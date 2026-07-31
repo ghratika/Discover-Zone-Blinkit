@@ -1,0 +1,128 @@
+[
+  {
+    "category_id": "cat_01",
+    "category_name": "Groceries",
+    "trust_score": 4.5,
+    "sample_review_snippet": "Exactly what I ordered, fresh and well-packed.",
+    "is_universal_default": false
+  },
+  {
+    "category_id": "cat_02",
+    "category_name": "Snacks & Munchies",
+    "trust_score": 4.2,
+    "sample_review_snippet": "Crispier than the store — arrived perfectly sealed.",
+    "is_universal_default": true
+  },
+  {
+    "category_id": "cat_03",
+    "category_name": "Beverages",
+    "trust_score": 4.4,
+    "sample_review_snippet": "Cold drinks delivered icy cold — loved it.",
+    "is_universal_default": true
+  },
+  {
+    "category_id": "cat_04",
+    "category_name": "Dairy & Eggs",
+    "trust_score": 4.6,
+    "sample_review_snippet": "Fresh expiry dates every single time.",
+    "is_universal_default": true
+  },
+  {
+    "category_id": "cat_05",
+    "category_name": "Household Basics",
+    "trust_score": 4.3,
+    "sample_review_snippet": "Genuine brands, no substitutions — reliable.",
+    "is_universal_default": true
+  },
+  {
+    "category_id": "cat_06",
+    "category_name": "Personal Care",
+    "trust_score": 4.1,
+    "sample_review_snippet": "Arrived sealed and exactly as described.",
+    "is_universal_default": true
+  },
+  {
+    "category_id": "cat_07",
+    "category_name": "Baby Care",
+    "trust_score": 4.7,
+    "sample_review_snippet": "Trusted brands, careful packaging — zero complaints.",
+    "is_universal_default": false
+  },
+  {
+    "category_id": "cat_08",
+    "category_name": "Pet Supplies",
+    "trust_score": 4.0,
+    "sample_review_snippet": "Great quality, arrived the same day.",
+    "is_universal_default": false
+  },
+  {
+    "category_id": "cat_09",
+    "category_name": "Health & Wellness",
+    "trust_score": 4.2,
+    "sample_review_snippet": "Authentic products, well within expiry — recommended.",
+    "is_universal_default": false
+  },
+  {
+    "category_id": "cat_10",
+    "category_name": "Frozen Food",
+    "trust_score": 3.8,
+    "sample_review_snippet": "Still frozen solid on arrival — surprisingly good.",
+    "is_universal_default": false
+  },
+  {
+    "category_id": "cat_11",
+    "category_name": "Fresh Vegetables",
+    "trust_score": 4.3,
+    "sample_review_snippet": "Farm-fresh quality, no wilted leaves.",
+    "is_universal_default": false
+  },
+  {
+    "category_id": "cat_12",
+    "category_name": "Fresh Fruits",
+    "trust_score": 4.4,
+    "sample_review_snippet": "Ripe and sweet — better than what I'd pick myself.",
+    "is_universal_default": false
+  },
+  {
+    "category_id": "cat_13",
+    "category_name": "Cleaning Supplies",
+    "trust_score": 4.1,
+    "sample_review_snippet": "Correct brands, full quantities, fast delivery.",
+    "is_universal_default": false
+  },
+  {
+    "category_id": "cat_14",
+    "category_name": "Stationery",
+    "trust_score": 3.9,
+    "sample_review_snippet": "Good quality at a fair price, arrived next day.",
+    "is_universal_default": false
+  },
+  {
+    "category_id": "cat_15",
+    "category_name": "Electronics Accessories",
+    "trust_score": 3.7,
+    "sample_review_snippet": "Works as described — saved me a trip to the store.",
+    "is_universal_default": false
+  },
+  {
+    "category_id": "cat_16",
+    "category_name": "Instant & Ready Meals",
+    "trust_score": 4.0,
+    "sample_review_snippet": "Handy for busy nights — tastes just like the packet says.",
+    "is_universal_default": false
+  },
+  {
+    "category_id": "cat_17",
+    "category_name": "Bakery & Bread",
+    "trust_score": 4.2,
+    "sample_review_snippet": "Soft and fresh — same day delivery makes all the difference.",
+    "is_universal_default": false
+  },
+  {
+    "category_id": "cat_18",
+    "category_name": "Organic & Natural",
+    "trust_score": 4.5,
+    "sample_review_snippet": "Certified organic, clearly labelled — worth every rupee.",
+    "is_universal_default": false
+  }
+]

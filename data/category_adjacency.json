@@ -1,0 +1,1838 @@
+[
+  {
+    "source_category_id": "cat_01",
+    "target_category_id": "cat_05",
+    "co_occurrence_score": 0.4726,
+    "sample_size": 95
+  },
+  {
+    "source_category_id": "cat_01",
+    "target_category_id": "cat_04",
+    "co_occurrence_score": 0.4389,
+    "sample_size": 97
+  },
+  {
+    "source_category_id": "cat_01",
+    "target_category_id": "cat_07",
+    "co_occurrence_score": 0.4322,
+    "sample_size": 86
+  },
+  {
+    "source_category_id": "cat_01",
+    "target_category_id": "cat_13",
+    "co_occurrence_score": 0.4067,
+    "sample_size": 85
+  },
+  {
+    "source_category_id": "cat_01",
+    "target_category_id": "cat_03",
+    "co_occurrence_score": 0.388,
+    "sample_size": 97
+  },
+  {
+    "source_category_id": "cat_01",
+    "target_category_id": "cat_11",
+    "co_occurrence_score": 0.3846,
+    "sample_size": 85
+  },
+  {
+    "source_category_id": "cat_01",
+    "target_category_id": "cat_10",
+    "co_occurrence_score": 0.3793,
+    "sample_size": 88
+  },
+  {
+    "source_category_id": "cat_01",
+    "target_category_id": "cat_12",
+    "co_occurrence_score": 0.3709,
+    "sample_size": 79
+  },
+  {
+    "source_category_id": "cat_01",
+    "target_category_id": "cat_14",
+    "co_occurrence_score": 0.3582,
+    "sample_size": 72
+  },
+  {
+    "source_category_id": "cat_01",
+    "target_category_id": "cat_17",
+    "co_occurrence_score": 0.356,
+    "sample_size": 68
+  },
+  {
+    "source_category_id": "cat_01",
+    "target_category_id": "cat_02",
+    "co_occurrence_score": 0.3484,
+    "sample_size": 77
+  },
+  {
+    "source_category_id": "cat_01",
+    "target_category_id": "cat_09",
+    "co_occurrence_score": 0.348,
+    "sample_size": 79
+  },
+  {
+    "source_category_id": "cat_01",
+    "target_category_id": "cat_16",
+    "co_occurrence_score": 0.3364,
+    "sample_size": 74
+  },
+  {
+    "source_category_id": "cat_01",
+    "target_category_id": "cat_06",
+    "co_occurrence_score": 0.3223,
+    "sample_size": 68
+  },
+  {
+    "source_category_id": "cat_01",
+    "target_category_id": "cat_18",
+    "co_occurrence_score": 0.3037,
+    "sample_size": 65
+  },
+  {
+    "source_category_id": "cat_01",
+    "target_category_id": "cat_15",
+    "co_occurrence_score": 0.2991,
+    "sample_size": 67
+  },
+  {
+    "source_category_id": "cat_01",
+    "target_category_id": "cat_08",
+    "co_occurrence_score": 0.2642,
+    "sample_size": 51
+  },
+  {
+    "source_category_id": "cat_02",
+    "target_category_id": "cat_10",
+    "co_occurrence_score": 0.5256,
+    "sample_size": 113
+  },
+  {
+    "source_category_id": "cat_02",
+    "target_category_id": "cat_03",
+    "co_occurrence_score": 0.5042,
+    "sample_size": 119
+  },
+  {
+    "source_category_id": "cat_02",
+    "target_category_id": "cat_16",
+    "co_occurrence_score": 0.5025,
+    "sample_size": 101
+  },
+  {
+    "source_category_id": "cat_02",
+    "target_category_id": "cat_06",
+    "co_occurrence_score": 0.4138,
+    "sample_size": 84
+  },
+  {
+    "source_category_id": "cat_02",
+    "target_category_id": "cat_09",
+    "co_occurrence_score": 0.4081,
+    "sample_size": 91
+  },
+  {
+    "source_category_id": "cat_02",
+    "target_category_id": "cat_05",
+    "co_occurrence_score": 0.4009,
+    "sample_size": 87
+  },
+  {
+    "source_category_id": "cat_02",
+    "target_category_id": "cat_13",
+    "co_occurrence_score": 0.3665,
+    "sample_size": 81
+  },
+  {
+    "source_category_id": "cat_02",
+    "target_category_id": "cat_15",
+    "co_occurrence_score": 0.3653,
+    "sample_size": 80
+  },
+  {
+    "source_category_id": "cat_02",
+    "target_category_id": "cat_04",
+    "co_occurrence_score": 0.364,
+    "sample_size": 87
+  },
+  {
+    "source_category_id": "cat_02",
+    "target_category_id": "cat_11",
+    "co_occurrence_score": 0.3593,
+    "sample_size": 83
+  },
+  {
+    "source_category_id": "cat_02",
+    "target_category_id": "cat_14",
+    "co_occurrence_score": 0.3575,
+    "sample_size": 74
+  },
+  {
+    "source_category_id": "cat_02",
+    "target_category_id": "cat_01",
+    "co_occurrence_score": 0.3484,
+    "sample_size": 77
+  },
+  {
+    "source_category_id": "cat_02",
+    "target_category_id": "cat_12",
+    "co_occurrence_score": 0.3393,
+    "sample_size": 76
+  },
+  {
+    "source_category_id": "cat_02",
+    "target_category_id": "cat_17",
+    "co_occurrence_score": 0.3218,
+    "sample_size": 65
+  },
+  {
+    "source_category_id": "cat_02",
+    "target_category_id": "cat_07",
+    "co_occurrence_score": 0.3139,
+    "sample_size": 70
+  },
+  {
+    "source_category_id": "cat_02",
+    "target_category_id": "cat_18",
+    "co_occurrence_score": 0.3105,
+    "sample_size": 68
+  },
+  {
+    "source_category_id": "cat_02",
+    "target_category_id": "cat_08",
+    "co_occurrence_score": 0.2857,
+    "sample_size": 56
+  },
+  {
+    "source_category_id": "cat_03",
+    "target_category_id": "cat_10",
+    "co_occurrence_score": 0.5907,
+    "sample_size": 140
+  },
+  {
+    "source_category_id": "cat_03",
+    "target_category_id": "cat_09",
+    "co_occurrence_score": 0.5447,
+    "sample_size": 128
+  },
+  {
+    "source_category_id": "cat_03",
+    "target_category_id": "cat_16",
+    "co_occurrence_score": 0.5395,
+    "sample_size": 123
+  },
+  {
+    "source_category_id": "cat_03",
+    "target_category_id": "cat_02",
+    "co_occurrence_score": 0.5042,
+    "sample_size": 119
+  },
+  {
+    "source_category_id": "cat_03",
+    "target_category_id": "cat_04",
+    "co_occurrence_score": 0.494,
+    "sample_size": 124
+  },
+  {
+    "source_category_id": "cat_03",
+    "target_category_id": "cat_15",
+    "co_occurrence_score": 0.4936,
+    "sample_size": 115
+  },
+  {
+    "source_category_id": "cat_03",
+    "target_category_id": "cat_11",
+    "co_occurrence_score": 0.4578,
+    "sample_size": 114
+  },
+  {
+    "source_category_id": "cat_03",
+    "target_category_id": "cat_06",
+    "co_occurrence_score": 0.4421,
+    "sample_size": 103
+  },
+  {
+    "source_category_id": "cat_03",
+    "target_category_id": "cat_13",
+    "co_occurrence_score": 0.4385,
+    "sample_size": 107
+  },
+  {
+    "source_category_id": "cat_03",
+    "target_category_id": "cat_12",
+    "co_occurrence_score": 0.4362,
+    "sample_size": 106
+  },
+  {
+    "source_category_id": "cat_03",
+    "target_category_id": "cat_14",
+    "co_occurrence_score": 0.4103,
+    "sample_size": 96
+  },
+  {
+    "source_category_id": "cat_03",
+    "target_category_id": "cat_05",
+    "co_occurrence_score": 0.4064,
+    "sample_size": 102
+  },
+  {
+    "source_category_id": "cat_03",
+    "target_category_id": "cat_07",
+    "co_occurrence_score": 0.3959,
+    "sample_size": 97
+  },
+  {
+    "source_category_id": "cat_03",
+    "target_category_id": "cat_18",
+    "co_occurrence_score": 0.3942,
+    "sample_size": 95
+  },
+  {
+    "source_category_id": "cat_03",
+    "target_category_id": "cat_01",
+    "co_occurrence_score": 0.388,
+    "sample_size": 97
+  },
+  {
+    "source_category_id": "cat_03",
+    "target_category_id": "cat_17",
+    "co_occurrence_score": 0.3739,
+    "sample_size": 86
+  },
+  {
+    "source_category_id": "cat_03",
+    "target_category_id": "cat_08",
+    "co_occurrence_score": 0.3144,
+    "sample_size": 72
+  },
+  {
+    "source_category_id": "cat_04",
+    "target_category_id": "cat_03",
+    "co_occurrence_score": 0.494,
+    "sample_size": 124
+  },
+  {
+    "source_category_id": "cat_04",
+    "target_category_id": "cat_11",
+    "co_occurrence_score": 0.4911,
+    "sample_size": 110
+  },
+  {
+    "source_category_id": "cat_04",
+    "target_category_id": "cat_07",
+    "co_occurrence_score": 0.4695,
+    "sample_size": 100
+  },
+  {
+    "source_category_id": "cat_04",
+    "target_category_id": "cat_05",
+    "co_occurrence_score": 0.4595,
+    "sample_size": 102
+  },
+  {
+    "source_category_id": "cat_04",
+    "target_category_id": "cat_13",
+    "co_occurrence_score": 0.457,
+    "sample_size": 101
+  },
+  {
+    "source_category_id": "cat_04",
+    "target_category_id": "cat_09",
+    "co_occurrence_score": 0.4397,
+    "sample_size": 102
+  },
+  {
+    "source_category_id": "cat_04",
+    "target_category_id": "cat_01",
+    "co_occurrence_score": 0.4389,
+    "sample_size": 97
+  },
+  {
+    "source_category_id": "cat_04",
+    "target_category_id": "cat_12",
+    "co_occurrence_score": 0.4286,
+    "sample_size": 96
+  },
+  {
+    "source_category_id": "cat_04",
+    "target_category_id": "cat_10",
+    "co_occurrence_score": 0.4089,
+    "sample_size": 101
+  },
+  {
+    "source_category_id": "cat_04",
+    "target_category_id": "cat_16",
+    "co_occurrence_score": 0.3879,
+    "sample_size": 90
+  },
+  {
+    "source_category_id": "cat_04",
+    "target_category_id": "cat_14",
+    "co_occurrence_score": 0.3682,
+    "sample_size": 81
+  },
+  {
+    "source_category_id": "cat_04",
+    "target_category_id": "cat_02",
+    "co_occurrence_score": 0.364,
+    "sample_size": 87
+  },
+  {
+    "source_category_id": "cat_04",
+    "target_category_id": "cat_15",
+    "co_occurrence_score": 0.3574,
+    "sample_size": 84
+  },
+  {
+    "source_category_id": "cat_04",
+    "target_category_id": "cat_17",
+    "co_occurrence_score": 0.3411,
+    "sample_size": 73
+  },
+  {
+    "source_category_id": "cat_04",
+    "target_category_id": "cat_06",
+    "co_occurrence_score": 0.3406,
+    "sample_size": 78
+  },
+  {
+    "source_category_id": "cat_04",
+    "target_category_id": "cat_18",
+    "co_occurrence_score": 0.3406,
+    "sample_size": 78
+  },
+  {
+    "source_category_id": "cat_04",
+    "target_category_id": "cat_08",
+    "co_occurrence_score": 0.2593,
+    "sample_size": 56
+  },
+  {
+    "source_category_id": "cat_05",
+    "target_category_id": "cat_01",
+    "co_occurrence_score": 0.4726,
+    "sample_size": 95
+  },
+  {
+    "source_category_id": "cat_05",
+    "target_category_id": "cat_04",
+    "co_occurrence_score": 0.4595,
+    "sample_size": 102
+  },
+  {
+    "source_category_id": "cat_05",
+    "target_category_id": "cat_13",
+    "co_occurrence_score": 0.4423,
+    "sample_size": 92
+  },
+  {
+    "source_category_id": "cat_05",
+    "target_category_id": "cat_11",
+    "co_occurrence_score": 0.4312,
+    "sample_size": 94
+  },
+  {
+    "source_category_id": "cat_05",
+    "target_category_id": "cat_07",
+    "co_occurrence_score": 0.4265,
+    "sample_size": 87
+  },
+  {
+    "source_category_id": "cat_05",
+    "target_category_id": "cat_10",
+    "co_occurrence_score": 0.4113,
+    "sample_size": 95
+  },
+  {
+    "source_category_id": "cat_05",
+    "target_category_id": "cat_03",
+    "co_occurrence_score": 0.4064,
+    "sample_size": 102
+  },
+  {
+    "source_category_id": "cat_05",
+    "target_category_id": "cat_02",
+    "co_occurrence_score": 0.4009,
+    "sample_size": 87
+  },
+  {
+    "source_category_id": "cat_05",
+    "target_category_id": "cat_12",
+    "co_occurrence_score": 0.3796,
+    "sample_size": 82
+  },
+  {
+    "source_category_id": "cat_05",
+    "target_category_id": "cat_16",
+    "co_occurrence_score": 0.3699,
+    "sample_size": 81
+  },
+  {
+    "source_category_id": "cat_05",
+    "target_category_id": "cat_18",
+    "co_occurrence_score": 0.3571,
+    "sample_size": 75
+  },
+  {
+    "source_category_id": "cat_05",
+    "target_category_id": "cat_14",
+    "co_occurrence_score": 0.3544,
+    "sample_size": 73
+  },
+  {
+    "source_category_id": "cat_05",
+    "target_category_id": "cat_06",
+    "co_occurrence_score": 0.3507,
+    "sample_size": 74
+  },
+  {
+    "source_category_id": "cat_05",
+    "target_category_id": "cat_09",
+    "co_occurrence_score": 0.3506,
+    "sample_size": 81
+  },
+  {
+    "source_category_id": "cat_05",
+    "target_category_id": "cat_15",
+    "co_occurrence_score": 0.3378,
+    "sample_size": 75
+  },
+  {
+    "source_category_id": "cat_05",
+    "target_category_id": "cat_17",
+    "co_occurrence_score": 0.325,
+    "sample_size": 65
+  },
+  {
+    "source_category_id": "cat_05",
+    "target_category_id": "cat_08",
+    "co_occurrence_score": 0.2953,
+    "sample_size": 57
+  },
+  {
+    "source_category_id": "cat_06",
+    "target_category_id": "cat_10",
+    "co_occurrence_score": 0.4645,
+    "sample_size": 98
+  },
+  {
+    "source_category_id": "cat_06",
+    "target_category_id": "cat_03",
+    "co_occurrence_score": 0.4421,
+    "sample_size": 103
+  },
+  {
+    "source_category_id": "cat_06",
+    "target_category_id": "cat_09",
+    "co_occurrence_score": 0.439,
+    "sample_size": 90
+  },
+  {
+    "source_category_id": "cat_06",
+    "target_category_id": "cat_02",
+    "co_occurrence_score": 0.4138,
+    "sample_size": 84
+  },
+  {
+    "source_category_id": "cat_06",
+    "target_category_id": "cat_16",
+    "co_occurrence_score": 0.3805,
+    "sample_size": 78
+  },
+  {
+    "source_category_id": "cat_06",
+    "target_category_id": "cat_11",
+    "co_occurrence_score": 0.3532,
+    "sample_size": 77
+  },
+  {
+    "source_category_id": "cat_06",
+    "target_category_id": "cat_05",
+    "co_occurrence_score": 0.3507,
+    "sample_size": 74
+  },
+  {
+    "source_category_id": "cat_06",
+    "target_category_id": "cat_13",
+    "co_occurrence_score": 0.3476,
+    "sample_size": 73
+  },
+  {
+    "source_category_id": "cat_06",
+    "target_category_id": "cat_04",
+    "co_occurrence_score": 0.3406,
+    "sample_size": 78
+  },
+  {
+    "source_category_id": "cat_06",
+    "target_category_id": "cat_12",
+    "co_occurrence_score": 0.3318,
+    "sample_size": 70
+  },
+  {
+    "source_category_id": "cat_06",
+    "target_category_id": "cat_01",
+    "co_occurrence_score": 0.3223,
+    "sample_size": 68
+  },
+  {
+    "source_category_id": "cat_06",
+    "target_category_id": "cat_15",
+    "co_occurrence_score": 0.3084,
+    "sample_size": 66
+  },
+  {
+    "source_category_id": "cat_06",
+    "target_category_id": "cat_18",
+    "co_occurrence_score": 0.3073,
+    "sample_size": 63
+  },
+  {
+    "source_category_id": "cat_06",
+    "target_category_id": "cat_14",
+    "co_occurrence_score": 0.297,
+    "sample_size": 60
+  },
+  {
+    "source_category_id": "cat_06",
+    "target_category_id": "cat_17",
+    "co_occurrence_score": 0.2917,
+    "sample_size": 56
+  },
+  {
+    "source_category_id": "cat_06",
+    "target_category_id": "cat_07",
+    "co_occurrence_score": 0.2804,
+    "sample_size": 60
+  },
+  {
+    "source_category_id": "cat_06",
+    "target_category_id": "cat_08",
+    "co_occurrence_score": 0.2802,
+    "sample_size": 51
+  },
+  {
+    "source_category_id": "cat_07",
+    "target_category_id": "cat_04",
+    "co_occurrence_score": 0.4695,
+    "sample_size": 100
+  },
+  {
+    "source_category_id": "cat_07",
+    "target_category_id": "cat_01",
+    "co_occurrence_score": 0.4322,
+    "sample_size": 86
+  },
+  {
+    "source_category_id": "cat_07",
+    "target_category_id": "cat_05",
+    "co_occurrence_score": 0.4265,
+    "sample_size": 87
+  },
+  {
+    "source_category_id": "cat_07",
+    "target_category_id": "cat_13",
+    "co_occurrence_score": 0.4167,
+    "sample_size": 85
+  },
+  {
+    "source_category_id": "cat_07",
+    "target_category_id": "cat_11",
+    "co_occurrence_score": 0.4131,
+    "sample_size": 88
+  },
+  {
+    "source_category_id": "cat_07",
+    "target_category_id": "cat_03",
+    "co_occurrence_score": 0.3959,
+    "sample_size": 97
+  },
+  {
+    "source_category_id": "cat_07",
+    "target_category_id": "cat_09",
+    "co_occurrence_score": 0.362,
+    "sample_size": 80
+  },
+  {
+    "source_category_id": "cat_07",
+    "target_category_id": "cat_12",
+    "co_occurrence_score": 0.3411,
+    "sample_size": 73
+  },
+  {
+    "source_category_id": "cat_07",
+    "target_category_id": "cat_14",
+    "co_occurrence_score": 0.3267,
+    "sample_size": 66
+  },
+  {
+    "source_category_id": "cat_07",
+    "target_category_id": "cat_16",
+    "co_occurrence_score": 0.3257,
+    "sample_size": 71
+  },
+  {
+    "source_category_id": "cat_07",
+    "target_category_id": "cat_15",
+    "co_occurrence_score": 0.318,
+    "sample_size": 69
+  },
+  {
+    "source_category_id": "cat_07",
+    "target_category_id": "cat_02",
+    "co_occurrence_score": 0.3139,
+    "sample_size": 70
+  },
+  {
+    "source_category_id": "cat_07",
+    "target_category_id": "cat_17",
+    "co_occurrence_score": 0.3093,
+    "sample_size": 60
+  },
+  {
+    "source_category_id": "cat_07",
+    "target_category_id": "cat_10",
+    "co_occurrence_score": 0.3071,
+    "sample_size": 74
+  },
+  {
+    "source_category_id": "cat_07",
+    "target_category_id": "cat_18",
+    "co_occurrence_score": 0.3048,
+    "sample_size": 64
+  },
+  {
+    "source_category_id": "cat_07",
+    "target_category_id": "cat_06",
+    "co_occurrence_score": 0.2804,
+    "sample_size": 60
+  },
+  {
+    "source_category_id": "cat_07",
+    "target_category_id": "cat_08",
+    "co_occurrence_score": 0.2781,
+    "sample_size": 52
+  },
+  {
+    "source_category_id": "cat_08",
+    "target_category_id": "cat_12",
+    "co_occurrence_score": 0.3443,
+    "sample_size": 63
+  },
+  {
+    "source_category_id": "cat_08",
+    "target_category_id": "cat_10",
+    "co_occurrence_score": 0.3173,
+    "sample_size": 66
+  },
+  {
+    "source_category_id": "cat_08",
+    "target_category_id": "cat_03",
+    "co_occurrence_score": 0.3144,
+    "sample_size": 72
+  },
+  {
+    "source_category_id": "cat_08",
+    "target_category_id": "cat_05",
+    "co_occurrence_score": 0.2953,
+    "sample_size": 57
+  },
+  {
+    "source_category_id": "cat_08",
+    "target_category_id": "cat_09",
+    "co_occurrence_score": 0.2871,
+    "sample_size": 58
+  },
+  {
+    "source_category_id": "cat_08",
+    "target_category_id": "cat_02",
+    "co_occurrence_score": 0.2857,
+    "sample_size": 56
+  },
+  {
+    "source_category_id": "cat_08",
+    "target_category_id": "cat_15",
+    "co_occurrence_score": 0.2827,
+    "sample_size": 54
+  },
+  {
+    "source_category_id": "cat_08",
+    "target_category_id": "cat_14",
+    "co_occurrence_score": 0.2825,
+    "sample_size": 50
+  },
+  {
+    "source_category_id": "cat_08",
+    "target_category_id": "cat_06",
+    "co_occurrence_score": 0.2802,
+    "sample_size": 51
+  },
+  {
+    "source_category_id": "cat_08",
+    "target_category_id": "cat_13",
+    "co_occurrence_score": 0.2784,
+    "sample_size": 54
+  },
+  {
+    "source_category_id": "cat_08",
+    "target_category_id": "cat_07",
+    "co_occurrence_score": 0.2781,
+    "sample_size": 52
+  },
+  {
+    "source_category_id": "cat_08",
+    "target_category_id": "cat_11",
+    "co_occurrence_score": 0.2745,
+    "sample_size": 56
+  },
+  {
+    "source_category_id": "cat_08",
+    "target_category_id": "cat_18",
+    "co_occurrence_score": 0.2732,
+    "sample_size": 50
+  },
+  {
+    "source_category_id": "cat_08",
+    "target_category_id": "cat_16",
+    "co_occurrence_score": 0.2718,
+    "sample_size": 53
+  },
+  {
+    "source_category_id": "cat_08",
+    "target_category_id": "cat_01",
+    "co_occurrence_score": 0.2642,
+    "sample_size": 51
+  },
+  {
+    "source_category_id": "cat_08",
+    "target_category_id": "cat_04",
+    "co_occurrence_score": 0.2593,
+    "sample_size": 56
+  },
+  {
+    "source_category_id": "cat_08",
+    "target_category_id": "cat_17",
+    "co_occurrence_score": 0.2456,
+    "sample_size": 42
+  },
+  {
+    "source_category_id": "cat_09",
+    "target_category_id": "cat_03",
+    "co_occurrence_score": 0.5447,
+    "sample_size": 128
+  },
+  {
+    "source_category_id": "cat_09",
+    "target_category_id": "cat_10",
+    "co_occurrence_score": 0.4545,
+    "sample_size": 105
+  },
+  {
+    "source_category_id": "cat_09",
+    "target_category_id": "cat_04",
+    "co_occurrence_score": 0.4397,
+    "sample_size": 102
+  },
+  {
+    "source_category_id": "cat_09",
+    "target_category_id": "cat_06",
+    "co_occurrence_score": 0.439,
+    "sample_size": 90
+  },
+  {
+    "source_category_id": "cat_09",
+    "target_category_id": "cat_11",
+    "co_occurrence_score": 0.4123,
+    "sample_size": 94
+  },
+  {
+    "source_category_id": "cat_09",
+    "target_category_id": "cat_02",
+    "co_occurrence_score": 0.4081,
+    "sample_size": 91
+  },
+  {
+    "source_category_id": "cat_09",
+    "target_category_id": "cat_18",
+    "co_occurrence_score": 0.3981,
+    "sample_size": 84
+  },
+  {
+    "source_category_id": "cat_09",
+    "target_category_id": "cat_12",
+    "co_occurrence_score": 0.3937,
+    "sample_size": 87
+  },
+  {
+    "source_category_id": "cat_09",
+    "target_category_id": "cat_16",
+    "co_occurrence_score": 0.3839,
+    "sample_size": 86
+  },
+  {
+    "source_category_id": "cat_09",
+    "target_category_id": "cat_15",
+    "co_occurrence_score": 0.3767,
+    "sample_size": 84
+  },
+  {
+    "source_category_id": "cat_09",
+    "target_category_id": "cat_07",
+    "co_occurrence_score": 0.362,
+    "sample_size": 80
+  },
+  {
+    "source_category_id": "cat_09",
+    "target_category_id": "cat_05",
+    "co_occurrence_score": 0.3506,
+    "sample_size": 81
+  },
+  {
+    "source_category_id": "cat_09",
+    "target_category_id": "cat_01",
+    "co_occurrence_score": 0.348,
+    "sample_size": 79
+  },
+  {
+    "source_category_id": "cat_09",
+    "target_category_id": "cat_13",
+    "co_occurrence_score": 0.3362,
+    "sample_size": 78
+  },
+  {
+    "source_category_id": "cat_09",
+    "target_category_id": "cat_14",
+    "co_occurrence_score": 0.3257,
+    "sample_size": 71
+  },
+  {
+    "source_category_id": "cat_09",
+    "target_category_id": "cat_17",
+    "co_occurrence_score": 0.3033,
+    "sample_size": 64
+  },
+  {
+    "source_category_id": "cat_09",
+    "target_category_id": "cat_08",
+    "co_occurrence_score": 0.2871,
+    "sample_size": 58
+  },
+  {
+    "source_category_id": "cat_10",
+    "target_category_id": "cat_03",
+    "co_occurrence_score": 0.5907,
+    "sample_size": 140
+  },
+  {
+    "source_category_id": "cat_10",
+    "target_category_id": "cat_02",
+    "co_occurrence_score": 0.5256,
+    "sample_size": 113
+  },
+  {
+    "source_category_id": "cat_10",
+    "target_category_id": "cat_16",
+    "co_occurrence_score": 0.5,
+    "sample_size": 108
+  },
+  {
+    "source_category_id": "cat_10",
+    "target_category_id": "cat_06",
+    "co_occurrence_score": 0.4645,
+    "sample_size": 98
+  },
+  {
+    "source_category_id": "cat_10",
+    "target_category_id": "cat_09",
+    "co_occurrence_score": 0.4545,
+    "sample_size": 105
+  },
+  {
+    "source_category_id": "cat_10",
+    "target_category_id": "cat_05",
+    "co_occurrence_score": 0.4113,
+    "sample_size": 95
+  },
+  {
+    "source_category_id": "cat_10",
+    "target_category_id": "cat_14",
+    "co_occurrence_score": 0.4093,
+    "sample_size": 88
+  },
+  {
+    "source_category_id": "cat_10",
+    "target_category_id": "cat_04",
+    "co_occurrence_score": 0.4089,
+    "sample_size": 101
+  },
+  {
+    "source_category_id": "cat_10",
+    "target_category_id": "cat_15",
+    "co_occurrence_score": 0.4017,
+    "sample_size": 92
+  },
+  {
+    "source_category_id": "cat_10",
+    "target_category_id": "cat_13",
+    "co_occurrence_score": 0.3906,
+    "sample_size": 91
+  },
+  {
+    "source_category_id": "cat_10",
+    "target_category_id": "cat_01",
+    "co_occurrence_score": 0.3793,
+    "sample_size": 88
+  },
+  {
+    "source_category_id": "cat_10",
+    "target_category_id": "cat_11",
+    "co_occurrence_score": 0.377,
+    "sample_size": 92
+  },
+  {
+    "source_category_id": "cat_10",
+    "target_category_id": "cat_12",
+    "co_occurrence_score": 0.3761,
+    "sample_size": 88
+  },
+  {
+    "source_category_id": "cat_10",
+    "target_category_id": "cat_18",
+    "co_occurrence_score": 0.3733,
+    "sample_size": 84
+  },
+  {
+    "source_category_id": "cat_10",
+    "target_category_id": "cat_17",
+    "co_occurrence_score": 0.3505,
+    "sample_size": 75
+  },
+  {
+    "source_category_id": "cat_10",
+    "target_category_id": "cat_08",
+    "co_occurrence_score": 0.3173,
+    "sample_size": 66
+  },
+  {
+    "source_category_id": "cat_10",
+    "target_category_id": "cat_07",
+    "co_occurrence_score": 0.3071,
+    "sample_size": 74
+  },
+  {
+    "source_category_id": "cat_11",
+    "target_category_id": "cat_04",
+    "co_occurrence_score": 0.4911,
+    "sample_size": 110
+  },
+  {
+    "source_category_id": "cat_11",
+    "target_category_id": "cat_13",
+    "co_occurrence_score": 0.4623,
+    "sample_size": 98
+  },
+  {
+    "source_category_id": "cat_11",
+    "target_category_id": "cat_03",
+    "co_occurrence_score": 0.4578,
+    "sample_size": 114
+  },
+  {
+    "source_category_id": "cat_11",
+    "target_category_id": "cat_05",
+    "co_occurrence_score": 0.4312,
+    "sample_size": 94
+  },
+  {
+    "source_category_id": "cat_11",
+    "target_category_id": "cat_12",
+    "co_occurrence_score": 0.4194,
+    "sample_size": 91
+  },
+  {
+    "source_category_id": "cat_11",
+    "target_category_id": "cat_07",
+    "co_occurrence_score": 0.4131,
+    "sample_size": 88
+  },
+  {
+    "source_category_id": "cat_11",
+    "target_category_id": "cat_09",
+    "co_occurrence_score": 0.4123,
+    "sample_size": 94
+  },
+  {
+    "source_category_id": "cat_11",
+    "target_category_id": "cat_15",
+    "co_occurrence_score": 0.3955,
+    "sample_size": 87
+  },
+  {
+    "source_category_id": "cat_11",
+    "target_category_id": "cat_01",
+    "co_occurrence_score": 0.3846,
+    "sample_size": 85
+  },
+  {
+    "source_category_id": "cat_11",
+    "target_category_id": "cat_10",
+    "co_occurrence_score": 0.377,
+    "sample_size": 92
+  },
+  {
+    "source_category_id": "cat_11",
+    "target_category_id": "cat_17",
+    "co_occurrence_score": 0.3614,
+    "sample_size": 73
+  },
+  {
+    "source_category_id": "cat_11",
+    "target_category_id": "cat_18",
+    "co_occurrence_score": 0.3594,
+    "sample_size": 78
+  },
+  {
+    "source_category_id": "cat_11",
+    "target_category_id": "cat_02",
+    "co_occurrence_score": 0.3593,
+    "sample_size": 83
+  },
+  {
+    "source_category_id": "cat_11",
+    "target_category_id": "cat_06",
+    "co_occurrence_score": 0.3532,
+    "sample_size": 77
+  },
+  {
+    "source_category_id": "cat_11",
+    "target_category_id": "cat_16",
+    "co_occurrence_score": 0.3478,
+    "sample_size": 80
+  },
+  {
+    "source_category_id": "cat_11",
+    "target_category_id": "cat_14",
+    "co_occurrence_score": 0.3018,
+    "sample_size": 67
+  },
+  {
+    "source_category_id": "cat_11",
+    "target_category_id": "cat_08",
+    "co_occurrence_score": 0.2745,
+    "sample_size": 56
+  },
+  {
+    "source_category_id": "cat_12",
+    "target_category_id": "cat_03",
+    "co_occurrence_score": 0.4362,
+    "sample_size": 106
+  },
+  {
+    "source_category_id": "cat_12",
+    "target_category_id": "cat_04",
+    "co_occurrence_score": 0.4286,
+    "sample_size": 96
+  },
+  {
+    "source_category_id": "cat_12",
+    "target_category_id": "cat_11",
+    "co_occurrence_score": 0.4194,
+    "sample_size": 91
+  },
+  {
+    "source_category_id": "cat_12",
+    "target_category_id": "cat_09",
+    "co_occurrence_score": 0.3937,
+    "sample_size": 87
+  },
+  {
+    "source_category_id": "cat_12",
+    "target_category_id": "cat_18",
+    "co_occurrence_score": 0.3911,
+    "sample_size": 79
+  },
+  {
+    "source_category_id": "cat_12",
+    "target_category_id": "cat_05",
+    "co_occurrence_score": 0.3796,
+    "sample_size": 82
+  },
+  {
+    "source_category_id": "cat_12",
+    "target_category_id": "cat_10",
+    "co_occurrence_score": 0.3761,
+    "sample_size": 88
+  },
+  {
+    "source_category_id": "cat_12",
+    "target_category_id": "cat_01",
+    "co_occurrence_score": 0.3709,
+    "sample_size": 79
+  },
+  {
+    "source_category_id": "cat_12",
+    "target_category_id": "cat_13",
+    "co_occurrence_score": 0.3578,
+    "sample_size": 78
+  },
+  {
+    "source_category_id": "cat_12",
+    "target_category_id": "cat_08",
+    "co_occurrence_score": 0.3443,
+    "sample_size": 63
+  },
+  {
+    "source_category_id": "cat_12",
+    "target_category_id": "cat_07",
+    "co_occurrence_score": 0.3411,
+    "sample_size": 73
+  },
+  {
+    "source_category_id": "cat_12",
+    "target_category_id": "cat_02",
+    "co_occurrence_score": 0.3393,
+    "sample_size": 76
+  },
+  {
+    "source_category_id": "cat_12",
+    "target_category_id": "cat_15",
+    "co_occurrence_score": 0.3379,
+    "sample_size": 74
+  },
+  {
+    "source_category_id": "cat_12",
+    "target_category_id": "cat_06",
+    "co_occurrence_score": 0.3318,
+    "sample_size": 70
+  },
+  {
+    "source_category_id": "cat_12",
+    "target_category_id": "cat_17",
+    "co_occurrence_score": 0.3316,
+    "sample_size": 65
+  },
+  {
+    "source_category_id": "cat_12",
+    "target_category_id": "cat_14",
+    "co_occurrence_score": 0.3285,
+    "sample_size": 68
+  },
+  {
+    "source_category_id": "cat_12",
+    "target_category_id": "cat_16",
+    "co_occurrence_score": 0.3214,
+    "sample_size": 72
+  },
+  {
+    "source_category_id": "cat_13",
+    "target_category_id": "cat_11",
+    "co_occurrence_score": 0.4623,
+    "sample_size": 98
+  },
+  {
+    "source_category_id": "cat_13",
+    "target_category_id": "cat_04",
+    "co_occurrence_score": 0.457,
+    "sample_size": 101
+  },
+  {
+    "source_category_id": "cat_13",
+    "target_category_id": "cat_05",
+    "co_occurrence_score": 0.4423,
+    "sample_size": 92
+  },
+  {
+    "source_category_id": "cat_13",
+    "target_category_id": "cat_03",
+    "co_occurrence_score": 0.4385,
+    "sample_size": 107
+  },
+  {
+    "source_category_id": "cat_13",
+    "target_category_id": "cat_07",
+    "co_occurrence_score": 0.4167,
+    "sample_size": 85
+  },
+  {
+    "source_category_id": "cat_13",
+    "target_category_id": "cat_01",
+    "co_occurrence_score": 0.4067,
+    "sample_size": 85
+  },
+  {
+    "source_category_id": "cat_13",
+    "target_category_id": "cat_10",
+    "co_occurrence_score": 0.3906,
+    "sample_size": 91
+  },
+  {
+    "source_category_id": "cat_13",
+    "target_category_id": "cat_14",
+    "co_occurrence_score": 0.3713,
+    "sample_size": 75
+  },
+  {
+    "source_category_id": "cat_13",
+    "target_category_id": "cat_02",
+    "co_occurrence_score": 0.3665,
+    "sample_size": 81
+  },
+  {
+    "source_category_id": "cat_13",
+    "target_category_id": "cat_18",
+    "co_occurrence_score": 0.3606,
+    "sample_size": 75
+  },
+  {
+    "source_category_id": "cat_13",
+    "target_category_id": "cat_12",
+    "co_occurrence_score": 0.3578,
+    "sample_size": 78
+  },
+  {
+    "source_category_id": "cat_13",
+    "target_category_id": "cat_06",
+    "co_occurrence_score": 0.3476,
+    "sample_size": 73
+  },
+  {
+    "source_category_id": "cat_13",
+    "target_category_id": "cat_15",
+    "co_occurrence_score": 0.347,
+    "sample_size": 76
+  },
+  {
+    "source_category_id": "cat_13",
+    "target_category_id": "cat_16",
+    "co_occurrence_score": 0.3423,
+    "sample_size": 76
+  },
+  {
+    "source_category_id": "cat_13",
+    "target_category_id": "cat_09",
+    "co_occurrence_score": 0.3362,
+    "sample_size": 78
+  },
+  {
+    "source_category_id": "cat_13",
+    "target_category_id": "cat_17",
+    "co_occurrence_score": 0.302,
+    "sample_size": 61
+  },
+  {
+    "source_category_id": "cat_13",
+    "target_category_id": "cat_08",
+    "co_occurrence_score": 0.2784,
+    "sample_size": 54
+  },
+  {
+    "source_category_id": "cat_14",
+    "target_category_id": "cat_03",
+    "co_occurrence_score": 0.4103,
+    "sample_size": 96
+  },
+  {
+    "source_category_id": "cat_14",
+    "target_category_id": "cat_10",
+    "co_occurrence_score": 0.4093,
+    "sample_size": 88
+  },
+  {
+    "source_category_id": "cat_14",
+    "target_category_id": "cat_15",
+    "co_occurrence_score": 0.3838,
+    "sample_size": 76
+  },
+  {
+    "source_category_id": "cat_14",
+    "target_category_id": "cat_16",
+    "co_occurrence_score": 0.3781,
+    "sample_size": 76
+  },
+  {
+    "source_category_id": "cat_14",
+    "target_category_id": "cat_13",
+    "co_occurrence_score": 0.3713,
+    "sample_size": 75
+  },
+  {
+    "source_category_id": "cat_14",
+    "target_category_id": "cat_04",
+    "co_occurrence_score": 0.3682,
+    "sample_size": 81
+  },
+  {
+    "source_category_id": "cat_14",
+    "target_category_id": "cat_01",
+    "co_occurrence_score": 0.3582,
+    "sample_size": 72
+  },
+  {
+    "source_category_id": "cat_14",
+    "target_category_id": "cat_02",
+    "co_occurrence_score": 0.3575,
+    "sample_size": 74
+  },
+  {
+    "source_category_id": "cat_14",
+    "target_category_id": "cat_05",
+    "co_occurrence_score": 0.3544,
+    "sample_size": 73
+  },
+  {
+    "source_category_id": "cat_14",
+    "target_category_id": "cat_18",
+    "co_occurrence_score": 0.3367,
+    "sample_size": 66
+  },
+  {
+    "source_category_id": "cat_14",
+    "target_category_id": "cat_12",
+    "co_occurrence_score": 0.3285,
+    "sample_size": 68
+  },
+  {
+    "source_category_id": "cat_14",
+    "target_category_id": "cat_07",
+    "co_occurrence_score": 0.3267,
+    "sample_size": 66
+  },
+  {
+    "source_category_id": "cat_14",
+    "target_category_id": "cat_09",
+    "co_occurrence_score": 0.3257,
+    "sample_size": 71
+  },
+  {
+    "source_category_id": "cat_14",
+    "target_category_id": "cat_11",
+    "co_occurrence_score": 0.3018,
+    "sample_size": 67
+  },
+  {
+    "source_category_id": "cat_14",
+    "target_category_id": "cat_06",
+    "co_occurrence_score": 0.297,
+    "sample_size": 60
+  },
+  {
+    "source_category_id": "cat_14",
+    "target_category_id": "cat_17",
+    "co_occurrence_score": 0.2872,
+    "sample_size": 54
+  },
+  {
+    "source_category_id": "cat_14",
+    "target_category_id": "cat_08",
+    "co_occurrence_score": 0.2825,
+    "sample_size": 50
+  },
+  {
+    "source_category_id": "cat_15",
+    "target_category_id": "cat_03",
+    "co_occurrence_score": 0.4936,
+    "sample_size": 115
+  },
+  {
+    "source_category_id": "cat_15",
+    "target_category_id": "cat_10",
+    "co_occurrence_score": 0.4017,
+    "sample_size": 92
+  },
+  {
+    "source_category_id": "cat_15",
+    "target_category_id": "cat_16",
+    "co_occurrence_score": 0.3981,
+    "sample_size": 84
+  },
+  {
+    "source_category_id": "cat_15",
+    "target_category_id": "cat_11",
+    "co_occurrence_score": 0.3955,
+    "sample_size": 87
+  },
+  {
+    "source_category_id": "cat_15",
+    "target_category_id": "cat_14",
+    "co_occurrence_score": 0.3838,
+    "sample_size": 76
+  },
+  {
+    "source_category_id": "cat_15",
+    "target_category_id": "cat_09",
+    "co_occurrence_score": 0.3767,
+    "sample_size": 84
+  },
+  {
+    "source_category_id": "cat_15",
+    "target_category_id": "cat_02",
+    "co_occurrence_score": 0.3653,
+    "sample_size": 80
+  },
+  {
+    "source_category_id": "cat_15",
+    "target_category_id": "cat_04",
+    "co_occurrence_score": 0.3574,
+    "sample_size": 84
+  },
+  {
+    "source_category_id": "cat_15",
+    "target_category_id": "cat_13",
+    "co_occurrence_score": 0.347,
+    "sample_size": 76
+  },
+  {
+    "source_category_id": "cat_15",
+    "target_category_id": "cat_12",
+    "co_occurrence_score": 0.3379,
+    "sample_size": 74
+  },
+  {
+    "source_category_id": "cat_15",
+    "target_category_id": "cat_05",
+    "co_occurrence_score": 0.3378,
+    "sample_size": 75
+  },
+  {
+    "source_category_id": "cat_15",
+    "target_category_id": "cat_17",
+    "co_occurrence_score": 0.3333,
+    "sample_size": 65
+  },
+  {
+    "source_category_id": "cat_15",
+    "target_category_id": "cat_07",
+    "co_occurrence_score": 0.318,
+    "sample_size": 69
+  },
+  {
+    "source_category_id": "cat_15",
+    "target_category_id": "cat_06",
+    "co_occurrence_score": 0.3084,
+    "sample_size": 66
+  },
+  {
+    "source_category_id": "cat_15",
+    "target_category_id": "cat_18",
+    "co_occurrence_score": 0.3084,
+    "sample_size": 66
+  },
+  {
+    "source_category_id": "cat_15",
+    "target_category_id": "cat_01",
+    "co_occurrence_score": 0.2991,
+    "sample_size": 67
+  },
+  {
+    "source_category_id": "cat_15",
+    "target_category_id": "cat_08",
+    "co_occurrence_score": 0.2827,
+    "sample_size": 54
+  },
+  {
+    "source_category_id": "cat_16",
+    "target_category_id": "cat_03",
+    "co_occurrence_score": 0.5395,
+    "sample_size": 123
+  },
+  {
+    "source_category_id": "cat_16",
+    "target_category_id": "cat_02",
+    "co_occurrence_score": 0.5025,
+    "sample_size": 101
+  },
+  {
+    "source_category_id": "cat_16",
+    "target_category_id": "cat_10",
+    "co_occurrence_score": 0.5,
+    "sample_size": 108
+  },
+  {
+    "source_category_id": "cat_16",
+    "target_category_id": "cat_15",
+    "co_occurrence_score": 0.3981,
+    "sample_size": 84
+  },
+  {
+    "source_category_id": "cat_16",
+    "target_category_id": "cat_04",
+    "co_occurrence_score": 0.3879,
+    "sample_size": 90
+  },
+  {
+    "source_category_id": "cat_16",
+    "target_category_id": "cat_09",
+    "co_occurrence_score": 0.3839,
+    "sample_size": 86
+  },
+  {
+    "source_category_id": "cat_16",
+    "target_category_id": "cat_06",
+    "co_occurrence_score": 0.3805,
+    "sample_size": 78
+  },
+  {
+    "source_category_id": "cat_16",
+    "target_category_id": "cat_14",
+    "co_occurrence_score": 0.3781,
+    "sample_size": 76
+  },
+  {
+    "source_category_id": "cat_16",
+    "target_category_id": "cat_05",
+    "co_occurrence_score": 0.3699,
+    "sample_size": 81
+  },
+  {
+    "source_category_id": "cat_16",
+    "target_category_id": "cat_11",
+    "co_occurrence_score": 0.3478,
+    "sample_size": 80
+  },
+  {
+    "source_category_id": "cat_16",
+    "target_category_id": "cat_13",
+    "co_occurrence_score": 0.3423,
+    "sample_size": 76
+  },
+  {
+    "source_category_id": "cat_16",
+    "target_category_id": "cat_01",
+    "co_occurrence_score": 0.3364,
+    "sample_size": 74
+  },
+  {
+    "source_category_id": "cat_16",
+    "target_category_id": "cat_07",
+    "co_occurrence_score": 0.3257,
+    "sample_size": 71
+  },
+  {
+    "source_category_id": "cat_16",
+    "target_category_id": "cat_12",
+    "co_occurrence_score": 0.3214,
+    "sample_size": 72
+  },
+  {
+    "source_category_id": "cat_16",
+    "target_category_id": "cat_18",
+    "co_occurrence_score": 0.3163,
+    "sample_size": 68
+  },
+  {
+    "source_category_id": "cat_16",
+    "target_category_id": "cat_17",
+    "co_occurrence_score": 0.2767,
+    "sample_size": 57
+  },
+  {
+    "source_category_id": "cat_16",
+    "target_category_id": "cat_08",
+    "co_occurrence_score": 0.2718,
+    "sample_size": 53
+  },
+  {
+    "source_category_id": "cat_17",
+    "target_category_id": "cat_03",
+    "co_occurrence_score": 0.3739,
+    "sample_size": 86
+  },
+  {
+    "source_category_id": "cat_17",
+    "target_category_id": "cat_11",
+    "co_occurrence_score": 0.3614,
+    "sample_size": 73
+  },
+  {
+    "source_category_id": "cat_17",
+    "target_category_id": "cat_01",
+    "co_occurrence_score": 0.356,
+    "sample_size": 68
+  },
+  {
+    "source_category_id": "cat_17",
+    "target_category_id": "cat_10",
+    "co_occurrence_score": 0.3505,
+    "sample_size": 75
+  },
+  {
+    "source_category_id": "cat_17",
+    "target_category_id": "cat_04",
+    "co_occurrence_score": 0.3411,
+    "sample_size": 73
+  },
+  {
+    "source_category_id": "cat_17",
+    "target_category_id": "cat_15",
+    "co_occurrence_score": 0.3333,
+    "sample_size": 65
+  },
+  {
+    "source_category_id": "cat_17",
+    "target_category_id": "cat_12",
+    "co_occurrence_score": 0.3316,
+    "sample_size": 65
+  },
+  {
+    "source_category_id": "cat_17",
+    "target_category_id": "cat_18",
+    "co_occurrence_score": 0.3262,
+    "sample_size": 61
+  },
+  {
+    "source_category_id": "cat_17",
+    "target_category_id": "cat_05",
+    "co_occurrence_score": 0.325,
+    "sample_size": 65
+  },
+  {
+    "source_category_id": "cat_17",
+    "target_category_id": "cat_02",
+    "co_occurrence_score": 0.3218,
+    "sample_size": 65
+  },
+  {
+    "source_category_id": "cat_17",
+    "target_category_id": "cat_07",
+    "co_occurrence_score": 0.3093,
+    "sample_size": 60
+  },
+  {
+    "source_category_id": "cat_17",
+    "target_category_id": "cat_09",
+    "co_occurrence_score": 0.3033,
+    "sample_size": 64
+  },
+  {
+    "source_category_id": "cat_17",
+    "target_category_id": "cat_13",
+    "co_occurrence_score": 0.302,
+    "sample_size": 61
+  },
+  {
+    "source_category_id": "cat_17",
+    "target_category_id": "cat_06",
+    "co_occurrence_score": 0.2917,
+    "sample_size": 56
+  },
+  {
+    "source_category_id": "cat_17",
+    "target_category_id": "cat_14",
+    "co_occurrence_score": 0.2872,
+    "sample_size": 54
+  },
+  {
+    "source_category_id": "cat_17",
+    "target_category_id": "cat_16",
+    "co_occurrence_score": 0.2767,
+    "sample_size": 57
+  },
+  {
+    "source_category_id": "cat_17",
+    "target_category_id": "cat_08",
+    "co_occurrence_score": 0.2456,
+    "sample_size": 42
+  },
+  {
+    "source_category_id": "cat_18",
+    "target_category_id": "cat_09",
+    "co_occurrence_score": 0.3981,
+    "sample_size": 84
+  },
+  {
+    "source_category_id": "cat_18",
+    "target_category_id": "cat_03",
+    "co_occurrence_score": 0.3942,
+    "sample_size": 95
+  },
+  {
+    "source_category_id": "cat_18",
+    "target_category_id": "cat_12",
+    "co_occurrence_score": 0.3911,
+    "sample_size": 79
+  },
+  {
+    "source_category_id": "cat_18",
+    "target_category_id": "cat_10",
+    "co_occurrence_score": 0.3733,
+    "sample_size": 84
+  },
+  {
+    "source_category_id": "cat_18",
+    "target_category_id": "cat_13",
+    "co_occurrence_score": 0.3606,
+    "sample_size": 75
+  },
+  {
+    "source_category_id": "cat_18",
+    "target_category_id": "cat_11",
+    "co_occurrence_score": 0.3594,
+    "sample_size": 78
+  },
+  {
+    "source_category_id": "cat_18",
+    "target_category_id": "cat_05",
+    "co_occurrence_score": 0.3571,
+    "sample_size": 75
+  },
+  {
+    "source_category_id": "cat_18",
+    "target_category_id": "cat_04",
+    "co_occurrence_score": 0.3406,
+    "sample_size": 78
+  },
+  {
+    "source_category_id": "cat_18",
+    "target_category_id": "cat_14",
+    "co_occurrence_score": 0.3367,
+    "sample_size": 66
+  },
+  {
+    "source_category_id": "cat_18",
+    "target_category_id": "cat_17",
+    "co_occurrence_score": 0.3262,
+    "sample_size": 61
+  },
+  {
+    "source_category_id": "cat_18",
+    "target_category_id": "cat_16",
+    "co_occurrence_score": 0.3163,
+    "sample_size": 68
+  },
+  {
+    "source_category_id": "cat_18",
+    "target_category_id": "cat_02",
+    "co_occurrence_score": 0.3105,
+    "sample_size": 68
+  },
+  {
+    "source_category_id": "cat_18",
+    "target_category_id": "cat_15",
+    "co_occurrence_score": 0.3084,
+    "sample_size": 66
+  },
+  {
+    "source_category_id": "cat_18",
+    "target_category_id": "cat_06",
+    "co_occurrence_score": 0.3073,
+    "sample_size": 63
+  },
+  {
+    "source_category_id": "cat_18",
+    "target_category_id": "cat_07",
+    "co_occurrence_score": 0.3048,
+    "sample_size": 64
+  },
+  {
+    "source_category_id": "cat_18",
+    "target_category_id": "cat_01",
+    "co_occurrence_score": 0.3037,
+    "sample_size": 65
+  },
+  {
+    "source_category_id": "cat_18",
+    "target_category_id": "cat_08",
+    "co_occurrence_score": 0.2732,
+    "sample_size": 50
+  }
+]

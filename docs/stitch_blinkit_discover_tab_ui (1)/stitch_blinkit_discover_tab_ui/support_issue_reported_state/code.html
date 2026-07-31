@@ -1,0 +1,244 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<title>Support - Report an Issue</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#e2e2e2",
+                        "primary-fixed": "#ffe330",
+                        "outline-variant": "#cec6aa",
+                        "background": "#f8f9fb",
+                        "on-tertiary-container": "#006f71",
+                        "tertiary-fixed": "#2efaff",
+                        "secondary-fixed": "#e2e2e2",
+                        "inverse-surface": "#2e3132",
+                        "tertiary-fixed-dim": "#00dce1",
+                        "surface-container": "#edeef0",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "inverse-primary": "#e1c700",
+                        "on-surface-variant": "#4c4732",
+                        "inverse-on-surface": "#f0f1f3",
+                        "primary-container": "#ffe100",
+                        "on-tertiary-fixed": "#002021",
+                        "on-tertiary-fixed-variant": "#004f51",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#514700",
+                        "on-primary-container": "#726300",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#f8f9fb",
+                        "tertiary": "#00696c",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e1e2e4",
+                        "primary": "#6c5e00",
+                        "on-secondary-container": "#646464",
+                        "surface-tint": "#6c5e00",
+                        "surface-dim": "#d9dadc",
+                        "surface-container-high": "#e7e8ea",
+                        "primary-fixed-dim": "#e1c700",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f8f9fb",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#00f9fe",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e1e2e4",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "surface-container-low": "#f3f4f6",
+                        "on-primary-fixed": "#211c00",
+                        "secondary": "#5e5e5e",
+                        "outline": "#7d775f",
+                        "on-surface": "#191c1e",
+                        "on-background": "#191c1e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "16px",
+                        "stack-md": "8px",
+                        "gutter": "12px",
+                        "container-margin": "16px",
+                        "stack-sm": "4px",
+                        "section-gap": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-xs": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-md": ["20px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-xs": ["10px", {"lineHeight": "1", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #f8f9fb;
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .star-active {
+            font-variation-settings: 'FILL' 1;
+            color: #6c5e00;
+        }
+        .order-card-shadow {
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-on-background flex items-center justify-between px-container-margin h-12">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform text-primary dark:text-primary-fixed">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed">Support</h1>
+</div>
+<button class="active:scale-95 transition-transform text-primary dark:text-primary-fixed">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</header>
+<main class="pt-16 pb-20 px-container-margin max-w-md mx-auto">
+<!-- Order Summary & Success Message -->
+<section class="mb-stack-lg text-center">
+<div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-container mb-stack-lg">
+<span class="material-symbols-outlined text-on-primary-container text-4xl" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile mb-stack-sm">Delivered Successfully</h2>
+<p class="font-body-md text-body-md text-secondary">Order #BRK-928374-X was delivered at 2:14 PM</p>
+</section>
+<!-- Feedback & Issue Card -->
+<div class="bg-surface-container-lowest rounded-xl p-4 order-card-shadow border border-outline-variant/30 transition-all">
+<div class="flex items-start justify-between mb-stack-lg">
+<div>
+<h3 class="font-headline-md text-headline-md mb-stack-sm">Pedigree Adult Dry Dog Food</h3>
+<p class="font-body-md text-body-md text-secondary">Help us improve your experience</p>
+</div>
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A clean product shot of Pedigree Adult Dry Dog Food 3kg bag on a crisp white background. The packaging is a vibrant yellow with high-contrast red and blue text. Soft, commercial studio lighting emphasizes the texture of the bag and the professional product branding. Modern commerce aesthetic, sharp focus, 8k resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyxNSROt7Mf3PM612_mMckBY-G43VbWI2FjQFiHzQO_WFP27CT4YZ-5f9Cc3ZCmaQoxN61yaD7BJvfv4L1PVVBYUaD5a-wvkcZ4gZg5IHJEKo730SS4UXyajHcFjy9XPwE0kGuHu_QoBz6KV3qmCBJSRu1sxE4aNTcVdcPXP0mjqb1y4NxdIioQ9airYFikXN8DlyfI4bpOlAnorz2GvmC3Cq_ssUaync_gD4QI_7DAKYBD-x1cg3-tD-99yrpCUsNuo_I4dqP_U9J">
+</div>
+</div>
+<!-- Rating Stars (Visual only for feedback state context) -->
+<div class="flex justify-center gap-stack-md py-stack-md border-y border-outline-variant/20 mb-stack-lg">
+<span class="material-symbols-outlined text-4xl cursor-pointer hover:scale-110 transition-transform text-outline-variant" data-icon="star">star</span>
+<span class="material-symbols-outlined text-4xl cursor-pointer hover:scale-110 transition-transform text-outline-variant" data-icon="star">star</span>
+<span class="material-symbols-outlined text-4xl cursor-pointer hover:scale-110 transition-transform text-outline-variant" data-icon="star">star</span>
+<span class="material-symbols-outlined text-4xl cursor-pointer hover:scale-110 transition-transform text-outline-variant" data-icon="star">star</span>
+<span class="material-symbols-outlined text-4xl cursor-pointer hover:scale-110 transition-transform text-outline-variant" data-icon="star">star</span>
+</div>
+<!-- Prominent Yellow Report Button (Requested state) -->
+<button class="w-full bg-primary-container text-on-primary-container font-headline-md py-2 rounded-xl flex items-center justify-center gap-stack-md active:scale-[0.98] transition-all shadow-sm hover:bg-primary-fixed">
+<span class="material-symbols-outlined" data-icon="report_problem">report_problem</span>
+                Report an issue
+            </button>
+<p class="text-center font-label-sm text-label-sm text-secondary mt-stack-lg px-4">
+                Something wrong with the items or delivery? Let our support team know immediately.
+            </p>
+</div>
+<!-- Secondary Info Cards -->
+<div class="mt-stack-lg space-y-stack-md">
+<div class="bg-surface-container-low rounded-xl p-3 flex items-center justify-between border border-outline-variant/10">
+<div class="flex items-center gap-stack-md">
+<div class="p-2 rounded-full bg-white">
+<span class="material-symbols-outlined text-primary" data-icon="receipt_long">receipt_long</span>
+</div>
+<div>
+<p class="font-body-lg text-body-lg">View Invoice</p>
+<p class="font-label-xs text-label-xs text-secondary">Download PDF for your records</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-3 flex items-center justify-between border border-outline-variant/10">
+<div class="flex items-center gap-stack-md">
+<div class="p-2 rounded-full bg-white">
+<span class="material-symbols-outlined text-tertiary" data-icon="refresh">refresh</span>
+</div>
+<div>
+<p class="font-body-lg text-body-lg">Order again</p>
+<p class="font-label-xs text-label-xs text-secondary">Add same items to cart</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Help Section -->
+<div class="mb-stack-lg space-y-stack-lg">
+<div class="bg-surface-container-low rounded-xl p-3 flex items-center justify-between border border-outline-variant/10 cursor-pointer active:scale-[0.98] transition-all">
+<div class="flex items-center gap-stack-md">
+<div class="p-2 rounded-full bg-white">
+<span class="material-symbols-outlined text-secondary" data-icon="delivery_dining">delivery_dining</span>
+</div>
+<div>
+<p class="font-body-lg text-body-lg">Delivery partner feedback</p>
+<p class="font-label-xs text-label-xs text-secondary">Rate your delivery experience</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary" data-icon="chevron_right">chevron_right</span>
+</div>
+</div><div class="mt-6 mb-4 p-container-margin border-t border-outline-variant/20">
+<h4 class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-stack-md">More assistance</h4>
+<div class="grid gap-stack-md">
+<div class="bg-white p-4 rounded-xl border border-outline-variant/30 flex flex-col items-center text-center mx-auto">
+<span class="material-symbols-outlined text-secondary mb-stack-sm" data-icon="forum">forum</span>
+<p class="font-label-sm text-label-sm">Chat with us</p>
+</div>
+
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-2 pb-safe bg-surface-container-lowest border-t border-outline-variant shadow-sm rounded-t-xl"><a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all" href="#"><span class="material-symbols-outlined" data-icon="home">home</span><span class="font-label-sm text-label-sm">Home</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all" href="#"><span class="material-symbols-outlined" data-icon="explore">explore</span><span class="font-label-sm text-label-sm">Discover</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all" href="#"><span class="material-symbols-outlined" data-icon="grid_view">grid_view</span><span class="font-label-sm text-label-sm">Categories</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all" href="#"><span class="material-symbols-outlined" data-icon="print">print</span><span class="font-label-sm text-label-sm">Print</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all" href="#"><span class="material-symbols-outlined" data-icon="medical_services">medical_services</span><span class="font-label-sm text-label-sm">Ambulance</span></a><a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 transition-all" href="#"><span class="material-symbols-outlined" data-icon="restaurant" style="font-variation-settings: 'FILL' 1;">restaurant</span><span class="font-label-sm text-label-sm">Bistro</span></a></nav>
+<script>
+        // Micro-interaction for the stars
+        const stars = document.querySelectorAll('.material-symbols-outlined[data-icon="star"]');
+        stars.forEach((star, index) => {
+            star.addEventListener('click', () => {
+                stars.forEach((s, i) => {
+                    if (i <= index) {
+                        s.style.fontVariationSettings = "'FILL' 1";
+                        s.classList.add('text-primary');
+                        s.classList.remove('text-outline-variant');
+                    } else {
+                        s.style.fontVariationSettings = "'FILL' 0";
+                        s.classList.remove('text-primary');
+                        s.classList.add('text-outline-variant');
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+
+</body></html>

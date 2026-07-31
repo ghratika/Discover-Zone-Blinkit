@@ -1,0 +1,25 @@
+{
+  "name": "discover-zone",
+  "version": "1.0.0",
+  "description": "Discover Zone — Blinkit category discovery simulation (v1)",
+  "main": "ui/index.html",
+  "scripts": {
+    "start": "node ui/server.js",
+    "dev": "node ui/server.js",
+    "generate": "node generator/generate_users.js && node generator/generate_orders.js && node generator/derive_adjacency.js && node generator/generate_feedback.js",
+    "generate:users": "node generator/generate_users.js",
+    "generate:orders": "node generator/generate_orders.js",
+    "generate:adjacency": "node generator/derive_adjacency.js",
+    "generate:feedback": "node generator/generate_feedback.js"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "duckduckgo-images-api": "^1.0.5",
+    "g-i-s": "^2.1.7",
+    "googlethis": "^1.8.0",
+    "playwright": "^1.62.1",
+    "puppeteer": "^25.4.0"
+  }
+}

@@ -1,0 +1,2231 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Discover - Quick Commerce</title>
+
+<!-- Exact dependencies from stitch -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<!-- Tailwind config — exact from stitch -->
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-secondary-fixed":         "#1b1b1b",
+          "on-surface":                 "#191c1e",
+          "on-secondary-fixed-variant": "#474747",
+          "outline-variant":            "#cec6aa",
+          "surface-dim":                "#d9dadc",
+          "tertiary":                   "#00696c",
+          "primary":                    "#6c5e00",
+          "inverse-primary":            "#e1c700",
+          "on-tertiary-container":      "#006f71",
+          "error-container":            "#ffdad6",
+          "on-surface-variant":         "#4c4732",
+          "error":                      "#ba1a1a",
+          "outline":                    "#7d775f",
+          "surface-container-highest":  "#e1e2e4",
+          "surface-container-high":     "#e7e8ea",
+          "on-primary":                 "#ffffff",
+          "secondary-fixed":            "#e2e2e2",
+          "on-tertiary":                "#ffffff",
+          "primary-container":          "#ffe100",
+          "on-background":              "#191c1e",
+          "surface":                    "#f8f9fb",
+          "background":                 "#f8f9fb",
+          "on-tertiary-fixed-variant":  "#004f51",
+          "on-secondary-container":     "#646464",
+          "primary-fixed":              "#ffe330",
+          "secondary":                  "#5e5e5e",
+          "inverse-surface":            "#2e3132",
+          "surface-container":          "#edeef0",
+          "primary-fixed-dim":          "#e1c700",
+          "secondary-container":        "#e2e2e2",
+          "tertiary-container":         "#00f9fe",
+          "on-error":                   "#ffffff",
+          "inverse-on-surface":         "#f0f1f3",
+          "on-secondary":               "#ffffff",
+          "surface-variant":            "#e1e2e4",
+          "on-tertiary-fixed":          "#002021",
+          "surface-container-lowest":   "#ffffff",
+          "tertiary-fixed-dim":         "#00dce1",
+          "surface-container-low":      "#f3f4f6",
+          "secondary-fixed-dim":        "#c6c6c6",
+          "on-primary-fixed":           "#211c00",
+          "on-error-container":         "#93000a",
+          "on-primary-fixed-variant":   "#514700",
+          "surface-tint":               "#6c5e00",
+          "surface-bright":             "#f8f9fb",
+          "on-primary-container":       "#726300",
+          "tertiary-fixed":             "#2efaff",
+          "accent-green":               "#0c831f"
+        },
+        "borderRadius": { "DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px" },
+        "spacing": {
+          "stack-lg":"16px","stack-md":"8px","stack-sm":"4px",
+          "container-margin":"16px","gutter":"12px","section-gap":"32px"
+        },
+        "fontFamily": {
+          "headline-lg-mobile":["Inter"],"label-xs":["Inter"],"headline-md":["Inter"],
+          "headline-lg":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"label-sm":["Inter"]
+        },
+        "fontSize": {
+          "headline-lg-mobile":["24px",{"lineHeight":"1.2","fontWeight":"800"}],
+          "label-xs":          ["10px",{"lineHeight":"1","fontWeight":"700"}],
+          "headline-md":       ["20px",{"lineHeight":"1.3","fontWeight":"700"}],
+          "headline-lg":       ["32px",{"lineHeight":"1.2","letterSpacing":"-0.02em","fontWeight":"800"}],
+          "body-lg":           ["16px",{"lineHeight":"1.5","fontWeight":"500"}],
+          "body-md":           ["14px",{"lineHeight":"1.5","fontWeight":"400"}],
+          "label-sm":          ["12px",{"lineHeight":"1","letterSpacing":"0.01em","fontWeight":"600"}]
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  /* Exact from stitch loading screen */
+  body {
+    font-family: 'Inter', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    min-height: max(884px, 100dvh);
+  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+  }
+  /* Shimmer — exact from stitch loading screen */
+  .shimmer {
+    background: linear-gradient(90deg, rgba(229,231,235,1) 0%, rgba(243,244,246,1) 50%, rgba(229,231,235,1) 100%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+  }
+  @keyframes loading {
+    0%   { background-position:  200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  /* Personalised hero gradient */
+  .hero-gradient { background: linear-gradient(180deg, #ffe100 0%, #f8f9fb 100%); }
+  /* Sidebar active — exact from dog_food stitch */
+  .sidebar-active { border-left: 4px solid #0c831f; background: #f0fdf4; }
+  /* Screen switcher */
+  .screen { display: flex; flex-direction: column; min-height: 100dvh; }
+  .screen.hidden { display: none; }
+  /* Toast */
+  #toast {
+    position: fixed; bottom: 100px; left: 50%;
+    transform: translateX(-50%) translateY(6px);
+    background: #191c1e; color: #fff;
+    padding: 12px 24px; border-radius: 24px;
+    font-size: 14px; font-weight: 600; z-index: 9999;
+    opacity: 0; transition: opacity 0.25s, transform 0.25s;
+    pointer-events: none; white-space: nowrap;
+  }
+  #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  @keyframes pulse-ring {
+    0% { transform: scale(0.95); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(0.95); opacity: 1; }
+  }
+</style>
+</head>
+
+<body class="bg-surface text-on-surface">
+
+<!-- ─── Toast ──────────────────────────────────────────────────────── -->
+<div id="toast">✅ Order placed!</div>
+
+<!-- ─── User Selector Sheet ───────────────────────────────────────── -->
+<div id="user-sheet" class="hidden fixed inset-0 z-[70]">
+  <div class="absolute inset-0 bg-black/40" onclick="closeUserSheet()"></div>
+  <div class="absolute bottom-0 left-0 right-0 bg-surface rounded-t-2xl max-h-[75vh] flex flex-col">
+    <div class="flex items-center justify-between px-container-margin pt-5 pb-4 border-b border-outline-variant shrink-0">
+      <h3 class="font-headline-md text-headline-md">Switch Demo User</h3>
+      <button onclick="closeUserSheet()" class="p-2 rounded-full hover:bg-surface-container active:scale-90 transition-all">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <p class="font-body-md text-body-md text-on-surface-variant px-container-margin pt-3 pb-2 shrink-0">
+      Select a demo user to see their personalised Discover tab.
+    </p>
+    <div id="user-list" class="overflow-y-auto px-container-margin space-y-2 pb-6 no-scrollbar"></div>
+  </div>
+</div>
+
+<!-- ─── Cart FAB (appears after first ADD — exact from dog_food stitch) ─── -->
+<div id="cart-fab" class="hidden fixed bottom-[88px] right-4 z-[60]">
+  <button onclick="openCheckout()" class="bg-accent-green text-white px-5 py-3 rounded-2xl flex items-center gap-3 shadow-xl active:scale-95 transition-transform">
+    <div class="flex flex-col items-start leading-tight">
+      <span class="text-[10px] font-bold uppercase opacity-80" id="cart-count-label">1 Item</span>
+      <span class="font-body-lg text-body-lg font-extrabold" id="cart-total-label">₹0</span>
+    </div>
+    <div class="h-6 w-px bg-white/20"></div>
+    <div class="flex items-center gap-1">
+      <span class="font-bold text-[14px]">View Cart</span>
+      <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+    </div>
+  </button>
+</div>
+
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<!-- SCREEN A — DISCOVER (Loading → Cold-Start / Personalised)       -->
+<!-- HTML structure: exact discover_cold_start stitch                 -->
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<div id="screen-discover" class="screen bg-surface text-on-surface min-h-screen flex flex-col">
+
+  <!-- TopAppBar — exact from cold_start stitch -->
+  <header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant flex items-center justify-between px-container-margin h-16">
+    <div class="flex items-center gap-4">
+      <button class="active:scale-95 transition-transform p-2 -ml-2">
+        <span class="material-symbols-outlined text-primary">arrow_back</span>
+      </button>
+      <h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Discover</h1>
+    </div>
+    <!-- User selector — not in stitch, added as a pill for demo switching -->
+    <button id="user-btn" onclick="openUserSheet()"
+      class="flex items-center gap-1 bg-surface-container px-3 py-1.5 rounded-full active:scale-95 transition-transform max-w-[48%]">
+      <span class="material-symbols-outlined text-[18px] text-on-surface-variant shrink-0">account_circle</span>
+      <span id="user-label" class="font-label-sm text-label-sm text-on-surface-variant truncate">Loading…</span>
+      <span class="material-symbols-outlined text-[14px] text-on-surface-variant shrink-0">expand_more</span>
+    </button>
+  </header>
+
+  <!-- Main — mutated by JS between loading / cold-start / personalised -->
+  <main id="discover-main" class="flex-1 mt-16 pb-32 px-container-margin overflow-y-auto no-scrollbar"></main>
+
+  <!-- BottomNavBar — exact 6-tab layout from cold_start stitch -->
+  <!-- Bistro: bg-primary text-on-primary (dark pill, white text) per cold_start stitch -->
+  <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-4 pb-6 pt-2 bg-surface shadow-[0px_10px_30px_rgba(0,0,0,0.08)] rounded-t-xl">
+    <a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200" href="#">
+      <span class="material-symbols-outlined">home</span>
+      <span class="font-label-sm text-label-sm">Home</span>
+    </a>
+    <a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-all duration-200" href="#">
+      <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">search</span>
+      <span class="font-label-sm text-label-sm">Discover</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200" href="#">
+      <span class="material-symbols-outlined">grid_view</span>
+      <span class="font-label-sm text-label-sm">Categories</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200" href="#">
+      <span class="material-symbols-outlined">print</span>
+      <span class="font-label-sm text-label-sm">Print</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200" href="#">
+      <span class="material-symbols-outlined text-error">emergency</span>
+      <span class="font-label-sm text-label-sm text-error">Ambulance</span>
+    </a>
+    <a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-4 py-1 active:scale-90 transition-all duration-200 shadow-lg shadow-primary/20" href="#">
+      <span class="material-symbols-outlined">restaurant</span>
+      <span class="font-label-sm text-label-sm">Bistro</span>
+    </a>
+  </nav>
+</div>
+
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<!-- SCREEN B — CATEGORY DETAIL                                       -->
+<!-- HTML structure: exact category_detail_pet_supplies_expanded      -->
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<div id="screen-category" class="screen hidden bg-background text-on-surface antialiased">
+
+  <!-- TopAppBar — exact from category_detail stitch -->
+  <header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant flex items-center px-container-margin h-16">
+    <div class="flex items-center w-full justify-between">
+      <button onclick="backToDiscover()" class="flex items-center gap-2 text-primary active:scale-95 transition-transform">
+        <span class="material-symbols-outlined">arrow_back</span>
+        <span class="font-body-md text-body-md font-semibold">Back to Discover</span>
+      </button>
+      <h1 id="cat-title" class="font-headline-md text-headline-md text-on-surface"></h1>
+    </div>
+  </header>
+
+  <!-- Main — pt-20 pb-32 px-container-margin max-w-md mx-auto (exact from stitch) -->
+  <main id="category-main" class="flex-1 pt-20 pb-32 px-container-margin max-w-md mx-auto w-full overflow-y-auto no-scrollbar"></main>
+
+  <!-- Same 6-tab nav -->
+  <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-4 pb-6 pt-2 bg-surface shadow-[0px_10px_30px_rgba(0,0,0,0.08)] rounded-t-xl">
+    <a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200" href="#">
+      <span class="material-symbols-outlined">home</span>
+      <span class="font-label-sm text-label-sm">Home</span>
+    </a>
+    <a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-all duration-200" href="#">
+      <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">search</span>
+      <span class="font-label-sm text-label-sm">Discover</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200" href="#">
+      <span class="material-symbols-outlined">grid_view</span>
+      <span class="font-label-sm text-label-sm">Categories</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200" href="#">
+      <span class="material-symbols-outlined">print</span>
+      <span class="font-label-sm text-label-sm">Print</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200" href="#">
+      <span class="material-symbols-outlined text-error">emergency</span>
+      <span class="font-label-sm text-label-sm text-error">Ambulance</span>
+    </a>
+    <a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-4 py-1 active:scale-90 transition-all duration-200 shadow-lg shadow-primary/20" href="#">
+      <span class="material-symbols-outlined">restaurant</span>
+      <span class="font-label-sm text-label-sm">Bistro</span>
+    </a>
+  </nav>
+</div>
+
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<!-- SCREEN C — PRODUCT LINE VARIANTS                                 -->
+<!-- HTML structure: exact dog_food_product_listing stitch            -->
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<div id="screen-variants" class="screen hidden bg-surface text-on-surface">
+
+  <!-- TopAppBar — exact from dog_food stitch -->
+  <header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant flex items-center px-4 h-16">
+    <div class="flex items-center w-full justify-between">
+      <div class="flex items-center gap-3">
+        <button onclick="backToCategory()" class="active:scale-95 transition-transform">
+          <span class="material-symbols-outlined text-on-surface">arrow_back</span>
+        </button>
+        <div class="flex flex-col">
+          <h1 id="variant-title" class="font-headline-md text-headline-md text-on-surface leading-tight"></h1>
+          <div class="flex items-center gap-1">
+            <span class="text-[11px] font-semibold text-accent-green truncate">Delivering to Home</span>
+            <span class="material-symbols-outlined text-[14px] text-accent-green">expand_more</span>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <button class="active:scale-95 transition-transform">
+          <span class="material-symbols-outlined text-on-surface">search</span>
+        </button>
+        <button class="active:scale-95 transition-transform">
+          <span class="material-symbols-outlined text-on-surface">share</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Two-panel layout: sidebar + content (exact from dog_food stitch) -->
+  <main class="flex-1 pt-16 pb-24 flex min-h-screen">
+    <!-- Left sidebar sub-category rail -->
+    <aside id="variant-sidebar"
+      class="w-24 fixed left-0 top-16 bottom-24 overflow-y-auto bg-surface border-r border-outline-variant no-scrollbar z-10">
+      <div id="sidebar-items" class="flex flex-col py-2"></div>
+    </aside>
+    <!-- Right content area -->
+    <section class="ml-24 flex-1">
+      <!-- Filter/sort chips — exact from dog_food stitch -->
+      <div class="sticky top-16 z-40 bg-surface px-3 py-3 border-b border-outline-variant overflow-x-auto flex gap-2 no-scrollbar">
+        <button class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-outline-variant bg-surface-container-lowest active:scale-95 transition-transform shrink-0">
+          <span class="material-symbols-outlined text-[18px]">tune</span>
+          <span class="text-label-sm font-label-sm">Filters</span>
+        </button>
+        <button class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-outline-variant bg-surface-container-lowest active:scale-95 transition-transform shrink-0">
+          <span class="text-label-sm font-label-sm">Sort</span>
+          <span class="material-symbols-outlined text-[18px]">expand_more</span>
+        </button>
+        <button class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-outline-variant bg-surface-container-lowest active:scale-95 transition-transform shrink-0">
+          <span id="filter-type-label" class="text-label-sm font-label-sm">Type</span>
+          <span class="material-symbols-outlined text-[18px]">expand_more</span>
+        </button>
+      </div>
+      <!-- 2-column product grid -->
+      <div id="variant-grid" class="p-3 grid grid-cols-2 gap-x-3 gap-y-6"></div>
+    </section>
+  </main>
+
+  <!-- Bottom nav — exact from dog_food stitch (Bistro = bg-primary-container on this screen) -->
+  <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-4 pb-6 pt-2 bg-surface shadow-[0px_10px_30px_rgba(0,0,0,0.08)] rounded-t-xl">
+    <div class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200">
+      <span class="material-symbols-outlined">home</span>
+      <span class="font-label-sm text-label-sm mt-1">Home</span>
+    </div>
+    <div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-all duration-200">
+      <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">search</span>
+      <span class="font-label-sm text-label-sm mt-0.5">Discover</span>
+    </div>
+    <div class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200">
+      <span class="material-symbols-outlined">grid_view</span>
+      <span class="font-label-sm text-label-sm mt-1">Categories</span>
+    </div>
+    <div class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200">
+      <span class="material-symbols-outlined">print</span>
+      <span class="font-label-sm text-label-sm mt-1">Print</span>
+    </div>
+    <div class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200">
+      <span class="material-symbols-outlined text-error">emergency</span>
+      <span class="font-label-sm text-label-sm mt-1 text-error">Ambulance</span>
+    </div>
+    <div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container px-3 py-1 rounded-full active:scale-90 transition-all duration-200">
+      <span class="material-symbols-outlined">restaurant</span>
+      <span class="font-label-sm text-label-sm mt-0.5">Bistro</span>
+    </div>
+  </nav>
+</div>
+
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<!-- SCREEN D — CHECKOUT                                              -->
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<div id="screen-checkout" class="screen hidden bg-surface text-on-surface flex flex-col min-h-screen relative z-[90]">
+  <header class="bg-surface w-full top-0 border-b border-outline-variant flex items-center px-container-margin h-14 sticky z-50">
+    <div class="flex items-center gap-4 w-full">
+      <button onclick="backToCategory()" class="active:scale-95 transition-transform flex items-center justify-center">
+        <span class="material-symbols-outlined text-on-surface text-[24px]">arrow_back</span>
+      </button>
+      <h1 class="font-headline-md text-headline-md text-on-surface">Checkout</h1>
+    </div>
+  </header>
+  <main class="flex-1 pb-40 px-container-margin space-y-4 pt-4 overflow-y-auto">
+    <!-- Delivery Address Card -->
+    <section class="bg-surface-container-lowest rounded-lg border border-outline-variant p-4 flex items-start gap-3">
+      <div class="bg-surface-container-high p-2 rounded-lg text-primary">
+        <span class="material-symbols-outlined text-[20px]">home</span>
+      </div>
+      <div class="flex-1">
+        <div class="flex items-center justify-between mb-1">
+          <span class="font-body-lg text-body-lg font-bold">Home - 15 mins</span>
+          <button class="text-primary font-label-sm text-label-sm uppercase tracking-wider">Change</button>
+        </div>
+        <p class="text-on-surface-variant font-body-md text-body-md leading-snug">
+          B-1204, Heights Apartment, Sector 45, Gurgaon, Haryana - 122003
+        </p>
+      </div>
+    </section>
+    <!-- Cart Section -->
+    <section class="space-y-3">
+      <h2 class="font-label-sm text-label-sm text-on-secondary-container uppercase tracking-widest pl-1">Items in cart</h2>
+      <div class="bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden">
+        <div class="p-4 flex items-center gap-4">
+          <div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden flex-shrink-0 relative">
+            <img id="checkout-product-img" class="w-full h-full object-contain mix-blend-multiply absolute inset-0 p-1" src="" onerror="this.style.display='none'">
+          </div>
+          <div class="flex-1">
+            <h3 id="checkout-product-name" class="font-body-md text-body-md font-semibold text-on-surface">Pedigree Adult Dry Dog Food</h3>
+            <p class="text-on-surface-variant font-label-sm text-label-sm mt-0.5">1 item</p>
+            <div class="mt-2 flex items-center justify-between">
+              <span id="checkout-product-price" class="font-body-lg text-body-lg font-bold text-on-surface">₹649</span>
+              <div class="flex items-center gap-3 bg-primary-container/20 border border-primary-container rounded-lg px-2 py-1">
+                <button class="text-primary font-bold">－</button>
+                <span class="font-bold text-on-primary-container">1</span>
+                <button class="text-primary font-bold">＋</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Micro-interaction: Delivery Promise -->
+        <div class="bg-surface-container-low px-4 py-2 border-t border-outline-variant flex items-center gap-2">
+          <span class="material-symbols-outlined text-[16px] text-primary">speed</span>
+          <span class="text-label-sm font-label-sm text-secondary">Free delivery on orders above ₹700</span>
+        </div>
+      </div>
+    </section>
+    <!-- Bill Details -->
+    <section class="space-y-3">
+      <h2 class="font-label-sm text-label-sm text-on-secondary-container uppercase tracking-widest pl-1">Bill Details</h2>
+      <div class="bg-surface-container-lowest rounded-lg border border-outline-variant p-4 space-y-3">
+        <div class="flex justify-between items-center text-body-md font-body-md text-on-surface-variant">
+          <div class="flex items-center gap-1">
+            <span class="material-symbols-outlined text-[18px]">list_alt</span>
+            <span class="">Item total</span>
+          </div>
+          <span id="checkout-bill-total" class="text-on-surface">₹649</span>
+        </div>
+        <div class="flex justify-between items-center text-body-md font-body-md text-on-surface-variant">
+          <div class="flex items-center gap-1">
+            <span class="material-symbols-outlined text-[18px]">delivery_dining</span>
+            <span class="">Delivery fee</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="line-through text-secondary">₹25</span>
+            <span class="text-primary font-bold">Free</span>
+          </div>
+        </div>
+        <div class="flex justify-between items-center text-body-md font-body-md text-on-surface-variant">
+          <div class="flex items-center gap-1">
+            <span class="material-symbols-outlined text-[18px]">info</span>
+            <span class="">Handling fee</span>
+          </div>
+          <span class="text-on-surface">₹5</span>
+        </div>
+        <div class="pt-3 border-t border-outline-variant flex justify-between items-center">
+          <span class="font-bold text-on-surface text-body-lg">Grand Total</span>
+          <span id="checkout-grand-total" class="font-bold text-on-surface text-body-lg">₹654</span>
+        </div>
+      </div>
+    </section>
+    <!-- Cancellation Policy Note -->
+    <div class="bg-surface-container rounded-lg p-4 flex gap-3">
+      <span class="material-symbols-outlined text-on-surface-variant mt-0.5">description</span>
+      <p class="text-label-sm font-label-sm text-on-surface-variant leading-relaxed">
+        Orders cannot be cancelled once packed for delivery. In case of unexpected delays, a refund will be provided as per policy.
+      </p>
+    </div>
+  </main>
+  <!-- Fixed Bottom Section -->
+  <div class="fixed bottom-0 left-0 w-full z-[100] bg-surface p-container-margin shadow-[0px_-4px_20px_rgba(0,0,0,0.08)]">
+    <div class="flex items-center justify-between gap-4 mb-4">
+      <div class="flex flex-col">
+        <span id="checkout-footer-total" class="font-body-lg text-body-lg font-extrabold text-on-surface">₹654</span>
+        <span class="text-label-xs font-label-xs text-primary uppercase font-bold tracking-wider">View Detailed Bill</span>
+      </div>
+    </div>
+    <div class="flex w-full">
+      <button onclick="placeOrderAndNudge()" class="bg-primary text-on-primary flex items-center justify-center px-4 py-4 rounded-xl font-headline-md text-headline-md font-bold active:scale-95 transition-all shadow-md flex-1 text-center">
+        Place Order
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<!-- SCREEN - SUPPORT ORDER PLACED (DISCOVERY NUDGE)                  -->
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<div id="screen-support-order-placed" class="screen hidden bg-surface text-on-surface min-h-screen flex flex-col relative z-[95]">
+  <header class="fixed top-0 w-full z-50 bg-surface flex items-center justify-between px-container-margin h-14">
+    <div class="flex items-center gap-4">
+      <button class="active:scale-95 transition-transform text-primary" onclick="backToDiscover()">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </button>
+      <h1 class="font-headline-md text-headline-md text-primary font-bold">Support</h1>
+    </div>
+  </header>
+  <main class="pt-20 pb-24 px-container-margin max-w-md mx-auto w-full">
+    <!-- Order Summary & Success Message -->
+    <section class="mb-section-gap text-center">
+      <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-container mb-stack-lg shadow-sm">
+        <span class="material-symbols-outlined text-on-primary-container text-4xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+      </div>
+      <h2 class="font-headline-lg-mobile text-headline-lg-mobile mb-stack-sm text-on-surface">Order Placed Successfully</h2>
+      <p class="font-body-md text-body-md text-secondary">Order #BRK-928374-X was placed successfully</p>
+    </section>
+    
+    <div class="bg-surface-container-lowest rounded-xl p-5 mb-stack-lg shadow-sm border border-outline-variant flex flex-col gap-stack-md">
+      <div class="flex items-center gap-stack-md">
+        <span class="material-symbols-outlined text-primary">auto_awesome</span>
+        <h3 class="font-headline-md text-headline-md text-on-surface">While we deliver your order...</h3>
+      </div>
+      <p class="font-body-md text-body-md text-secondary">Discover new products and categories you might love.</p>
+      <div class="flex flex-col gap-stack-sm mt-stack-sm">
+        <button onclick="simulateDelivery()" class="w-full bg-primary-container hover:bg-primary-fixed-dim text-on-primary-container font-headline-md py-3 rounded-full active:scale-[0.98] transition-all shadow-sm">
+          Demo: Fast Forward Delivery
+        </button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<!-- SCREEN - SUPPORT ISSUE REPORTED STATE                            -->
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<div id="screen-support-issue-reported" class="screen hidden bg-surface text-on-surface min-h-screen flex flex-col relative z-[95]">
+  <header class="fixed top-0 w-full z-50 bg-surface flex items-center justify-between px-container-margin h-14">
+    <div class="flex items-center gap-4">
+      <button class="active:scale-95 transition-transform text-primary" onclick="backToDiscover()">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </button>
+      <h1 class="font-headline-md text-headline-md text-primary font-bold">Support</h1>
+    </div>
+  </header>
+  <main class="pt-20 pb-20 px-container-margin max-w-md mx-auto w-full">
+    <!-- Delivered Successfully -->
+    <section class="mb-stack-lg text-center">
+      <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-container mb-stack-lg shadow-sm">
+        <span class="material-symbols-outlined text-on-primary-container text-4xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+      </div>
+      <h2 class="font-headline-lg-mobile text-headline-lg-mobile mb-stack-sm text-on-surface">Delivered Successfully</h2>
+      <p class="font-body-md text-body-md text-secondary">Order #BRK-928374-X was delivered at 2:14 PM</p>
+    </section>
+    
+    <!-- Feedback & Issue Card -->
+    <div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm border border-outline-variant transition-all">
+      <div class="flex items-start justify-between mb-stack-lg">
+        <div class="pr-2">
+          <h3 id="issue-product-name" class="font-headline-md text-headline-md mb-stack-sm text-on-surface">Pedigree Adult Dry Dog Food</h3>
+          <p class="font-body-md text-body-md text-secondary">Help us improve your experience</p>
+        </div>
+        <div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden shrink-0 relative">
+          <img id="issue-product-img" class="w-full h-full object-contain mix-blend-multiply absolute inset-0 p-1" src="">
+        </div>
+      </div>
+      <!-- Rating Stars -->
+      <div class="flex justify-center gap-stack-md py-stack-md border-y border-outline-variant/20 mb-stack-lg">
+        <span class="material-symbols-outlined text-4xl text-outline-variant">star</span>
+        <span class="material-symbols-outlined text-4xl text-outline-variant">star</span>
+        <span class="material-symbols-outlined text-4xl text-outline-variant">star</span>
+        <span class="material-symbols-outlined text-4xl text-outline-variant">star</span>
+        <span class="material-symbols-outlined text-4xl text-outline-variant">star</span>
+      </div>
+      <!-- Report an issue -->
+      <button id="report-issue-btn" onclick="showScreen('screen-support-human-chat')" class="w-full bg-primary-container hover:bg-primary-fixed text-on-primary-container font-headline-md py-3 rounded-xl flex items-center justify-center gap-stack-md active:scale-[0.98] transition-all shadow-sm">
+        <span class="material-symbols-outlined">report_problem</span>
+        Report an issue
+      </button>
+      <p id="report-issue-text" class="text-center font-label-sm text-label-sm text-secondary mt-stack-lg px-4">
+        Something wrong with the items or delivery? Let our support team know immediately.
+      </p>
+    </div>
+    
+    <!-- Secondary Info Cards -->
+    <div class="mt-stack-lg space-y-stack-md">
+      <div class="bg-surface-container-low rounded-xl p-3 flex items-center justify-between border border-outline-variant/10">
+        <div class="flex items-center gap-stack-md">
+          <div class="p-2 rounded-full bg-white">
+            <span class="material-symbols-outlined text-primary">receipt_long</span>
+          </div>
+          <div>
+            <p class="font-body-lg text-body-lg text-on-surface">View Invoice</p>
+            <p class="font-label-xs text-label-xs text-secondary">Download PDF for your records</p>
+          </div>
+        </div>
+        <span class="material-symbols-outlined text-secondary">chevron_right</span>
+      </div>
+    </div>
+    
+    <!-- Help Section -->
+    <div class="mt-6 mb-4 p-container-margin border-t border-outline-variant/20">
+      <h4 class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-stack-md">More assistance</h4>
+      <div class="grid gap-stack-md">
+        <div onclick="showScreen('screen-support-human-chat')" class="bg-white p-4 rounded-xl border border-outline-variant/30 flex flex-col items-center text-center mx-auto active:scale-95 transition-transform cursor-pointer">
+          <span class="material-symbols-outlined text-secondary mb-stack-sm">forum</span>
+          <p class="font-label-sm text-label-sm text-on-surface">Chat with us</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Back to Discover Button -->
+    <div class="mt-4 flex justify-center pb-8">
+      <button onclick="backToDiscover()" class="bg-on-surface text-surface px-6 py-3 rounded-xl font-label-sm text-label-sm font-bold flex items-center gap-2 active:scale-95 transition-all">
+        Back to Discover <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </button>
+    </div>
+  </main>
+</div>
+
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<!-- SCREEN - SUPPORT HUMAN CHAT                                      -->
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<div id="screen-support-human-chat" class="screen hidden bg-surface text-on-surface h-screen flex flex-col overflow-hidden relative z-[100]">
+  <header class="fixed top-0 w-full z-50 bg-surface flex items-center justify-between px-container-margin h-14 w-full border-b border-outline-variant">
+    <div class="flex items-center gap-3">
+      <button class="text-primary active:scale-95 transition-transform" onclick="showScreen('screen-support-issue-reported')">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </button>
+      <div class="flex flex-col">
+        <h1 class="font-headline-md text-headline-md text-primary font-bold">Chat with Support</h1>
+        <span class="text-label-xs font-label-xs text-secondary leading-none flex items-center gap-1">
+          <span class="w-1.5 h-1.5 bg-[#10b981] rounded-full"></span> Online
+        </span>
+      </div>
+    </div>
+  </header>
+  <main class="flex-1 mt-14 mb-16 overflow-y-auto px-container-margin py-stack-lg flex flex-col gap-gutter bg-background">
+    <!-- Agent Profile Intro -->
+    <div class="flex flex-col items-center mb-stack-lg mt-4">
+      <div class="w-16 h-16 rounded-full border-4 border-surface shadow-sm overflow-hidden mb-stack-md bg-surface-container-highest flex items-center justify-center">
+        <span class="material-symbols-outlined text-[32px] text-primary">support_agent</span>
+      </div>
+      <p class="font-label-sm text-label-sm text-on-surface">Priya, Support Team</p>
+      <p class="text-label-xs font-label-xs text-secondary opacity-70">Dedicated Support Specialist</p>
+    </div>
+    <!-- Message: Agent -->
+    <div class="flex gap-2 max-w-[85%]">
+      <div class="bg-surface-container-lowest border border-outline-variant text-on-surface p-3 rounded-2xl rounded-bl-none shadow-sm">
+        <p class="text-body-md font-body-md leading-relaxed">Sorry to hear that! Can you tell us what went wrong?</p>
+        <span class="text-[10px] text-secondary mt-1 block">Just now</span>
+      </div>
+    </div>
+    <!-- Quick Replies -->
+    <div class="flex flex-wrap gap-2 justify-end my-stack-md">
+      <button onclick="handleChatReply('Item was damaged')" class="bg-surface-container-lowest border border-outline-variant px-4 py-2 rounded-full text-label-sm font-label-sm text-on-surface hover:bg-primary-container hover:text-on-primary-container hover:border-primary-container active:scale-95 transition-all shadow-sm">
+        Item was damaged
+      </button>
+      <button onclick="handleChatReply('Wrong item')" class="bg-surface-container-lowest border border-outline-variant px-4 py-2 rounded-full text-label-sm font-label-sm text-on-surface hover:bg-primary-container hover:text-on-primary-container hover:border-primary-container active:scale-95 transition-all shadow-sm">
+        Wrong item
+      </button>
+      <button onclick="handleChatReply('Quality issue')" class="bg-surface-container-lowest border border-outline-variant px-4 py-2 rounded-full text-label-sm font-label-sm text-on-surface hover:bg-primary-container hover:text-on-primary-container hover:border-primary-container active:scale-95 transition-all shadow-sm">
+        Quality issue
+      </button>
+    </div>
+    <!-- User Reply Container -->
+    <div id="chat-user-reply" class="hidden flex justify-end">
+      <div class="bg-primary-container text-on-primary-container p-3 rounded-2xl rounded-br-none shadow-sm max-w-[85%]">
+        <p id="chat-user-reply-text" class="text-body-md font-body-md font-medium"></p>
+      </div>
+    </div>
+    <!-- Agent Final Container -->
+    <div id="chat-agent-reply" class="hidden flex gap-2 max-w-[85%] mt-2">
+      <div class="bg-surface-container-lowest border border-outline-variant text-on-surface p-3 rounded-2xl rounded-bl-none shadow-sm">
+        <p class="text-body-md font-body-md leading-relaxed">Let me check what we can do for you...</p>
+      </div>
+    </div>
+  </main>
+  <!-- Bottom Input Area -->
+  <div class="fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-outline-variant p-3 z-50">
+    <div class="flex items-center gap-3">
+      <div class="flex-1 relative">
+        <input disabled class="w-full bg-surface-container-low border-none rounded-full py-2.5 px-5 text-body-md placeholder:text-secondary" placeholder="Select an option above..." type="text">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<!-- SCREEN - SUPPORT RESOLUTION OPTIONS                              -->
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<div id="screen-support-resolution-options" class="screen hidden bg-surface text-on-surface min-h-screen flex flex-col relative z-[100]">
+  <header class="fixed top-0 w-full z-50 bg-surface flex items-center justify-between px-container-margin h-14">
+    <div class="flex items-center gap-4">
+      <button class="active:scale-95 transition-transform text-primary" onclick="showScreen('screen-support-human-chat')">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </button>
+      <h1 class="font-headline-md text-headline-md font-bold text-primary">Support</h1>
+    </div>
+  </header>
+  <main class="flex-grow pt-14 px-container-margin pb-24 w-full max-w-md mx-auto">
+    <!-- Hero Section -->
+    <section class="mt-stack-lg mb-section-gap">
+      <div class="relative rounded-xl overflow-hidden mb-gutter h-40 bg-surface-container-high flex flex-col items-center justify-center border border-outline-variant">
+        <span class="material-symbols-outlined text-[64px] text-primary">support_agent</span>
+        <span class="inline-block bg-primary-container text-on-primary-container text-[10px] font-bold px-2 py-0.5 rounded-full mt-2 w-max">RESOLUTION NEEDED</span>
+      </div>
+      <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-stack-md mt-4">
+        We couldn't fix this right away — here's what we can do:
+      </h2>
+      <p class="font-body-md text-body-md text-on-surface-variant">
+        We understand your order didn't arrive as expected. Please choose your preferred way to resolve this issue.
+      </p>
+    </section>
+    <!-- Resolution Options Grid -->
+    <section class="grid grid-cols-2 gap-gutter mb-section-gap">
+      <!-- Replacement Card -->
+      <button onclick="renderReplacementScreen()" class="flex flex-col items-center justify-center p-stack-lg bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm hover:bg-surface-container-high transition-colors active:scale-95 group">
+        <div class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center mb-stack-md group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-on-primary-container text-3xl">inventory_2</span>
+        </div>
+        <div class="text-center">
+          <span class="font-headline-md text-headline-md block mb-1 text-on-surface font-bold">Replacement</span>
+          <span class="font-label-xs text-label-xs text-secondary uppercase tracking-wider">Fastest fix</span>
+        </div>
+      </button>
+      <!-- Refund Card -->
+      <button onclick="renderRefundScreen()" class="flex flex-col items-center justify-center p-stack-lg bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm hover:bg-surface-container-high transition-colors active:scale-95 group">
+        <div class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center mb-stack-md group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-on-primary-container text-3xl">currency_rupee</span>
+        </div>
+        <div class="text-center">
+          <span class="font-headline-md text-headline-md block mb-1 text-on-surface font-bold">Refund</span>
+          <span class="font-label-xs text-label-xs text-secondary uppercase tracking-wider">To original source</span>
+        </div>
+      </button>
+    </section>
+  </main>
+</div>
+
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<!-- SCREEN E — SUPPORT REFUND CONFIRMED                              -->
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<div id="screen-support-refund" class="screen hidden flex flex-col min-h-screen text-on-surface bg-background pb-20 relative z-[100]">
+  <header class="fixed top-0 w-full z-50 flex items-center justify-between px-container-margin h-14 bg-surface">
+    <button class="w-10 h-10 flex items-center -ml-2 active:scale-95 transition-transform" onclick="simulateSupportToDiscover()">
+      <span class="material-symbols-outlined text-primary text-[24px]">arrow_back</span>
+    </button>
+    <span class="font-headline-md text-headline-md text-primary font-bold">Support</span>
+    <div class="w-10 h-10 flex items-center justify-end -mr-2">
+      <span class="material-symbols-outlined text-secondary text-[24px]">help_outline</span>
+    </div>
+  </header>
+  <main class="flex-grow flex flex-col items-center justify-center px-container-margin pt-14 pb-32 w-full">
+    <div class="relative flex flex-col items-center text-center w-full max-w-sm">
+      <div class="relative z-10 mb-8 mt-8">
+        <div class="absolute inset-0 bg-primary-container rounded-full animate-[pulse-ring_2s_cubic-bezier(0.4,0,0.6,1)_infinite]"></div>
+        <div class="relative w-24 h-24 bg-primary-container rounded-full flex items-center justify-center shadow-lg">
+          <span class="material-symbols-outlined text-[48px] text-on-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+        </div>
+      </div>
+      <h1 id="refund-title" class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-3">Refund initiated for Pedigree Adult Dry Dog Food — amount will reflect shortly.</h1>
+      <p class="font-body-md text-body-md text-secondary max-w-[280px] mb-8">
+        We've processed your request. Depending on your bank, funds will arrive in 3-5 business days.
+      </p>
+      <div class="w-full grid grid-cols-2 gap-3 text-left">
+        <div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant col-span-2 flex items-center justify-between shadow-sm">
+          <div>
+            <p class="font-label-xs text-label-xs text-secondary uppercase tracking-wider mb-1">Estimated Refund</p>
+            <p id="refund-amount" class="font-headline-md text-headline-md text-on-surface font-extrabold">₹649</p>
+          </div>
+          <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-container bg-surface-container-low flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-[24px]">credit_card</span>
+          </div>
+        </div>
+        <div class="bg-surface-container-low p-3 rounded-xl flex flex-col justify-center border border-outline-variant">
+          <p class="font-label-xs text-label-xs text-secondary uppercase tracking-wider mb-1">Reference</p>
+          <p class="font-body-md text-body-md font-bold text-on-surface">#RFD-9021</p>
+        </div>
+        <div class="bg-surface-container-low p-3 rounded-xl flex flex-col justify-center border border-outline-variant">
+          <p class="font-label-xs text-label-xs text-secondary uppercase tracking-wider mb-1">Method</p>
+          <p class="font-body-md text-body-md font-bold text-on-surface">Original Pay</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="fixed bottom-0 left-0 w-full p-container-margin bg-surface/80 backdrop-blur-md z-50">
+    <div class="max-w-md mx-auto">
+      <div class="flex justify-center mb-4">
+        <div class="bg-secondary-container px-3 py-1.5 rounded-full flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[14px] text-on-secondary-container">info</span>
+          <span class="font-label-sm text-label-sm text-on-secondary-container">Check email for confirmation</span>
+        </div>
+      </div>
+      <button onclick="simulateSupportToDiscover()" class="w-full h-14 bg-on-background text-surface rounded-xl font-body-lg text-body-lg font-bold shadow-xl active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+        Back to Discover
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<!-- SCREEN F — SUPPORT REPLACEMENT CONFIRMED                         -->
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<div id="screen-support-replacement" class="screen hidden flex flex-col min-h-screen text-on-surface bg-background overflow-hidden pb-20 relative z-[100]">
+  <header class="fixed top-0 w-full z-50 bg-surface flex items-center justify-between px-container-margin h-14">
+    <button aria-label="Go back" class="active:scale-95 transition-transform w-10 h-10 flex items-center -ml-2" onclick="simulateSupportToDiscover()">
+      <span class="material-symbols-outlined text-primary text-[24px]">arrow_back</span>
+    </button>
+    <h1 class="font-headline-md text-headline-md text-primary font-bold">Support</h1>
+    <button aria-label="Help" class="active:scale-95 transition-transform w-10 h-10 flex items-center justify-end -mr-2">
+      <span class="material-symbols-outlined text-secondary text-[24px]">help_outline</span>
+    </button>
+  </header>
+  <main class="flex-grow flex flex-col items-center justify-center px-container-margin pt-14 pb-32 relative w-full">
+    <div class="absolute inset-0 opacity-40 pointer-events-none overflow-hidden">
+      <div class="absolute -top-20 -left-20 w-64 h-64 bg-primary-container rounded-full blur-[100px]"></div>
+      <div class="absolute bottom-40 -right-20 w-80 h-80 bg-secondary-container rounded-full blur-[120px]"></div>
+    </div>
+    <div class="relative mb-8 mt-8">
+      <div class="w-32 h-32 bg-primary-container rounded-full flex items-center justify-center animate-[pulse-ring_2s_cubic-bezier(0.4,0,0.6,1)_infinite] shadow-sm">
+        <span class="material-symbols-outlined text-[64px] text-on-primary-container" style="font-variation-settings: 'wght' 700;">check</span>
+      </div>
+      <div class="absolute -top-4 -right-4 w-8 h-8 bg-primary-fixed rounded-full border-4 border-surface shadow-sm"></div>
+      <div class="absolute bottom-2 -left-6 w-6 h-6 bg-tertiary-container rounded-full border-2 border-surface shadow-sm"></div>
+    </div>
+    <div class="text-center space-y-2 max-w-[280px] z-20">
+      <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background">Success!</h2>
+      <p class="font-body-lg text-body-lg text-secondary">
+        Your replacement will arrive in <span class="text-on-background font-bold">15-30 minutes</span>.
+      </p>
+    </div>
+    <div class="mt-8 w-full max-w-xs bg-surface-container h-1 rounded-full overflow-hidden">
+      <div class="h-full bg-primary-container w-full transition-all duration-1000 ease-out" id="progress-bar"></div>
+    </div>
+    <p class="mt-2 font-label-xs text-label-xs text-outline uppercase tracking-wider">Processing Delivery</p>
+    <div class="mt-8 w-full max-w-sm grid grid-cols-1 gap-3">
+      <div class="bg-surface-container-lowest border border-outline-variant p-4 rounded-xl flex items-center gap-4 shadow-sm z-20">
+        <div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden shrink-0 relative">
+          <img id="replacement-img" class="w-full h-full object-contain mix-blend-multiply absolute inset-0 p-1" src="" onerror="this.style.display='none'">
+        </div>
+        <div class="flex-grow">
+          <p class="font-label-xs text-label-xs text-secondary mb-1">REPLACING ITEM</p>
+          <h3 id="replacement-title" class="font-body-md text-body-md text-on-surface font-semibold line-clamp-2 leading-tight">Pedigree Adult Dry Dog Food</h3>
+          <p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Standard Delivery</p>
+        </div>
+        <div class="shrink-0 flex items-center justify-center">
+          <span class="material-symbols-outlined text-primary text-[24px]">local_shipping</span>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="fixed bottom-0 left-0 w-full p-container-margin pb-safe bg-gradient-to-t from-background via-background to-transparent pt-8 z-50">
+    <div class="max-w-md mx-auto">
+      <button onclick="simulateSupportToDiscover()" class="w-full py-4 px-6 bg-primary-container hover:bg-primary-fixed-dim text-on-primary-container font-headline-md text-headline-md rounded-xl transition-all duration-150 active:scale-95 shadow-sm flex items-center justify-center gap-2">
+        <span class="">Back to Discover</span>
+        <span class="material-symbols-outlined">explore</span>
+      </button>
+    </div>
+  </footer>
+</div>
+
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<!-- JAVASCRIPT                                                        -->
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<script>
+'use strict';
+
+// ── Category cover images — AIDA URLs from stitch + gradient fallbacks ─────
+// When AIDA URL loads: real photo. On error: CSS gradient shows instead.
+const CAT_COVER = {
+  cat_01: { url:'',  g:'linear-gradient(135deg,#FFF9C4,#F9A825)', ic:'shopping_cart', c:'#c47900' },
+  cat_02: { url:'https://lh3.googleusercontent.com/aida-public/AB6AXuAIiDUe4PGslyYlVr1Zx1F-JRgBQRai2nVF-z-CaWRwgA0XVy_kbnQDwBctYeiniZRjeQXlq0rj_9GBHGqx3bTeXne9a8RiruYwgyskqVVh5Jiv3zEKf-pa5-GhWbch6kfIEBO_8ZfiLBxQPS0Gc8JxiVRqTPt18QLk7HsU9Bn9LjiSbHl2Gk4DkvwH06pbYJ_yeXK2d15bqZ4UM3CBzTh_N5vwWhlma6Gxc0OcD9lO-LxwOr8RD0C_cSboAr87fBfQue3ZcbVA5l5l', g:'linear-gradient(135deg,#FFE0B2,#FF7043)', ic:'fastfood', c:'#c63d15' },
+  cat_03: { url:'',  g:'linear-gradient(135deg,#B2EBF2,#00ACC1)', ic:'local_cafe', c:'#007c91' },
+  cat_04: { url:'',  g:'linear-gradient(135deg,#FFFDE7,#FDD835)', ic:'egg', c:'#c6a700' },
+  cat_05: { url:'https://lh3.googleusercontent.com/aida-public/AB6AXuBRxi07cD2AyHv2Ym6vjlnsFQ8Q6FvRgOiAJkKlmruDafrEj4JVMJ9Fx0MLmIRSrUfYOhkydm1YV8SpTsKDNTGQrR-oW_aGOY_OUM-XqvxQMx1c3FJCCjA4kdGSHzHHDGYDxfOYGwCMuUhSiJtT6a-I_1MlRu4F0kpmsS4Wim2SEy4lnnxPQTaCs_ZoJSmW2Kyus3uip-LQCnlJ4X-M9D9mGhr0kANn3i4AKcagTqCxz6yB8OyG2yFlElRkV1zAlwVxgdzEP9V9dHzA', g:'linear-gradient(135deg,#E1F5FE,#039BE5)', ic:'home_repair_service', c:'#006db3' },
+  cat_06: { url:'https://lh3.googleusercontent.com/aida-public/AB6AXuCGEJ9WxhzSYGd7wJhWXReu5PoXn_I1viG_zTlKnlZPMRGOcSM5SXNuqRJPxnyCiAAJQ3MTGJJO96EmO4LRL7orPR4DKBrc4f9lM6eSP0fQ1CghT39CnbpQfH9-dLnLL0BA46xRlsE4xf2YlGW696qgvUL6_LhI198aa2lkzpGMf6adxWYp_Fofv9wwQoq-euIfGlwcw_mztIXWD34UnhwpXoYKNwfDkk7n-SAdYVfxuqqltlMEFxYufMYg_HPyWX33lkA8pbwU8di7', g:'linear-gradient(135deg,#FCE4EC,#E91E63)', ic:'face', c:'#b0003a' },
+  cat_07: { url:'https://lh3.googleusercontent.com/aida-public/AB6AXuBHZaHIxRJua4udqwoTsbpkPKU3DFbppDtHG8sSHwsMrdUrRqyDhlEuQirUkudqdpxeUPU1x1N4pMAMD2bGpsmVPbkcTr9z1gMuYNdFZkbi4VdFR9XY-2q-8LP_N5brfdjdBlGv8dKmjPRqckktTgO2Vduer0ymg6w95SxJ5ra0rn0Srex2VKo8J51nDzAuktF7lS4KCOP1DOKH6_kIwS1ZJjUHFpM4ZtbqJ0wFR2zhWzNVwcBVX0oWbhcH7FZzDGum8bbExYM9mP2b', g:'linear-gradient(135deg,#EDE7F6,#7E57C2)', ic:'child_care', c:'#4d2c91' },
+  cat_08: { url:'https://lh3.googleusercontent.com/aida-public/AB6AXuB9zhR76Z1tabmn_KtTEe5yK-D3iuw1uzKjIELzOjIzBinZxT7G-0ooMNuZto6Apz2wN47BohMMk6lQRGyjZ-7tpEJRDeMyiBOw09k7DlUu11jjoEmUERyl0ufixcZYxdYTCnKpt7els0vSG4mCmVk3ASuA-vGm-5eEEdRyIa6dIi8pSCBO6VXWManZJ7DvQ3mUxzi6sGAi520_pR1Ex-ZWAfGi76ERTz_QV2MaO4aUw7yVlcq5sxodY9mzW-3tZ6lN2gaH2kqqKKqB', g:'linear-gradient(135deg,#F1F8E9,#7CB342)', ic:'pets', c:'#4b830d' },
+  cat_09: { url:'',  g:'linear-gradient(135deg,#E0F2F1,#00897B)', ic:'health_and_safety', c:'#005b4f' },
+  cat_10: { url:'',  g:'linear-gradient(135deg,#E3F2FD,#1E88E5)', ic:'ac_unit', c:'#005cb2' },
+  cat_11: { url:'',  g:'linear-gradient(135deg,#CCFF90,#558B2F)', ic:'eco', c:'#255d00' },
+  cat_12: { url:'',  g:'linear-gradient(135deg,#FFF3E0,#F57C00)', ic:'nutrition', c:'#bb4d00' },
+  cat_13: { url:'',  g:'linear-gradient(135deg,#E0F7FA,#00838F)', ic:'cleaning_services', c:'#005662' },
+  cat_14: { url:'',  g:'linear-gradient(135deg,#FFFDE7,#F9A825)', ic:'edit_note', c:'#c47900' },
+  cat_15: { url:'',  g:'linear-gradient(135deg,#ECEFF1,#546E7A)', ic:'devices', c:'#263238' },
+  cat_16: { url:'',  g:'linear-gradient(135deg,#FBE9E7,#BF360C)', ic:'ramen_dining', c:'#7f0000' },
+  cat_17: { url:'',  g:'linear-gradient(135deg,#FFF8E1,#FFB300)', ic:'bakery_dining', c:'#c17900' },
+  cat_18: { url:'',  g:'linear-gradient(135deg,#F1F8E9,#388E3C)', ic:'spa', c:'#1b5e20' },
+};
+
+// Product line images (AIDA URLs from category_detail stitch — Pet Supplies)
+const LINE_IMAGES = {
+  'Dog Food':      'https://lh3.googleusercontent.com/aida-public/AB6AXuC5n84BqNtl33C0YDlJsHZ4SAUHYHWo1FU9VNz5nRhPuHUz94PQm1m8R0XkVwGEBZNhtj_iJXr_cvxtNt5RYwP6wRAr3wn_lcoSx_W2btp2t7TYk6XmAVrNMFafxrpZXRlFkNidbsBCUkQsJb3G6NOf2GsJ_U3zFhlgvfQvck-d3VOxQPx6dFkA3JYxKxRZ8yNt_6GrkJg1AAyDposzY0s6h-IoESdIUesEbRuCfOopDxqjJHTQv8oHAZB7IWs0KElsxc-BfTpdP5On',
+  'Cat Litter':    'https://lh3.googleusercontent.com/aida-public/AB6AXuAHLIaAuA_kSPHBhvZlXU4rFUnq_3HWKyixQREQONb8iQZg0_zcjKfTF-eLl_fINfpLMOsappMqDUj35wTov0sFIDCwZsy7vnyIYrNFTknfQ6YvG37Q9gDUI8EHmI76Z9XdzqxOkochZy8sdrfWKhVUbQDAW-jQgDjsDAc2XGk1GXPUmbrYEpci1qv3enppzjD9MfQYstzhU-cil0SCJt8nNykgNFCzCVYDP84ueWT0czMzjfQXaEeT_mj0vFuUqNK5qnLPPuJQFn-0',
+  'Pet Grooming':  'https://lh3.googleusercontent.com/aida-public/AB6AXuAYHgKxtN4MVwfDQPXp-hZyfuc2jm1eKQaX8q8YsQ3dNwMSJ4ak_eoHbmytd9N9Sx21GvM5uVSEHdpoqkHdka_ZLmoWLSJAA3-0A2qZMO5F49b6HwsAUv_IvSc_gCEpB0mKCdUrWRo1ZUN6ho5a6H0V5DXB0DH06EdTUcL0K4jG7SAgOyxo4fBedWQZDSJrGF6oAtklDKRxThY3H6Yx0-4Rph87SckvOhflh-Fo8IwwNm_9Qn21F2QzjXpkSjUfVU80sekvGAkSI0B0',
+};
+// Variant images (AIDA URLs from dog_food stitch)
+const VARIANT_IMAGES = [
+  'https://lh3.googleusercontent.com/aida-public/AB6AXuAXECpCs_DC7cPpDLoVP-wQBICDYetOBtasIbkT68r7Fq0vlPGNqUhWi7FeM6fZjYWtYL6BTv4GwVaHcAyCdF9Fl96_IelIsOIUeDuLPyossdUr5mUpcUb1nq8ctt2CxpuKzvk9TPRMzu76OWYycKJaNfYjJmbli7Xqho9-8K0rz22QV6vQb6QZKsW8wmKHO1I40nNGQVM6xpCEf3c5s2NlvBiIIBctU5FsU4Db_zSnWbnBFJRxtnPAdDn0IxLFdsofmTPdmyrkL96u',
+  'https://lh3.googleusercontent.com/aida-public/AB6AXuBUpT5PUjYGh0P8ZjcZUF0BuOXyedt9RoffCA0Or6Lnk78AGuSLJ1qahYiu-XCAmBc2AdqaPod6DygQwVwmOfMivqcmaPgcHTyMISEVf7jJ7_lGEm-tXEAC_V-_f719IpcPAonLoTa8x4GPjyoRd6UCTlBJNLJ-UpA82Hdw6R9CF5RwAjUPiCeYX8GBQXq6Ci8_9dwxE7scOBW4mMVGpGAygjgTFeWria3SlfNJ5XYGD-f5H27uSrwJQ4uuAbO-2niVGnJ86GH9qnrp',
+  'https://lh3.googleusercontent.com/aida-public/AB6AXuAZe_VPldTh7klPAziwtpV6eDjCmL0uakBHQa-KF1A0XUwP9ryi4JDtnPg54MY3QXXBkQGhrLxmVnCYOmZ11qLQ52qOolfcmRDKLZOOAgjoS8kVGvVv8JKAPnYmcbi2olrGUagGosB7ahn_cH9URHbX6feZY48xKdCp9DkVN72dOg7TiWKfnKy9yJhvddK0H1MB6ltp0D5MuKo-Lr9q4bzY1J9_5ULvt4xGmbX5fd9Koq3PS1eWdD5qx7OCLsXeV3xcQZ4NTuziGy0V',
+  'https://lh3.googleusercontent.com/aida-public/AB6AXuAL6BIa3fMeaXsTLo6xaL6VxChEoMtZc1Kz8uCsRKSXvCkuS_11J09uZNJAwS2LpaLRr9voe3JMWqM9l4SVWmCRy6VT-8gqAhX5P-IEh6YRwjV-jr2fr_1-riCH2p2DGkDWQH8VG2wYDJbSHAh446KW1l4gNDQnLkVSdOt9SJD3o3gxYWMjTuPk3yXeRIRbFSPW4kYadmX7-8DIH69rlOfiMA5cNcZV706TZ2mjeoJOXzAexUJO6hGvMTd15VPSoKBVjYF-zhohSBbN',
+];
+
+const PRODUCT_LINES = {
+  cat_01:[{n:'Staple Grains',ic:'grocery'},{n:'Cooking Oils',ic:'opacity'},{n:'Pulses & Lentils',ic:'eco'}],
+  cat_02:[{n:'Chips & Crisps',ic:'fastfood'},{n:'Chocolates',ic:'cake'},{n:'Healthy Snacks',ic:'nutrition'}],
+  cat_03:[{n:'Packaged Juices',ic:'local_bar'},{n:'Soft Drinks',ic:'local_cafe'},{n:'Water & Hydration',ic:'water_drop'}],
+  cat_04:[{n:'Fresh Milk',ic:'egg'},{n:'Curd & Yogurt',ic:'breakfast_dining'},{n:'Paneer & Cheese',ic:'lunch_dining'}],
+  cat_05:[{n:'Floor Cleaners',ic:'cleaning_services'},{n:'Dish Wash',ic:'kitchen'},{n:'Detergents',ic:'local_laundry_service'}],
+  cat_06:[{n:'Face Care',ic:'face'},{n:'Hair Care',ic:'self_improvement'},{n:'Body Wash',ic:'soap'}],
+  cat_07:[{n:'Diapers',ic:'child_care'},{n:'Baby Food',ic:'baby_changing_station'},{n:'Wipes & Care',ic:'clean_hands'}],
+  cat_08:[{n:'Dog Food',ic:'pets'},{n:'Cat Litter',ic:'category'},{n:'Pet Grooming',ic:'content_cut'}],
+  cat_09:[{n:'Vitamins',ic:'health_and_safety'},{n:'First Aid',ic:'medical_services'},{n:'Protein & Fitness',ic:'fitness_center'}],
+  cat_10:[{n:'Frozen Vegetables',ic:'ac_unit'},{n:'Frozen Snacks',ic:'kitchen'},{n:'Ice Cream',ic:'icecream'}],
+  cat_11:[{n:'Leafy Greens',ic:'eco'},{n:'Root Vegetables',ic:'agriculture'},{n:'Exotic Vegetables',ic:'nutrition'}],
+  cat_12:[{n:'Citrus Fruits',ic:'nutrition'},{n:'Tropical Fruits',ic:'local_florist'},{n:'Berries',ic:'scatter_plot'}],
+  cat_13:[{n:'Floor & Surface',ic:'cleaning_services'},{n:'Toilet Cleaners',ic:'wc'},{n:'Air Fresheners',ic:'air'}],
+  cat_14:[{n:'Notebooks',ic:'edit_note'},{n:'Pens & Markers',ic:'draw'},{n:'Office Supplies',ic:'work'}],
+  cat_15:[{n:'Phone Accessories',ic:'smartphone'},{n:'Cables & Adapters',ic:'cable'},{n:'Batteries',ic:'battery_charging_full'}],
+  cat_16:[{n:'Instant Noodles',ic:'ramen_dining'},{n:'Ready Meals',ic:'lunch_dining'},{n:'Soups & Broths',ic:'soup_kitchen'}],
+  cat_17:[{n:'Breads & Loaves',ic:'bakery_dining'},{n:'Cookies & Buns',ic:'cookie'},{n:'Cakes & Pastries',ic:'cake'}],
+  cat_18:[{n:'Organic Grains',ic:'spa'},{n:'Cold-Press Oils',ic:'opacity'},{n:'Superfoods',ic:'energy_savings_leaf'}],
+};
+
+function getCover(id) { 
+  const cv = CAT_COVER[id] || CAT_COVER.cat_01; 
+  if (!cv.url) {
+    const varDef = CAT_VARIANTS[id];
+    if (varDef && !varDef.useAIDA && varDef.img && varDef.img.length > 0) {
+      return { ...cv, url: varDef.img[0] };
+    }
+  }
+  return cv;
+}
+function getLines(id)  { return PRODUCT_LINES[id]||PRODUCT_LINES.cat_01; }
+
+// ── App State ──────────────────────────────────────────────────────────────
+let currentUserId     = '';
+let currentCategoryId = '';
+let currentDetail     = null;
+let loadGeneration    = 0;
+let demoUsers         = [];
+let cartCount         = 0;
+let cartTotalNum      = 0;
+
+// ── Screen Routing ─────────────────────────────────────────────────────────
+function showScreen(id) {
+  ['screen-discover','screen-category','screen-variants','screen-checkout','screen-support-order-placed','screen-support-issue-reported','screen-support-human-chat','screen-support-resolution-options','screen-support-refund','screen-support-replacement'].forEach(s=>{
+    const el = document.getElementById(s);
+    if(el) el.classList.toggle('hidden', s!==id);
+  });
+  window.scrollTo(0,0);
+  if(id === 'screen-checkout' || id.startsWith('screen-support')) {
+    document.getElementById('cart-fab').classList.add('hidden');
+  } else if (cartCount > 0) {
+    document.getElementById('cart-fab').classList.remove('hidden');
+  }
+}
+function backToDiscover() { showScreen('screen-discover'); loadDiscover(); }
+function backToCategory()  { showScreen('screen-category'); }
+
+// ── Toast ──────────────────────────────────────────────────────────────────
+function showToast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(()=>el.classList.remove('show'), 2200);
+}
+
+// ── Cart FAB ───────────────────────────────────────────────────────────────
+function updateCart(priceStr) {
+  cartCount++;
+  const num = parseInt((priceStr||'₹200').replace(/[^0-9]/g,''),10)||200;
+  cartTotalNum += num;
+  document.getElementById('cart-count-label').textContent = `${cartCount} Item${cartCount>1?'s':''}`;
+  document.getElementById('cart-total-label').textContent = `₹${cartTotalNum}`;
+  document.getElementById('cart-fab').classList.remove('hidden');
+}
+
+// ── User Sheet ─────────────────────────────────────────────────────────────
+function openUserSheet()  { renderUserList(); document.getElementById('user-sheet').classList.remove('hidden'); }
+function closeUserSheet() { document.getElementById('user-sheet').classList.add('hidden'); }
+function renderUserList() {
+  const reg = demoUsers.filter(u=>u.order_count>=2).slice(0, 10);
+  function row(u) {
+    const active = u.user_id===currentUserId;
+    return `<button onclick="selectUser('${u.user_id}')"
+      class="w-full flex items-center justify-between p-3 rounded-xl border transition-all active:scale-[0.98]
+             ${active?'border-primary bg-primary-container/20':'border-outline-variant bg-surface-container-lowest'}">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-primary-container text-on-primary-container">
+          <span class="material-symbols-outlined text-[18px]">person</span>
+        </div>
+        <div class="text-left">
+          <p class="font-body-md text-body-md font-semibold">${u.user_id}</p>
+          <p class="font-label-sm text-label-sm text-on-surface-variant">${u.order_count} order${u.order_count!==1?'s':''} · Personalised</p>
+        </div>
+      </div>
+      ${active?'<span class="material-symbols-outlined text-primary" style="font-variation-settings:\'FILL\' 1;">check_circle</span>':''}
+    </button>`;
+  }
+  document.getElementById('user-list').innerHTML =
+    `<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2">Demo Users</p>`
+    + reg.map(row).join('');
+}
+function selectUser(uid) {
+  currentUserId = uid;
+  const u = demoUsers.find(x=>x.user_id===uid);
+  document.getElementById('user-label').textContent = `${uid} · ${u.order_count} orders`;
+  closeUserSheet(); showScreen('screen-discover'); loadDiscover();
+}
+
+// ── DISCOVER — Skeleton (exact from stitch loading screen) ────────────────
+function renderSkeleton() {
+  document.getElementById('discover-main').innerHTML = `
+    <section class="py-stack-lg">
+      <div class="h-6 w-1/2 shimmer rounded-full mb-2"></div>
+      <div class="h-4 w-2/3 shimmer rounded-full"></div>
+    </section>
+    <div class="grid grid-cols-1 gap-stack-lg">
+      ${[1,2,3].map(()=>`
+        <div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant shadow-sm">
+          <div class="w-full h-48 shimmer"></div>
+          <div class="p-stack-lg space-y-4">
+            <div class="h-6 w-3/4 shimmer rounded-full"></div>
+            <div class="h-16 shimmer rounded-lg"></div>
+            <div class="h-12 shimmer rounded-xl"></div>
+          </div>
+        </div>`).join('')}
+    </div>`;
+}
+
+async function loadDiscover() {
+  const gen = ++loadGeneration;
+  renderSkeleton();
+  await new Promise(r=>setTimeout(r,380));
+  if(gen!==loadGeneration) return;
+  try {
+    const res  = await fetch(`/api/discover?userId=${encodeURIComponent(currentUserId)}`);
+    const data = await res.json();
+    if(gen!==loadGeneration) return;
+    renderDiscoverScreen(data);
+  } catch {
+    if(gen!==loadGeneration) return;
+    document.getElementById('discover-main').innerHTML = `
+      <div class="py-section-gap flex flex-col items-center text-center gap-4">
+        <span class="material-symbols-outlined text-5xl text-outline">wifi_off</span>
+        <p class="font-headline-md text-headline-md">Server not reachable</p>
+        <p class="font-body-md text-body-md text-on-surface-variant">Run: <code class="bg-surface-container px-2 py-1 rounded">node ui/server.js</code></p>
+        <button onclick="loadDiscover()" class="px-6 py-3 bg-primary text-white rounded-xl font-label-sm text-label-sm uppercase tracking-wider active:scale-95 transition-all">Retry</button>
+      </div>`;
+  }
+}
+
+// ── DISCOVER — Card renderer (exact cold_start card HTML from stitch) ──────
+// Single consistent DiscoverCard for BOTH cold-start and personalised.
+const CS_BADGES = ['Top Rated','Essentials','Fastest Delivery'];
+const PS_BADGES = ['For You','Trending','Editor\'s Pick'];
+
+function imgSrc(url, g, ic, c) {
+  // If URL: try loading it. On error, hide it so gradient bg shows.
+  if (url) {
+    return `<img class="w-full h-full object-cover absolute inset-0 z-10"
+      src="${url}" onerror="this.style.display='none'" alt=""/>`;
+  }
+  // No URL: just show icon over gradient
+  return `<div class="absolute inset-0 flex items-center justify-center z-10">
+    <span class="material-symbols-outlined text-[80px] opacity-20" style="color:${c};font-variation-settings:'FILL' 1;">${ic}</span>
+  </div>`;
+}
+
+function renderDiscoverScreen({ mode, suggestions }) {
+  const main = document.getElementById('discover-main');
+  const isCS = mode === 'cold_start';
+
+  // Section header — exact from stitch
+  const header = isCS
+    ? `<section class="py-stack-lg">
+         <h2 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Welcome!</h2>
+         <p class="font-body-md text-body-md text-on-surface-variant">Popular categories to get you started</p>
+       </section>`
+    : `<section class="hero-gradient -mx-container-margin px-container-margin pt-4 pb-8 mb-stack-sm">
+         <h2 class="font-headline-md text-headline-md text-on-surface mb-1">Categories picked just for you</h2>
+         <p class="font-body-md text-body-md text-on-surface-variant">Based on your recent shopping habits.</p>
+       </section>`;
+
+  const cards = suggestions.length === 0
+    ? `<div class="py-8 flex flex-col items-center text-center gap-3">
+         <span class="material-symbols-outlined text-5xl text-primary" style="font-variation-settings:'FILL' 1;">auto_awesome</span>
+         <p class="font-headline-md text-headline-md">You're all caught up!</p>
+         <p class="font-body-md text-body-md text-on-surface-variant">More picks coming as you explore.</p>
+       </div>`
+    : suggestions.map((s, i) => {
+        const cv    = getCover(s.category_id);
+        const badge = isCS ? CS_BADGES[i%3] : PS_BADGES[i%3];
+        // Exact card HTML from cold_start stitch:
+        return `
+          <div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden active:scale-[0.98] transition-transform">
+            <div class="relative h-48" style="background:${cv.g}">
+              ${imgSrc(cv.url, cv.g, cv.ic, cv.c)}
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-20"></div>
+              <div class="absolute bottom-4 left-4 z-30">
+                <span class="bg-primary-container text-on-primary-container font-label-xs text-label-xs px-2 py-1 rounded-full uppercase tracking-wider">${badge}</span>
+              </div>
+            </div>
+            <div class="p-stack-lg">
+              <h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">${s.category_name}</h3>
+              <div class="bg-surface-container rounded-lg p-stack-md mb-stack-lg relative overflow-hidden">
+                <span class="material-symbols-outlined text-on-surface-variant/20 absolute -right-2 -bottom-2 text-4xl">format_quote</span>
+                <p class="font-body-md text-body-md text-on-surface-variant italic">"${s.sample_review_snippet}"</p>
+              </div>
+              <button onclick="openCategory('${s.category_id}')"
+                class="w-full py-3 bg-on-surface text-on-primary font-body-lg text-body-lg rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-all">
+                Explore ${s.category_name}
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </button>
+            </div>
+          </div>`;
+      }).join('');
+
+  // Exact structure from cold_start stitch
+  main.innerHTML = header + `<div class="grid grid-cols-1 gap-stack-lg">${cards}</div>`;
+}
+
+// ── CATEGORY DETAIL — exact category_detail_pet_supplies_expanded stitch ──
+async function openCategory(categoryId) {
+  currentCategoryId = categoryId;
+  showScreen('screen-category');
+
+  const cv   = getCover(categoryId);
+  const main = document.getElementById('category-main');
+
+  // Skeleton while fetching
+  main.innerHTML = `
+    <div class="mb-stack-lg h-12 shimmer rounded-full"></div>
+    <div class="h-32 shimmer rounded-xl mb-section-gap"></div>
+    <div class="space-y-section-gap">
+      ${[1,2,3].map(()=>`
+        <div class="flex flex-col">
+          <div class="bg-white rounded-2xl overflow-hidden border border-outline-variant">
+            <div class="shimmer" style="aspect-ratio:1"></div>
+            <div class="p-4 space-y-3">
+              <div class="h-5 w-3/4 shimmer rounded-full"></div>
+              <div class="h-4 w-1/3 shimmer rounded-full"></div>
+              <div class="flex justify-between items-center mt-2">
+                <div class="h-7 w-20 shimmer rounded-full"></div>
+                <div class="h-10 w-16 shimmer rounded-xl"></div>
+              </div>
+            </div>
+          </div>
+          <div class="h-4 w-2/3 shimmer rounded-full mt-3"></div>
+        </div>`).join('')}
+    </div>`;
+
+  try {
+    const res     = await fetch(`/api/category?categoryId=${encodeURIComponent(categoryId)}`);
+    currentDetail = await res.json();
+    document.getElementById('cat-title').textContent = currentDetail.category_name;
+    renderCategoryScreen(currentDetail, cv);
+  } catch {
+    main.innerHTML = `<div class="py-12 text-center">
+      <span class="material-symbols-outlined text-4xl text-outline">error_outline</span>
+      <p class="font-body-md text-body-md text-on-surface-variant mt-3">Failed to load.</p>
+    </div>`;
+  }
+}
+
+function renderCategoryScreen(detail, cv) {
+  const main  = document.getElementById('category-main');
+  cv          = cv || getCover(detail.category_id);
+  const lines = getLines(detail.category_id);
+
+  // Build product-line cards — exact from category_detail stitch
+  const cards = detail.products.map((p, i) => {
+    const line    = lines[i] || lines[0];
+    const imgUrl  = LINE_IMAGES[line.n] || '';
+    const stars   = p.rating!==null ? (p.rating*5).toFixed(1) : '—';
+    const reviews = (() => {
+      const n = parseInt((p.product_id||'p_100').replace('p_',''),10)||100;
+      return `${((200+(n%2000))/1000).toFixed(1)}k`;
+    })();
+    const lineBadgeColors = ['bg-primary','bg-secondary','bg-tertiary'];
+    const lineBadgeTxt    = ['text-on-primary','text-on-secondary','text-on-tertiary'];
+    // Image: use LINE_IMAGES URL if available, else gradient fallback
+    const productImgHTML = imgUrl
+      ? `<img class="w-full h-full object-contain mix-blend-multiply" src="${imgUrl}" onerror="this.parentElement.style.background='${cv.g}';this.style.display='none'" alt="${line.n}"/>`
+      : `<div class="absolute inset-0 flex items-center justify-center">
+           <span class="material-symbols-outlined text-[80px] opacity-20" style="color:${cv.c};font-variation-settings:'FILL' 1;">${line.ic||cv.ic}</span>
+         </div>`;
+
+    return `
+      <div class="flex flex-col">
+        <div class="bg-white rounded-2xl overflow-hidden border border-outline-variant relative group active:scale-[0.98] transition-all">
+          <!-- Square product image — exact from category_detail stitch -->
+          <div class="aspect-square relative overflow-hidden bg-surface-container-low p-4" style="${imgUrl?'':'background:'+cv.g}">
+            ${productImgHTML}
+            <div class="absolute top-3 left-3 ${lineBadgeColors[i%3]} ${lineBadgeTxt[i%3]} text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider z-10">
+              ${line.n}
+            </div>
+          </div>
+          <!-- Product info — exact layout from category_detail stitch -->
+          <div class="p-4 flex flex-col gap-1">
+            <h3 class="font-body-lg text-body-lg text-on-background line-clamp-2 min-h-[48px]">${line.n}</h3>
+            <div class="flex items-center gap-1">
+              <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings:'FILL' 1;">star</span>
+              <span class="text-label-sm font-bold">${stars}</span>
+              <span class="text-outline text-[10px] ml-1">(${reviews} reviews)</span>
+            </div>
+            <div class="mt-stack-md flex items-center justify-between">
+              <span class="font-headline-md text-headline-md">${p.price_display||'—'}</span>
+              <button class="add-btn bg-white border-2 border-primary text-primary font-bold px-6 py-2 rounded-xl active:scale-90 transition-all hover:bg-primary hover:text-white"
+                data-category-id="${detail.category_id}" data-price="${p.price_display||'₹0'}"
+                data-name="${line.n}" data-img="${imgUrl}"
+                onclick="handleAdd(this)">ADD</button>
+            </div>
+          </div>
+        </div>
+        <!-- "See more in [Line] →" — exact from category_detail stitch -->
+        <a onclick="openVariants('${detail.category_id}','${line.n}',${i})" href="#"
+          class="mt-stack-md text-primary font-bold text-label-sm flex items-center hover:underline active:scale-95 transition-transform">
+          See more in ${line.n} <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+        </a>
+      </div>`;
+  }).join('');
+
+  // Exact page structure from category_detail stitch
+  main.innerHTML = `
+    <!-- Search bar — exact from category_detail stitch -->
+    <div class="mb-stack-lg">
+      <div class="relative flex items-center bg-white rounded-full border border-outline-variant px-4 py-3 shadow-sm">
+        <span class="material-symbols-outlined text-outline mr-3">search</span>
+        <input class="bg-transparent border-none focus:ring-0 text-body-md w-full outline-none placeholder-outline"
+          placeholder="Search for ${detail.category_name.toLowerCase()}..." type="text"/>
+        <span class="material-symbols-outlined text-outline">mic</span>
+      </div>
+    </div>
+
+    <!-- Category banner — exact from category_detail stitch (bg-primary-container = yellow) -->
+    <div class="relative overflow-hidden rounded-xl bg-primary-container p-6 mb-section-gap">
+      <div class="relative z-10">
+        <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-primary-container leading-tight">
+          Everything in<br/>${detail.category_name}.
+        </h2>
+        <p class="font-label-sm text-label-sm text-on-primary-fixed-variant mt-2">Delivered in 10 minutes</p>
+      </div>
+      <div class="absolute -right-4 -bottom-4 opacity-20">
+        <span class="material-symbols-outlined text-[120px]" style="font-variation-settings:'FILL' 1;">${getCover(detail.category_id).ic}</span>
+      </div>
+    </div>
+
+    <!-- Product line cards -->
+    <div class="space-y-section-gap">${cards}</div>
+    <div class="h-10"></div>`;
+}
+
+// ── ADD button ─────────────────────────────────────────────────────────────
+let pendingCheckoutItem = null;
+
+function handleAdd(btn) {
+  const categoryId = btn.dataset.categoryId;
+  const price      = btn.dataset.price;
+  const name       = btn.dataset.name || 'Product';
+  const img        = btn.dataset.img || '';
+
+  pendingCheckoutItem = { categoryId, price, name, img };
+
+  btn.disabled = true;
+  btn.classList.add('opacity-50', 'bg-accent-green', 'text-white');
+  btn.classList.remove('bg-white', 'text-primary');
+  btn.textContent = 'ADDED';
+
+  updateCart(price);
+  showToast('✅ Added to cart!');
+}
+
+function openCheckout() {
+  if (!pendingCheckoutItem) return;
+  const numPrice = parseInt(pendingCheckoutItem.price.replace(/[^0-9]/g,''),10)||200;
+  
+  document.getElementById('checkout-product-img').src = pendingCheckoutItem.img;
+  document.getElementById('checkout-product-img').style.display = pendingCheckoutItem.img ? 'block' : 'none';
+  document.getElementById('checkout-product-name').textContent = pendingCheckoutItem.name;
+  document.getElementById('checkout-product-price').textContent = `₹${numPrice}`;
+  document.getElementById('checkout-bill-total').textContent = `₹${numPrice}`;
+  document.getElementById('checkout-grand-total').textContent = `₹${numPrice + 5}`;
+  document.getElementById('checkout-footer-total').textContent = `₹${numPrice + 5}`;
+  
+  showScreen('screen-checkout');
+}
+
+async function placeOrderAndNudge() {
+  if (!pendingCheckoutItem) return;
+  const categoryId = pendingCheckoutItem.categoryId;
+  
+  try {
+    const res = await fetch('/api/order',{
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({userId:currentUserId, categoryId})
+    });
+    const result = await res.json();
+    if (result.success) {
+      const u = demoUsers.find(x=>x.user_id===currentUserId);
+      if(u) u.order_count++;
+      document.getElementById('user-label').textContent =
+        `${currentUserId} · ${u?.order_count||1} order${(u?.order_count||1)!==1?'s':''}`;
+    }
+  } catch(e) {}
+  
+  cartCount = 0;
+  cartTotalNum = 0;
+  document.getElementById('cart-fab').classList.add('hidden');
+  
+  showScreen('screen-support-order-placed');
+}
+
+function simulateDelivery() {
+  document.getElementById('issue-product-name').textContent = pendingCheckoutItem.name;
+  document.getElementById('issue-product-img').src = pendingCheckoutItem.img;
+  
+  const numPrice = parseInt(pendingCheckoutItem.price.replace(/[^0-9]/g,''), 10) || 0;
+  const reportBtn = document.getElementById('report-issue-btn');
+  const reportText = document.getElementById('report-issue-text');
+  
+  if (numPrice < 200) {
+    if (reportBtn) reportBtn.classList.add('hidden');
+    if (reportText) reportText.classList.add('hidden');
+  } else {
+    if (reportBtn) reportBtn.classList.remove('hidden');
+    if (reportText) reportText.classList.remove('hidden');
+  }
+  
+  showScreen('screen-support-issue-reported');
+}
+
+function handleChatReply(text) {
+  document.getElementById('chat-user-reply-text').textContent = text;
+  document.getElementById('chat-user-reply').classList.remove('hidden');
+  setTimeout(() => {
+    document.getElementById('chat-agent-reply').classList.remove('hidden');
+    setTimeout(() => {
+      showScreen('screen-support-resolution-options');
+      // Reset chat for next time
+      document.getElementById('chat-user-reply').classList.add('hidden');
+      document.getElementById('chat-agent-reply').classList.add('hidden');
+    }, 1500);
+  }, 500);
+}
+
+function renderRefundScreen() {
+  document.getElementById('refund-title').textContent = `Refund initiated for ${pendingCheckoutItem.name} — amount will reflect shortly.`;
+  document.getElementById('refund-amount').textContent = `₹${parseInt(pendingCheckoutItem.price.replace(/[^0-9]/g,''),10)||200}`;
+  showScreen('screen-support-refund');
+}
+
+function renderReplacementScreen() {
+  document.getElementById('replacement-title').textContent = pendingCheckoutItem.name;
+  document.getElementById('replacement-img').src = pendingCheckoutItem.img;
+  document.getElementById('replacement-img').style.display = pendingCheckoutItem.img ? 'block' : 'none';
+  showScreen('screen-support-replacement');
+}
+
+function simulateSupportToDiscover() {
+  pendingCheckoutItem = null;
+  backToDiscover();
+}
+
+// ── VARIANT SCREEN — exact dog_food_product_listing stitch ────────────────
+function openVariants(categoryId, lineName, lineIdx) {
+  showScreen('screen-variants');
+  document.getElementById('variant-title').textContent = lineName;
+  document.getElementById('filter-type-label').textContent = lineName+' Type';
+
+  const cv    = getCover(categoryId);
+  const lines = getLines(categoryId);
+
+  // Left sidebar — sub-lines (exact structure from dog_food stitch)
+  document.getElementById('sidebar-items').innerHTML = lines.map((l,i)=>`
+    <div class="flex flex-col items-center py-4 px-2 text-center gap-2 border-l-4 cursor-pointer ${i===lineIdx?'sidebar-active':'border-transparent'}"
+      onclick="switchVariantLine('${categoryId}',${i})">
+      <div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-outline-variant"
+        style="${i===lineIdx?'background:'+cv.g:''}">
+        <span class="material-symbols-outlined text-[20px]" style="color:${cv.c};font-variation-settings:'FILL' 1;">${l.ic||cv.ic}</span>
+      </div>
+      <span class="text-[10px] ${i===lineIdx?'font-bold':'font-medium text-on-surface-variant'} leading-tight">${l.n}</span>
+    </div>`).join('');
+
+  renderVariantGrid(categoryId, lineIdx);
+}
+
+function switchVariantLine(categoryId, lineIdx) {
+  const lines = getLines(categoryId);
+  const cv    = getCover(categoryId);
+  document.querySelectorAll('#sidebar-items > div').forEach((el,i)=>{
+    const active = i===lineIdx;
+    el.className = `flex flex-col items-center py-4 px-2 text-center gap-2 border-l-4 cursor-pointer ${active?'sidebar-active':'border-transparent'}`;
+    const circle = el.querySelector('div');
+    circle.style.background = active ? cv.g : '';
+    const span = el.querySelector('span:last-child');
+    span.className = `text-[10px] ${active?'font-bold':'font-medium text-on-surface-variant'} leading-tight`;
+  });
+  document.getElementById('variant-title').textContent = lines[lineIdx]?.n || '';
+  renderVariantGrid(categoryId, lineIdx);
+}
+
+// ── Per-category variant definitions — individual per-product images ──────────
+// img[j] = unique image for each of the 4 products in this category.
+// cat_04 (dairy): individually generated AI photos served from /images/.
+// All others: curated Unsplash CDN photo IDs matched to each specific product.
+// cat_08 (pet): AIDA CDN (useAIDA:true), img[] unused.
+const U = 'https://images.unsplash.com/photo-';  // Unsplash CDN base
+const CAT_VARIANTS = {
+  "cat_01": {
+    brands: [
+      "Daawat Basmati Rice",
+      "Fortune Sunflower Oil",
+      "Tata Sampann Moong Dal",
+      "India Gate Brown Rice",
+      "Aashirvaad Shudh Chakki Atta",
+      "Saffola Gold Refined Cooking oil | Power...",
+      "Tata Sampann Unpolished Toor Dal/Arhar D..."
+    ],
+    tiers: [
+      "Staple Grains",
+      "Cooking Oils",
+      "Pulses & Lentils",
+      "Staple Grains",
+      "Staple Grains",
+      "Cooking Oils",
+      "Pulses & Lentils"
+    ],
+    sizes: [
+      "1 kg",
+      "1 L",
+      "500 g",
+      "5 kg",
+      "5 kg",
+      "1 L",
+      "1 kg"
+    ],
+    base: 89,
+    img: [
+      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=400/da/cms-assets/cms/product/1dac26d6-73fe-4e94-a91f-c85bac0bad3a.png?dpr_multiplier=3.00",
+      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=400/da/cms-assets/cms/product/61c67eb1-3f1b-423c-bc55-6b7fba83a5c9.png?dpr_multiplier=3.00",
+      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=400/da/cms-assets/cms/product/d0799cef-246f-4750-a878-49f893403c2c.png?dpr_multiplier=3.00",
+      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=400/da/cms-assets/cms/product/rc-upload-1779421790948-1613.png?dpr_multiplier=3.00",
+      "https://m.media-amazon.com/images/I/91Lj2AJXfOL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/61zAXUr5PhL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/61HA0lc+dHL._AC_UL320_.jpg"
+    ],
+    useAIDA: false
+  },
+  "cat_02": {
+    brands: [
+      "Lay's Classic Salted",
+      "Cadbury Dairy Milk Silk",
+      "Kurkure Masala Munch",
+      "KitKat 4-Finger",
+      "Too Yumm Dahi Papdi Chaat Multigrain Chi...",
+      "RiteBite Max Protein Daily Assorted Prot..."
+    ],
+    tiers: [
+      "Chips & Crisps",
+      "Chocolates",
+      "Chips & Crisps",
+      "Chocolates",
+      "Healthy Snacks",
+      "Healthy Snacks"
+    ],
+    sizes: [
+      "52 g",
+      "60 g",
+      "70 g",
+      "40 g",
+      "90 g",
+      "50 g"
+    ],
+    base: 20,
+    img: [
+      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=400/da/cms-assets/cms/product/rc-upload-1776693405497-48.png",
+      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=400/da/cms-assets/cms/product/bf0dd2a7-fb0c-4702-825c-75caad01f489.png?dpr_multiplier=3.00",
+      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=400/da/cms-assets/cms/product/rc-upload-1780634830965-687.png?dpr_multiplier=3.00",
+      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=400/da/cms-assets/cms/product/rc-upload-1784189330239-193.png",
+      "https://m.media-amazon.com/images/I/61k5oVIwLML._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/81cYyBEuyHL._AC_UL320_.jpg"
+    ],
+    useAIDA: false
+  },
+  "cat_03": {
+    brands: [
+      "Tropicana Orange 1L",
+      "Coca-Cola 600ml",
+      "Bisleri Mineral Water",
+      "Paper Boat Aam Panna",
+      "NATURAL STORE Kinley With Added Minerals...",
+      "Gatorade Spar Combo"
+    ],
+    tiers: [
+      "Packaged Juices",
+      "Soft Drinks",
+      "Water & Hydration",
+      "Packaged Juices",
+      "Water & Hydration",
+      "Water & Hydration"
+    ],
+    sizes: [
+      "1 L",
+      "600 ml",
+      "1 L",
+      "200 ml",
+      "1 L",
+      "500 ml"
+    ],
+    base: 35,
+    img: [
+      "/images/tropicana.png",
+      "/images/cocacola.png",
+      "/images/bisleri.png",
+      "/images/paperboat.png",
+      "https://m.media-amazon.com/images/I/51xyjOa12BL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/41AL4bEql3L._AC_UL320_.jpg"
+    ],
+    useAIDA: false
+  },
+  "cat_04": {
+    brands: [
+      "Amul Gold Full Cream",
+      "Mother Dairy Toned",
+      "Nestle Slim Skimmed",
+      "Heritage Farm Fresh",
+      "Amul Masti Dahi",
+      "Mother Dairy Paneer",
+      "Britannia Cheese Slices"
+    ],
+    tiers: [
+      "Fresh Milk",
+      "Fresh Milk",
+      "Fresh Milk",
+      "Fresh Milk",
+      "Curd & Yogurt",
+      "Paneer & Cheese",
+      "Paneer & Cheese"
+    ],
+    sizes: [
+      "500 ml",
+      "1 L",
+      "1 L",
+      "2 L",
+      "400 g",
+      "200 g",
+      "100 g"
+    ],
+    base: 28,
+    img: [
+      "/images/amul_gold_milk.png",
+      "/images/mother_dairy_toned.png",
+      "/images/nestle_slim_milk.png",
+      "/images/heritage_farm_fresh.png",
+      "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&h=400&fit=crop"
+    ],
+    useAIDA: false
+  },
+  "cat_05": {
+    brands: [
+      "Lizol Pine Floor Cleaner",
+      "Vim Dishwash Lemon",
+      "Surf Excel Matic Front Load Liquid Deter...",
+      "Domex Disinfectant Floor Cleaner|| 1 ltr",
+      "Tide Plus Detergent Washing Powder",
+      "Ariel Power Gel Liquid Detergent for Top..."
+    ],
+    tiers: [
+      "Floor Cleaners",
+      "Dish Wash",
+      "Detergents",
+      "Floor Cleaners",
+      "Detergents",
+      "Detergents"
+    ],
+    sizes: [
+      "500 ml",
+      "500 ml",
+      "1 L",
+      "500 ml",
+      "1 kg",
+      "1 L"
+    ],
+    base: 59,
+    img: [
+      "/images/lizol_floor_cleaner.png",
+      "/images/vim_dishwash.png",
+      "https://m.media-amazon.com/images/I/61ShrCBCKrL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/5165K160aYS._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/71hSVcOSZUL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/71X1Jt6RcWL._AC_UL320_.jpg"
+    ],
+    useAIDA: false
+  },
+  "cat_06": {
+    brands: [
+      "Premium Quality Product",
+      "Pantene Hair Fall Control Shampoo for We...",
+      "DOVE Nourishing Bodywash",
+      "Dettol Lime Fresh Body Wash and Shower G...",
+      "Garnier Men",
+      "Head & Shoulders Smooth and Silky"
+    ],
+    tiers: [
+      "Face Care",
+      "Hair Care",
+      "Body Wash",
+      "Body Wash",
+      "Face Care",
+      "Hair Care"
+    ],
+    sizes: [
+      "100 ml",
+      "200 ml",
+      "250 ml",
+      "250 ml",
+      "100 g",
+      "180 ml"
+    ],
+    base: 99,
+    img: [
+      "https://m.media-amazon.com/images/I/51AmjNNFiyL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/41NVRvdo++L._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/51Jd+S+tkjL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/610llX8cE2L._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/619N0zaKbdL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/61ANB+67sgL._AC_UL320_.jpg"
+    ],
+    useAIDA: false
+  },
+  "cat_07": {
+    brands: [
+      "Premium Quality Product",
+      "Premium Quality Product",
+      "Premium Quality Product",
+      "Premium Quality Product",
+      "CERELAC Baby Food Cereal | No Preservati...",
+      "Slurrp Farm Cereal",
+      "Johnson's Baby Wet Wipes | 216 Wipes | A...",
+      "Himalaya Gentle Baby Lotion 400ml with A..."
+    ],
+    tiers: [
+      "Diapers",
+      "Diapers",
+      "Diapers",
+      "Diapers",
+      "Baby Food",
+      "Baby Food",
+      "Wipes & Care",
+      "Wipes & Care"
+    ],
+    sizes: [
+      "20 pcs",
+      "40 pcs",
+      "72 pcs",
+      "100 pcs",
+      "300 g",
+      "200 g",
+      "72 wipes",
+      "200 ml"
+    ],
+    base: 199,
+    img: [
+      "https://m.media-amazon.com/images/I/714MXQQ7xyL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/71leY2svSgL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/61WPKYsu-RL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/61rsXsjCYzL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/815w+7rBwEL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/71NUDhLeBML._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/61d5ZkA9BFL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/61x765qlYJL._AC_UL320_.jpg"
+    ],
+    useAIDA: false
+  },
+  "cat_08": {
+    brands: [
+      "Pedigree Adult Dry Dog Food",
+      "Royal Canin Medium Adult Dog Food",
+      "Chappi Adult (1+ Years) Dry Dog Food",
+      "Drools Puppy & Adult Chips",
+      "Whiskas Adult (1+ Years) Dry Cat Food",
+      "Odourlock Unscented Ultra Premium Cat Li",
+      "Wahl 820004 Oatmeal Shampoo"
+    ],
+    tiers: [
+      "Dog Food",
+      "Dog Food",
+      "Dog Food",
+      "Dog Food",
+      "Cat Litter",
+      "Cat Litter",
+      "Pet Grooming"
+    ],
+    sizes: [
+      "500 g",
+      "1 kg",
+      "3 kg",
+      "5 kg",
+      "1.2 kg",
+      "12 kg",
+      "700 ml"
+    ],
+    base: 120,
+    img: [
+      "https://m.media-amazon.com/images/I/71ExfwyWQAL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/61XAdWQWSLL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/71gpJROiFlL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/61xrwJ3atZL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/81yapTGwJLL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/61H5+a9aTsL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/71Npnm2RvjL._AC_UL320_.jpg"
+    ],
+    useAIDA: true
+  },
+  "cat_09": {
+    brands: [
+      "Vlado's Himalayan Organics Natural Lipos...",
+      "Healthvit Taurine Multivitamin Supplemen...",
+      "FAST&UP L",
+      "MuscleBlaze Biozyme Performance Whey Pro...",
+      "Savlon Antiseptic Disinfectant Liquid fo...",
+      "Hansaplast Antiseptic Plasters | Various...",
+      "Optimum Nutrition (ON) Gold Standard 100..."
+    ],
+    tiers: [
+      "Vitamins",
+      "Vitamins",
+      "Vitamins",
+      "Protein & Fitness",
+      "First Aid",
+      "First Aid",
+      "Protein & Fitness"
+    ],
+    sizes: [
+      "30 tabs",
+      "60 tabs",
+      "20 tabs",
+      "500 g",
+      "500 ml",
+      "100 strips",
+      "2 lbs"
+    ],
+    base: 199,
+    img: [
+      "https://m.media-amazon.com/images/I/61O2uDw-PUL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/71D2XbVksuL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/61L3GJ9OuNL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/71XXDVlXymL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/51Ltdf741EL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/51bCuczSsJL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/71aaVOEsHLL._AC_UL320_.jpg"
+    ],
+    useAIDA: false
+  },
+  "cat_10": {
+    brands: [
+      "McCain Aloo Tikki",
+      "Haldirams Frozen Samosa",
+      "Kwality Walls Cornetto",
+      "Mother Dairy Kulfi",
+      "MAYS Frozen Peas 200 gm Pack",
+      "Amul Chocomini Chocolate",
+      "Baskin Robbins | Flat 16% Discount | E"
+    ],
+    tiers: [
+      "Frozen Snacks",
+      "Frozen Snacks",
+      "Ice Cream",
+      "Ice Cream",
+      "Frozen Vegetables",
+      "Ice Cream",
+      "Ice Cream"
+    ],
+    sizes: [
+      "400 g",
+      "400 g",
+      "4 pcs",
+      "4 pcs",
+      "500 g",
+      "1 L",
+      "500 ml"
+    ],
+    base: 89,
+    img: [
+      "/images/mccain.png",
+      "/images/samosa.png",
+      "/images/cornetto.png",
+      "/images/kulfi.png",
+      "https://m.media-amazon.com/images/I/61x7kIzdqqL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/71KZQkANkFS._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/51MsFa8jLHL._AC_UL320_.jpg"
+    ],
+    useAIDA: false
+  },
+  "cat_11": {
+    brands: [
+      "Fresh Palak Spinach",
+      "Organic Carrot Bunch",
+      "Baby Corn Exotic",
+      "Cherry Tomatoes",
+      "Fresh Broccoli",
+      "Fresh Capsicum"
+    ],
+    tiers: [
+      "Leafy Greens",
+      "Root Vegetables",
+      "Exotic Vegetables",
+      "Exotic Vegetables",
+      "Exotic Vegetables",
+      "Exotic Vegetables"
+    ],
+    sizes: [
+      "250 g",
+      "500 g",
+      "200 g",
+      "250 g",
+      "1 pc",
+      "250 g"
+    ],
+    base: 25,
+    img: [
+      "/images/palak.png",
+      "/images/carrot.png",
+      "/images/babycorn.png",
+      "/images/cherrytomato.png",
+      "https://m.media-amazon.com/images/I/61OuSASeuNL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/61IDaYk6RBL._AC_UL320_.jpg"
+    ],
+    useAIDA: false
+  },
+  "cat_12": {
+    brands: [
+      "Nagpur Santra Oranges",
+      "Alphonso Hapus Mangoes",
+      "Organic Strawberries",
+      "Imported Red Grapes",
+      "Imported Green Apple Live Plant | Hybrid...",
+      "WELMORA Fresh Blueberries – (Weight"
+    ],
+    tiers: [
+      "Citrus Fruits",
+      "Tropical Fruits",
+      "Berries",
+      "Tropical Fruits",
+      "Tropical Fruits",
+      "Berries"
+    ],
+    sizes: [
+      "4 pcs",
+      "4 pcs",
+      "250 g",
+      "500 g",
+      "4 pcs",
+      "125 g"
+    ],
+    base: 49,
+    img: [
+      "/images/oranges.png",
+      "/images/mangoes.png",
+      "/images/strawberries.png",
+      "/images/grapes.png",
+      "https://m.media-amazon.com/images/I/41JF-YA4M3L._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/51ZkrWmS42L._AC_UL320_.jpg"
+    ],
+    useAIDA: false
+  },
+  "cat_13": {
+    brands: [
+      "Colin Glass Cleaner",
+      "Harpic Power Plus Max 10 Actions Toilet ...",
+      "Premium Quality Product",
+      "Disinfectant sprays",
+      "Ambi Pur Air Freshener Spray",
+      "Godrej aer Power Pocket | Bathroom fresh..."
+    ],
+    tiers: [
+      "Floor & Surface",
+      "Toilet Cleaners",
+      "Air Fresheners",
+      "Floor & Surface",
+      "Air Fresheners",
+      "Air Fresheners"
+    ],
+    sizes: [
+      "250 ml",
+      "500 ml",
+      "75 g",
+      "500 ml",
+      "275 g",
+      "10 g"
+    ],
+    base: 49,
+    img: [
+      "/images/colin.png",
+      "https://m.media-amazon.com/images/I/51f-SheMIrL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/71Qy4Ad-r5L._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/61O13dfQ1jL._CR,,,_QL70_SL300_.jpg",
+      "https://m.media-amazon.com/images/I/61Zx3QJ3LpL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/61jAgru6cuL._AC_UL320_.jpg"
+    ],
+    useAIDA: false
+  },
+  "cat_14": {
+    brands: [
+      "Premium Quality Product",
+      "TARGET PUBLICATIONS Graph Books | A4 Siz...",
+      "YOUVA Navneet Spiral Long Book For Stude...",
+      "Faber",
+      "Cello Butterflow Classic Roller Pen Set ...",
+      "Luxor Whiteboard Marker Pen",
+      "3M Post",
+      "Kangaro HP"
+    ],
+    tiers: [
+      "Notebooks",
+      "Notebooks",
+      "Notebooks",
+      "Notebooks",
+      "Pens & Markers",
+      "Pens & Markers",
+      "Office Supplies",
+      "Office Supplies"
+    ],
+    sizes: [
+      "1 pc",
+      "1 pc",
+      "1 pc",
+      "5 pcs",
+      "5 pcs",
+      "4 pcs",
+      "100 sheets",
+      "1 pc"
+    ],
+    base: 30,
+    img: [
+      "https://m.media-amazon.com/images/I/71aMIJr6lfL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/71-sVLvJeJL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/61jKLFwx0gL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/61mp85-Wq3L._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/81EyzkfZhbL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/51nD3Y5g65L._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/719gxnixAXL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/711B1BL3AxL._AC_UL320_.jpg"
+    ],
+    useAIDA: false
+  },
+  "cat_15": {
+    brands: [
+      "Belkin Apple Certified USB",
+      "boAt Type C to C 65W Fast Charging Cable...",
+      "Xiaomi Power Bank 4i 10000mAh 22.5W Fast...",
+      "SYSKA Ssk",
+      "Duracell Ultra AA Battery",
+      "Eveready Ultima Alkaline AAA Battery",
+      "Spigen Liquid Air Back Cover Case for iP..."
+    ],
+    tiers: [
+      "Cables & Adapters",
+      "Cables & Adapters",
+      "Phone Accessories",
+      "Phone Accessories",
+      "Batteries",
+      "Batteries",
+      "Phone Accessories"
+    ],
+    sizes: [
+      "1 m",
+      "2 m",
+      "10000 mAh",
+      "9 W",
+      "4 pcs",
+      "10 pcs",
+      "1 pc"
+    ],
+    base: 149,
+    img: [
+      "https://m.media-amazon.com/images/I/51NQBUQEH-L._AC_UY400_.jpg",
+      "https://m.media-amazon.com/images/I/51llyiz422L._AC_UY400_.jpg",
+      "https://m.media-amazon.com/images/I/313dDwp81RL._AC_UY400_.jpg",
+      "https://m.media-amazon.com/images/I/81+2X0UGKJL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/81cx4sYAkyL._AC_UY400_.jpg",
+      "https://m.media-amazon.com/images/I/81v863eG0VL._AC_UY400_.jpg",
+      "https://m.media-amazon.com/images/I/81q1Qn6Lp8L._AC_UY400_.jpg"
+    ],
+    useAIDA: false
+  },
+  "cat_16": {
+    brands: [
+      "MAGGI 2",
+      "Yippee Classic Noodles",
+      "Knorr Classic Tomato Soup",
+      "Daawat Biryani Kit Hyderabadi | Authenti...",
+      "Ching's Instant Hot and Sour Soup",
+      "Ziply5 Ready"
+    ],
+    tiers: [
+      "Instant Noodles",
+      "Instant Noodles",
+      "Soups & Broths",
+      "Ready Meals",
+      "Soups & Broths",
+      "Ready Meals"
+    ],
+    sizes: [
+      "70 g",
+      "60 g",
+      "44 g",
+      "300 g",
+      "55 g",
+      "330 g"
+    ],
+    base: 15,
+    img: [
+      "https://m.media-amazon.com/images/I/8123bF53XpL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/71AKxc3YX7L._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/71P4Mm3iUML._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/71LhRLzhHQL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/51cVll7MQuL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/61z3PJDDbIL._AC_UL320_.jpg"
+    ],
+    useAIDA: false
+  },
+  "cat_17": {
+    brands: [
+      "Britannia 100% Whole Wheat Bread",
+      "The Baker's Dozen Multigrain Loaf",
+      "Modern Brown Bread",
+      "Harvest Gold Atta Whole Wheat Zero Maida...",
+      "Britannia Good Day Cashew Cookies",
+      "Winkies Swiss Roll Chocolate Cake"
+    ],
+    tiers: [
+      "Breads & Loaves",
+      "Breads & Loaves",
+      "Breads & Loaves",
+      "Breads & Loaves",
+      "Cookies & Buns",
+      "Cakes & Pastries"
+    ],
+    sizes: [
+      "400 g",
+      "400 g",
+      "400 g",
+      "500 g",
+      "600 g",
+      "150 g"
+    ],
+    base: 40,
+    img: [
+      "https://m.media-amazon.com/images/I/81CrCWJ8VML._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/41Ye5DDUsoL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/81hwhWe0S+L._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/71vtFO+GNYL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/71C7sUXPh7L._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/51nRa19nAcL._AC_UL320_.jpg"
+    ],
+    useAIDA: false
+  },
+  "cat_18": {
+    brands: [
+      "Organic Tattva",
+      "Organic Tattva",
+      "True Elements Superseeds Mix",
+      "Kapiva Ashwagandha Gold Capsules",
+      "Natureland Organics Moong Dal Yellow/Spl...",
+      "A TATA Product – Organic India Quinoa – ..."
+    ],
+    tiers: [
+      "Organic Grains",
+      "Cold-Press Oils",
+      "Superfoods",
+      "Vitamins",
+      "Organic Grains",
+      "Superfoods"
+    ],
+    sizes: [
+      "1 kg",
+      "500 ml",
+      "250 g",
+      "60 caps",
+      "1 kg",
+      "500 g"
+    ],
+    base: 249,
+    img: [
+      "https://m.media-amazon.com/images/I/51jU+8srSML._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/718lDky9IKL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/711JJsEMUPL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/61vWNsRLSeL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/71wO31BCRaL._AC_UL320_.jpg",
+      "https://m.media-amazon.com/images/I/71LGXQtuaZL._AC_UL320_.jpg"
+    ],
+    useAIDA: false
+  }
+};
+
+// Automatically populate LINE_IMAGES for all categories based on CAT_VARIANTS
+Object.keys(PRODUCT_LINES).forEach(catId => {
+  const lines = PRODUCT_LINES[catId];
+  const varDef = CAT_VARIANTS[catId];
+  if (varDef && !varDef.useAIDA && varDef.img) {
+    lines.forEach((line, i) => {
+      if (!LINE_IMAGES[line.n]) {
+        LINE_IMAGES[line.n] = varDef.img[i] || varDef.img[0];
+      }
+    });
+  }
+});
+
+// 4 variant cards — exact product card structure from dog_food stitch
+function renderVariantGrid(categoryId, lineIdx) {
+  const cv     = getCover(categoryId);
+  const line   = (getLines(categoryId))[lineIdx] || getLines(categoryId)[0];
+  const varDef = CAT_VARIANTS[categoryId] || CAT_VARIANTS.cat_01;
+  const BRANDS    = varDef.brands;
+  const TIERS     = varDef.tiers;
+  const SIZES     = varDef.sizes;
+  const BASE      = varDef.base + lineIdx * Math.round(varDef.base * 0.3);
+  const DISCOUNTS = ['20% OFF on MRP','8% OFF on MRP','10% OFF','₹35 OFF'];
+
+  let matchedIndexes = [];
+  for (let k = 0; k < BRANDS.length; k++) {
+    if (TIERS[k] === line.n) {
+      matchedIndexes.push(k);
+    }
+  }
+  if (matchedIndexes.length === 0) {
+     const start = (lineIdx * 2) % BRANDS.length;
+     matchedIndexes = [start, (start+1)%BRANDS.length, (start+2)%BRANDS.length];
+  }
+
+  document.getElementById('variant-grid').innerHTML = matchedIndexes.map((j, displayIdx)=>{
+    const price   = Math.round(BASE * (1 + displayIdx * 0.8));
+    const mrp     = Math.round(price * 1.22);
+    const stars   = (3.8+displayIdx*0.2+lineIdx*0.05).toFixed(1);
+    const reviews = (2000+displayIdx*3000+lineIdx*500).toLocaleString();
+    
+    // AIDA CDN photos for pet supplies; img[j] for everything else
+    const imgUrl  = varDef.useAIDA
+      ? (VARIANT_IMAGES[j % VARIANT_IMAGES.length] || '')
+      : (varDef.img && varDef.img[j] ? varDef.img[j] : '');
+
+    const imgHTML = imgUrl
+      ? `<img class="w-full h-full object-contain p-2" src="${imgUrl}"
+             onerror="this.style.display='none'" alt="${BRANDS[j]}"/>`
+      : `<div class="absolute inset-0 flex items-center justify-center">
+           <span class="material-symbols-outlined text-[70px] opacity-30" style="color:${cv.c};font-variation-settings:'FILL' 1;">${line.ic||cv.ic}</span>
+         </div>`;
+
+    return `
+      <div class="flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden relative">
+        <div class="relative w-full aspect-square bg-white p-2" style="${imgUrl?'':'background:'+cv.g}">
+          ${imgHTML}
+          <button class="absolute top-2 right-2 w-7 h-7 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
+            <span class="material-symbols-outlined text-[18px]">favorite</span>
+          </button>
+          <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+            ${[0,1,2].map(k=>`<span class="w-1 h-1 rounded-full ${k===0?'bg-on-surface':'bg-on-secondary-container/40'}"></span>`).join('')}
+          </div>
+          <button class="absolute bottom-2 right-2 w-6 h-6 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
+            <span class="material-symbols-outlined text-[16px]">open_in_full</span>
+          </button>
+        </div>
+        <div class="p-2.5 flex flex-col gap-1">
+          <div class="flex items-center gap-1">
+            <span class="material-symbols-outlined text-primary text-[14px]">schedule</span>
+            <span class="text-[10px] font-bold text-on-surface">${8+displayIdx*2} mins</span>
+          </div>
+          <h3 class="text-body-md font-bold leading-tight line-clamp-2 min-h-[40px]">${BRANDS[j]}</h3>
+          <div class="flex items-center gap-1 mt-0.5">
+            <div class="bg-surface-container px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider">${SIZES[j]}</div>
+            <div class="flex items-center text-[10px] font-bold">
+              <span class="material-symbols-outlined text-yellow-500 text-[12px]" style="font-variation-settings:'FILL' 1;">star</span>
+              <span class="ml-0.5">${stars}</span>
+              <span class="text-on-secondary-container font-normal ml-0.5">(${reviews})</span>
+            </div>
+          </div>
+          <div class="text-[11px] text-on-secondary-container font-medium mt-1">${SIZES[j]}</div>
+          <div class="flex items-center justify-between mt-1">
+            <div class="flex flex-col">
+              <div class="flex items-baseline gap-1">
+                <span class="text-body-lg font-bold">₹${price}</span>
+                <span class="text-[10px] text-on-secondary-container line-through">₹${mrp}</span>
+              </div>
+              <span class="text-[9px] font-bold text-blue-600">${DISCOUNTS[displayIdx%DISCOUNTS.length]}</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <button class="add-btn border border-accent-green text-accent-green font-bold text-[11px] px-3 py-1.5 rounded-lg active:scale-95 transition-transform bg-white hover:bg-accent-green hover:text-white"
+                data-category-id="${categoryId}" data-price="₹${price}" data-name="${BRANDS[j]}" data-img="${imgUrl}"
+                onclick="handleAdd(this)">ADD</button>
+              <span class="text-[8px] text-on-secondary-container mt-0.5 font-medium">${displayIdx+1} option${displayIdx>0?'s':''}</span>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+// ── Init ───────────────────────────────────────────────────────────────────
+async function init() {
+  // Atmospheric fade-in — exact from cold_start stitch script
+  document.body.style.opacity = '0';
+  document.body.style.transition = 'opacity 0.4s ease';
+  requestAnimationFrame(() => { document.body.style.opacity = '1'; });
+
+  try {
+    const res = await fetch('/api/users');
+    demoUsers = await res.json();
+    const reg = demoUsers.find(u=>u.order_count>=2)||demoUsers[0];
+    currentUserId = reg.user_id;
+    document.getElementById('user-label').textContent = `${currentUserId} · ${reg.order_count} orders`;
+    loadDiscover();
+  } catch {
+    document.getElementById('discover-main').innerHTML = `
+      <div class="py-section-gap flex flex-col items-center text-center gap-4">
+        <span class="material-symbols-outlined text-5xl text-error">error</span>
+        <p class="font-headline-md text-headline-md">Server not running</p>
+        <p class="font-body-md text-body-md text-on-surface-variant">Open terminal and run:<br/>
+          <code class="bg-surface-container px-2 py-1 rounded text-sm">node ui/server.js</code></p>
+        <button onclick="init()" class="px-6 py-3 bg-primary text-white rounded-xl font-label-sm text-label-sm uppercase tracking-wider active:scale-95 transition-all">Retry</button>
+      </div>`;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('button, a').forEach(el =>
+    el.addEventListener('touchstart', ()=>{}, {passive:true})
+  );
+  init();
+});
+</script>
+</body>
+</html>

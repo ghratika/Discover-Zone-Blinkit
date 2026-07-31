@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Blinkit - Discover</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed": "#1b1b1b",
+            "on-surface": "#191c1e",
+            "on-secondary-fixed-variant": "#474747",
+            "outline-variant": "#cec6aa",
+            "surface-dim": "#d9dadc",
+            "tertiary": "#00696c",
+            "primary": "#6c5e00",
+            "inverse-primary": "#e1c700",
+            "on-tertiary-container": "#006f71",
+            "error-container": "#ffdad6",
+            "on-surface-variant": "#4c4732",
+            "error": "#ba1a1a",
+            "outline": "#7d775f",
+            "surface-container-highest": "#e1e2e4",
+            "surface-container-high": "#e7e8ea",
+            "on-primary": "#ffffff",
+            "secondary-fixed": "#e2e2e2",
+            "on-tertiary": "#ffffff",
+            "primary-container": "#ffe100",
+            "on-background": "#191c1e",
+            "surface": "#f8f9fb",
+            "background": "#f8f9fb",
+            "on-tertiary-fixed-variant": "#004f51",
+            "on-secondary-container": "#646464",
+            "primary-fixed": "#ffe330",
+            "secondary": "#5e5e5e",
+            "inverse-surface": "#2e3132",
+            "surface-container": "#edeef0",
+            "primary-fixed-dim": "#e1c700",
+            "secondary-container": "#e2e2e2",
+            "tertiary-container": "#00f9fe",
+            "on-error": "#ffffff",
+            "inverse-on-surface": "#f0f1f3",
+            "on-secondary": "#ffffff",
+            "surface-variant": "#e1e2e4",
+            "on-tertiary-fixed": "#002021",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-fixed-dim": "#00dce1",
+            "surface-container-low": "#f3f4f6",
+            "secondary-fixed-dim": "#c6c6c6",
+            "on-primary-fixed": "#211c00",
+            "on-error-container": "#93000a",
+            "on-primary-fixed-variant": "#514700",
+            "surface-tint": "#6c5e00",
+            "surface-bright": "#f8f9fb",
+            "on-primary-container": "#726300",
+            "tertiary-fixed": "#2efaff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "stack-lg": "16px",
+            "stack-md": "8px",
+            "stack-sm": "4px",
+            "container-margin": "16px",
+            "gutter": "12px",
+            "section-gap": "32px"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Inter"],
+            "label-xs": ["Inter"],
+            "headline-md": ["Inter"],
+            "headline-lg": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "label-sm": ["Inter"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "800"}],
+            "label-xs": ["10px", {"lineHeight": "1", "fontWeight": "700"}],
+            "headline-md": ["20px", {"lineHeight": "1.3", "fontWeight": "700"}],
+            "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "body-lg": ["16px", {"lineHeight": "1.5", "fontWeight": "500"}],
+            "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+            "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      background-color: #f8f9fb;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hero-gradient {
+      background: linear-gradient(180deg, #ffe100 0%, #f8f9fb 100%);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center px-container-margin h-16 w-full bg-surface dark:bg-on-surface border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform p-2 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Discover</h1>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 pb-32 min-h-screen">
+<!-- Hero Header -->
+<section class="hero-gradient px-container-margin pt-4 pb-8">
+<div class="flex flex-col gap-1">
+<h2 class="font-headline-md text-headline-md text-on-surface">Categories picked just for you</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Based on your recent lifestyle and shopping habits.</p>
+</div>
+</section>
+<!-- Personalized Cards Bento -->
+<section class="px-container-margin -mt-4 space-y-stack-lg">
+<!-- Pet Supplies Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden group active:scale-[0.98] transition-all">
+<div class="flex flex-col">
+<div class="h-48 w-full relative">
+<img class="w-full h-full object-cover" data-alt="A high-end editorial product shot of premium organic dog food, a sleek ceramic bowl, and a minimalist leash arranged on a clean white marble surface. The lighting is soft and professional with a bright light-mode aesthetic, utilizing Blinkit's signature yellow and black accents. The mood is reliable and clean, perfect for a high-velocity quick commerce platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9zhR76Z1tabmn_KtTEe5yK-D3iuw1uzKjIELzOjIzBinZxT7G-0ooMNuZto6Apz2wN47BohMMk6lQRGyjZ-7tpEJRDeMyiBOw09k7DlUu11jjoEmUERyl0ufixcZYxdYTCnKpt7els0vSG4mCmVk3ASuA-vGm-5eEEdRyIa6dIi8pSCBO6VXWManZJ7DvQ3mUxzi6sGAi520_pR1Ex-ZWAfGi76ERTz_QV2MaO4aUw7yVlcq5sxodY9mzW-3tZ6lN2gaH2kqqKKqB"/>
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">pets</span>
+              Pet Supplies
+            </div>
+</div>
+<div class="p-4 flex flex-col gap-3">
+<div class="italic font-body-md text-body-md text-on-surface-variant pl-4 border-l-4 border-primary">
+              "Fast delivery, always fresh. Your pets don't have to wait for dinner."
+            </div>
+<div class="flex items-center justify-between mt-2">
+<h3 class="font-headline-md text-headline-md">Explore Pet Supplies</h3>
+<button class="w-10 h-10 rounded-full bg-on-secondary-fixed text-white flex items-center justify-center hover:bg-black transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Baby Products Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden group active:scale-[0.98] transition-all">
+<div class="flex flex-row-reverse">
+<div class="w-1/3 h-auto relative">
+<img class="w-full h-full object-cover" data-alt="A macro shot of soft organic baby cotton products and a premium diaper pack on a light beige background. The scene is illuminated by gentle morning light to evoke a sense of purity and reliability. The visual style is modern corporate with a minimalist touch, using neutral tones and Blinkit yellow as a focal signal color." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHZaHIxRJua4udqwoTsbpkPKU3DFbppDtHG8sSHwsMrdUrRqyDhlEuQirUkudqdpxeUPU1x1N4pMAMD2bGpsmVPbkcTr9z1gMuYNdFZkbi4VdFR9XY-2q-8LP_N5brfdjdBlGv8dKmjPRqckktTgO2Vduer0ymg6w95SxJ5ra0rn0Srex2VKo8J51nDzAuktF7lS4KCOP1DOKH6_kIwS1ZJjUHFpM4ZtbqJ0wFR2zhWzNVwcBVX0oWbhcH7FZzDGum8bbExYM9mP2b"/>
+</div>
+<div class="w-2/3 p-4 flex flex-col justify-between gap-4">
+<div>
+<div class="inline-flex bg-primary-container text-on-primary-container px-2 py-0.5 rounded-full font-label-xs text-label-xs mb-2">
+                FOR THE LITTLE ONES
+              </div>
+<h3 class="font-headline-md text-headline-md block">Baby Products</h3>
+<div class="italic font-body-md text-body-md text-on-surface-variant mt-2">
+                "Gentle care, delivered in minutes. Because they can't wait."
+              </div>
+</div>
+<button class="flex items-center gap-2 font-label-sm text-label-sm text-primary uppercase tracking-wider group-hover:gap-3 transition-all">
+              Explore Baby Products <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Personal Care Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden group active:scale-[0.98] transition-all">
+<div class="p-4">
+<div class="flex items-start justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">face</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Personal Care</h3>
+</div>
+<div class="bg-tertiary-container text-on-tertiary-container px-2 py-1 rounded font-label-xs text-label-xs">NEW COLLECTIONS</div>
+</div>
+<div class="grid grid-cols-2 gap-stack-md mb-4">
+<div class="aspect-square rounded-lg bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A collection of minimalist skincare bottles and tubes arranged artistically on a neutral gray surface. The lighting is crisp, highlighting the textures of the packaging. The aesthetic is clean and efficient, maintaining Blinkit's modern corporate identity with a focus on quick delivery and product quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkCoOKE_kT-LrI1TOByeouA1e_FdPViVxQuy8e1t8S4eIu-70FzZNHcZlf15U_bcgtI-4cGpx3Y6ttvzuCT-oRC6tFBuzEU_7IS2q9EgMqea7eTxpRpqExRZjBvcXfj9Am9p93G6NRtxC3K_YWjxZLCzQko4fYcou4jsYvT6eGIy9-Zw2vwyWOP3Db2sYIrNt3DStBLXkjtXkYgj4R6QmYa5n-AtOZSoPvZgE9qJi9LPKIbQX8Xv1MK6WQ7d_4-8SPn7D3H88CJ7Nf"/>
+</div>
+<div class="aspect-square rounded-lg bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A top-down view of premium bath and body products, including a wooden brush and organic soap, on a textured white background. High-contrast bold lighting emphasizes the luxury feel within a fast-commerce context. The image uses a clean, light-mode palette to ensure visual consistency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe_h076VzuR-ei--ocRATh0qkzd1PTB3IUSbCVI5IAialIugJZoml81x6BZKZFft615rD52alpkkYfe33deV8jp3FAyGpHk477vpbu84DmLMlgWTuu2MGBFRT3SFdZqZJPryFlVMOIhIayj5e6K845P6MCyaZ1GuwACR20tnIS69TJLIt8U_u2TgqhWtKloZyyQcN017Wrg89XBFUlZiq5LRnNkv9phKIbCbTdGSGTTg9V6n7XtAi-GCT0sPvje4w3bNRkX9BtiKo9"/>
+</div>
+</div>
+<div class="italic font-body-md text-body-md text-on-surface-variant mb-6 text-center">
+             "Self-care is only 10 minutes away."
+           </div>
+<button class="w-full py-4 bg-on-secondary-fixed text-on-primary rounded-xl font-label-sm text-label-sm uppercase tracking-widest active:scale-95 transition-all">
+             Explore Personal Care →
+           </button>
+</div>
+</div>
+</section>
+<!-- Search Prompt -->
+<div class="px-container-margin mt-section-gap mb-12">
+<div class="bg-primary-container/20 border border-primary/20 rounded-2xl p-6 flex flex-col items-center text-center gap-4">
+<span class="material-symbols-outlined text-4xl text-primary">search_spark</span>
+<h4 class="font-headline-md text-headline-md">Not finding what you need?</h4>
+<p class="font-body-md text-body-md">Search across 10,000+ items across all categories.</p>
+<div class="w-full relative">
+<input class="w-full h-12 rounded-full border-outline-variant bg-white pl-12 pr-4 focus:ring-primary focus:border-primary" placeholder="Search for 'Milk', 'Eggs' or 'Bread'" type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant">mic</span>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-4 pb-6 pt-2 bg-surface shadow-[0px_10px_30px_rgba(0,0,0,0.08)] rounded-t-xl">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<!-- Discover (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</a>
+<!-- Categories -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label-sm text-label-sm mt-1">Categories</span>
+</a>
+<!-- Print -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">print</span>
+<span class="font-label-sm text-label-sm mt-1">Print</span>
+</a>
+<!-- Ambulance -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-error">emergency</span>
+<span class="font-label-sm text-label-sm mt-1">Ambulance</span>
+</a>
+<!-- Bistro Pill -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">restaurant</span>
+<span class="font-label-sm text-label-sm">Bistro</span>
+</a>
+</nav>
+<script>
+    // Micro-interactions for the interactive elements
+    document.querySelectorAll('.active\\:scale-95, .active\\:scale-90, .active\\:scale-\\[0\\.98\\]').forEach(el => {
+      el.addEventListener('touchstart', () => {}, {passive: true});
+    });
+
+    // Simple scroll behavior for top bar shadow
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 20) {
+        header.classList.add('shadow-md');
+      } else {
+        header.classList.remove('shadow-md');
+      }
+    });
+  </script>
+</body></html>

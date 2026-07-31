@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "ui/server.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "data/**",
+          "ui/index.html"
+        ]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/ui/server.js"
+    }
+  ]
+}

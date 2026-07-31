@@ -1,0 +1,255 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<title>Checkout | Blinkit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#e2e2e2",
+                    "secondary": "#5e5e5e",
+                    "on-secondary-container": "#646464",
+                    "tertiary-fixed": "#2efaff",
+                    "surface-bright": "#f8f9fb",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#f3f4f6",
+                    "on-primary": "#ffffff",
+                    "primary": "#6c5e00",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2e3132",
+                    "surface": "#f8f9fb",
+                    "on-tertiary-fixed": "#002021",
+                    "surface-container": "#edeef0",
+                    "tertiary-fixed-dim": "#00dce1",
+                    "outline-variant": "#cec6aa",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#006f71",
+                    "surface-tint": "#6c5e00",
+                    "background": "#f8f9fb",
+                    "surface-container-high": "#e7e8ea",
+                    "inverse-primary": "#e1c700",
+                    "tertiary": "#00696c",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "primary-container": "#ffe100",
+                    "on-secondary-fixed-variant": "#474747",
+                    "on-primary-fixed-variant": "#514700",
+                    "on-background": "#191c1e",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#ffe330",
+                    "on-primary-container": "#726300",
+                    "on-surface-variant": "#4c4732",
+                    "outline": "#7d775f",
+                    "on-surface": "#191c1e",
+                    "surface-dim": "#d9dadc",
+                    "primary-fixed-dim": "#e1c700",
+                    "inverse-on-surface": "#f0f1f3",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "on-primary-fixed": "#211c00",
+                    "tertiary-container": "#00f9fe",
+                    "on-tertiary-fixed-variant": "#004f51",
+                    "surface-container-highest": "#e1e2e4",
+                    "secondary-fixed": "#e2e2e2",
+                    "surface-variant": "#e1e2e4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "8px",
+                    "section-gap": "32px",
+                    "container-margin": "16px",
+                    "gutter": "12px",
+                    "stack-sm": "4px",
+                    "stack-lg": "16px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-xs": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                    "label-xs": ["10px", {"lineHeight": "1", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "headline-md": ["20px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim w-full top-0 border-b border-outline-variant dark:border-outline flex items-center px-container-margin h-14 w-full z-50 sticky">
+<div class="flex items-center gap-4 w-full">
+<button class="active:scale-95 transition-transform hover:opacity-80 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface">Checkout</h1>
+</div>
+</header>
+<main class="pb-40 px-container-margin space-y-4 pt-4">
+<!-- Delivery Address Card -->
+<section class="bg-surface-container-lowest rounded-lg border border-outline-variant p-4 flex items-start gap-3">
+<div class="bg-surface-container-high p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">home</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1">
+<span class="font-body-lg text-body-lg font-bold">Home - 15 mins</span>
+<button class="text-primary font-label-sm text-label-sm uppercase tracking-wider">Change</button>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md leading-snug">
+                    B-1204, Heights Apartment, Sector 45, Gurgaon, Haryana - 122003
+                </p>
+</div>
+</section>
+<!-- Cart Section -->
+<section class="space-y-3">
+<h2 class="font-label-sm text-label-sm text-on-secondary-container uppercase tracking-widest pl-1">Items in cart</h2>
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden">
+<div class="p-4 flex items-center gap-4">
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A professional studio product shot of a Pedigree Adult Dry Dog Food bag, set against a clean, bright minimalist background. The lighting is soft and even, highlighting the vibrant yellow packaging and detailed textures. High-contrast colors and sharp focus emphasize the premium quality of the brand within a modern quick-commerce UI context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBspnqqJLc9_NoGNaQ8JKIGNebc4eMEPR2olyStHxq0Np1PbM8MKztOxbA3GzQyYzlZyqtUDiMVZlVmXHmgEovcB17ezig2xXPozSd6lNRgtV-li5QZ8XTCeqbUPMOauAAV79TD0SDK_iFLhdgd5mijTdyrmeYwsaBNDoeAC9mGroKrZTuISD_WmY4Jankd8BkzPuy4wxfb0-UsCkF2UGsUZnyR3Lvhn9EU8xqN5KocGpvOrSIlcjC6cQtwEOwhf7kNKHKFL-XV06cq">
+</div>
+<div class="flex-1">
+<h3 class="font-body-md text-body-md font-semibold text-on-surface">Pedigree Adult Dry Dog Food</h3>
+<p class="text-on-surface-variant font-label-sm text-label-sm">1.2 kg</p>
+<div class="mt-1 flex items-center justify-between">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹649</span>
+<div class="flex items-center gap-3 bg-primary-container/20 border border-primary-container rounded-lg px-2 py-1">
+<button class="text-primary font-bold">－</button>
+<span class="font-bold text-on-primary-container">1</span>
+<button class="text-primary font-bold">＋</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Micro-interaction: Delivery Promise -->
+<div class="bg-surface-container-low px-4 py-2 border-t border-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">speed</span>
+<span class="text-label-sm font-label-sm text-secondary">Free delivery on orders above ₹700</span>
+</div>
+</div>
+</section>
+<!-- Bill Details -->
+<section class="space-y-3">
+<h2 class="font-label-sm text-label-sm text-on-secondary-container uppercase tracking-widest pl-1">Bill Details</h2>
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant p-4 space-y-3">
+<div class="flex justify-between items-center text-body-md font-body-md text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">list_alt</span>
+<span class="">Item total</span>
+</div>
+<span class="text-on-surface">₹649</span>
+</div>
+<div class="flex justify-between items-center text-body-md font-body-md text-on-surface-variant"><div class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">delivery_dining</span><span class="">Delivery fee</span></div><div class="flex items-center gap-2"><span class="line-through text-secondary">₹25</span><span class="text-primary font-bold">Free</span></div></div>
+<div class="flex justify-between items-center text-body-md font-body-md text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">info</span>
+<span class="">Handling fee</span>
+</div>
+<span class="text-on-surface">₹5</span>
+</div>
+<div class="pt-3 border-t border-outline-variant flex justify-between items-center">
+<span class="font-bold text-on-surface text-body-lg">Grand Total</span>
+<span class="font-bold text-on-surface text-body-lg">₹679</span>
+</div>
+</div>
+</section>
+<!-- Cancellation Policy Note -->
+<div class="bg-surface-container rounded-lg p-4 flex gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">description</span>
+<p class="text-label-sm font-label-sm text-on-surface-variant leading-relaxed">
+                Orders cannot be cancelled once packed for delivery. In case of unexpected delays, a refund will be provided as per policy.
+            </p>
+</div>
+</main>
+<!-- Fixed Bottom Section -->
+<div class="fixed bottom-0 left-0 w-full z-[60]">
+<!-- Payment Call to Action -->
+<div class="bg-surface p-container-margin shadow-[0px_-4px_20px_rgba(0,0,0,0.08)]">
+<div class="flex items-center justify-between gap-4 mb-4">
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg font-extrabold text-on-surface">₹679</span>
+<span class="text-label-xs font-label-xs text-primary uppercase font-bold">View Detailed Bill</span>
+</div>
+<button class="bg-primary-container text-on-primary-container flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-body-lg text-body-lg font-bold active:scale-95 transition-all shadow-md flex-1">
+                    Select Payment Method
+                    <span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Bottom Navigation Bar (Hidden on checkout but requested to maintain structure) -->
+<nav class="bg-surface dark:bg-surface-container-highest shadow-[0px_-2px_10px_rgba(0,0,0,0.05)] flex justify-around items-center h-16 px-2 pb-safe w-full border-t border-outline-variant/30">
+<button class="flex flex-col items-center justify-center text-secondary dark:text-on-secondary-fixed-variant active:scale-90 transition-all duration-200 hover:bg-surface-container-low">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-xs text-label-xs">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-on-secondary-fixed-variant active:scale-90 transition-all duration-200 hover:bg-surface-container-low">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-xs text-label-xs">Discover</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-on-secondary-fixed-variant active:scale-90 transition-all duration-200 hover:bg-surface-container-low">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label-xs text-label-xs">Categories</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-on-secondary-fixed-variant active:scale-90 transition-all duration-200 hover:bg-surface-container-low">
+<span class="material-symbols-outlined">print</span>
+<span class="font-label-xs text-label-xs">Print</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-on-secondary-fixed-variant active:scale-90 transition-all duration-200 hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-error">emergency</span>
+<span class="font-label-xs text-label-xs">Ambulance</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-3 py-1 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined">restaurant</span>
+<span class="font-label-xs text-label-xs">Bistro</span>
+</button>
+</nav>
+</div>
+<!-- Micro-interaction Scripts -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Ripple effect simulation on payment button
+            const btn = document.querySelector('button.bg-primary-container');
+            btn.addEventListener('click', function(e) {
+                const x = e.clientX - e.target.offsetLeft;
+                const y = e.clientY - e.target.offsetTop;
+                const ripple = document.createElement('span');
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                ripple.className = 'absolute bg-white/20 rounded-full w-2 h-2 animate-ping';
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 1000);
+            });
+        });
+    </script>
+
+
+</body></html>

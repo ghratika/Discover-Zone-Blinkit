@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Discover - Quick Commerce</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#1b1b1b",
+                    "on-surface": "#191c1e",
+                    "on-secondary-fixed-variant": "#474747",
+                    "outline-variant": "#cec6aa",
+                    "surface-dim": "#d9dadc",
+                    "tertiary": "#00696c",
+                    "primary": "#6c5e00",
+                    "inverse-primary": "#e1c700",
+                    "on-tertiary-container": "#006f71",
+                    "error-container": "#ffdad6",
+                    "on-surface-variant": "#4c4732",
+                    "error": "#ba1a1a",
+                    "outline": "#7d775f",
+                    "surface-container-highest": "#e1e2e4",
+                    "surface-container-high": "#e7e8ea",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-tertiary": "#ffffff",
+                    "primary-container": "#ffe100",
+                    "on-background": "#191c1e",
+                    "surface": "#f8f9fb",
+                    "background": "#f8f9fb",
+                    "on-tertiary-fixed-variant": "#004f51",
+                    "on-secondary-container": "#646464",
+                    "primary-fixed": "#ffe330",
+                    "secondary": "#5e5e5e",
+                    "inverse-surface": "#2e3132",
+                    "surface-container": "#edeef0",
+                    "primary-fixed-dim": "#e1c700",
+                    "secondary-container": "#e2e2e2",
+                    "tertiary-container": "#00f9fe",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f0f1f3",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e1e2e4",
+                    "on-tertiary-fixed": "#002021",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#00dce1",
+                    "surface-container-low": "#f3f4f6",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "on-primary-fixed": "#211c00",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#514700",
+                    "surface-tint": "#6c5e00",
+                    "surface-bright": "#f8f9fb",
+                    "on-primary-container": "#726300",
+                    "tertiary-fixed": "#2efaff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "16px",
+                    "stack-md": "8px",
+                    "stack-sm": "4px",
+                    "container-margin": "16px",
+                    "gutter": "12px",
+                    "section-gap": "32px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Inter"],
+                    "label-xs": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                    "label-xs": ["10px", { "lineHeight": "1", "fontWeight": "700" }],
+                    "headline-md": ["20px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                    "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                    "body-lg": ["16px", { "lineHeight": "1.5", "fontWeight": "500" }],
+                    "body-md": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                    "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600" }]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant flex items-center px-container-margin h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform p-2 -ml-2">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Discover</h1>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 mt-16 pb-32 px-container-margin">
+<!-- Welcome Section -->
+<section class="py-stack-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Welcome!</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Popular categories to get you started</p>
+</section>
+<!-- Bento Grid / Category Cards -->
+<div class="grid grid-cols-1 gap-stack-lg">
+<!-- Category Card: Personal Care -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden active:scale-[0.98] transition-transform">
+<div class="relative h-48">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist arrangement of premium personal care products including organic soaps, facial serums, and soft cotton towels. The scene is lit with warm, natural sunlight in a bright, modern bathroom setting. The color palette consists of soft beiges, ivory, and vibrant yellow accents to align with the brand's energetic visual identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGEJ9WxhzSYGd7wJhWXReu5PoXn_I1viG_zTlKnlZPMRGOcSM5SXNuqRJPxnyCiAAJQ3MTGJJO96EmO4LRL7orPR4DKBrc4f9lM6eSP0fQ1CghT39CnbpQfH9-dLnLL0BA46xRlsE4xf2YlGW696qgvUL6_LhI198aa2lkzpGMf6adxWYp_Fofv9wwQoq-euIfGlwcw_mztIXWD34UnhwpXoYKNwfDkk7n-SAdYVfxuqqltlMEFxYufMYg_HPyWX33lkA8pbwU8di7"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-primary-container text-on-primary-container font-label-xs text-label-xs px-2 py-1 rounded-full uppercase tracking-wider">Top Rated</span>
+</div>
+</div>
+<div class="p-stack-lg">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Personal Care</h3>
+<div class="bg-surface-container rounded-lg p-stack-md mb-stack-lg relative overflow-hidden">
+<span class="material-symbols-outlined text-on-surface-variant/20 absolute -right-2 -bottom-2 text-4xl" data-icon="format_quote">format_quote</span>
+<p class="font-body-md text-body-md text-on-surface-variant italic">"Great quality, arrived the same day."</p>
+</div>
+<button class="w-full py-3 bg-on-surface text-on-primary font-body-lg text-body-lg rounded-xl flex items-center justify-center gap-2">
+                        Explore Personal Care
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Category Card: Household Basics -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden active:scale-[0.98] transition-transform">
+<div class="relative h-48">
+<img class="w-full h-full object-cover" data-alt="A high-contrast, modern display of household essentials like eco-friendly laundry detergents, paper towels, and organized kitchen cleaning supplies. The image has a sharp, clean commercial photography style with high-key lighting. The aesthetic is ultra-efficient and reliable, utilizing a crisp white background with bold black and yellow highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRxi07cD2AyHv2Ym6vjlnsFQ8Q6FvRgOiAJkKlmruDafrEj4JVMJ9Fx0MLmIRSrUfYOhkydm1YV8SpTsKDNTGQrR-oW_aGOY_OUM-XqvxQMx1c3FJCCjA4kdGSHzHHDGYDxfOYGwCMuUhSiJtT6a-I_1MlRu4F0kpmsS4Wim2SEy4lnnxPQTaCs_ZoJSmW2Kyus3uip-LQCnlJ4X-M9D9mGhr0kANn3i4AKcagTqCxz6yB8OyG2yFlElRkV1zAlwVxgdzEP9V9dHzA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-primary-container text-on-primary-container font-label-xs text-label-xs px-2 py-1 rounded-full uppercase tracking-wider">Essentials</span>
+</div>
+</div>
+<div class="p-stack-lg">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Household Basics</h3>
+<div class="bg-surface-container rounded-lg p-stack-md mb-stack-lg relative">
+<span class="material-symbols-outlined text-on-surface-variant/20 absolute -right-2 -bottom-2 text-4xl" data-icon="format_quote">format_quote</span>
+<p class="font-body-md text-body-md text-on-surface-variant italic">"Everything I need, delivered in minutes."</p>
+</div>
+<button class="w-full py-3 bg-on-surface text-on-primary font-body-lg text-body-lg rounded-xl flex items-center justify-center gap-2">
+                        Explore Household Basics
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Category Card: Snacks -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden active:scale-[0.98] transition-transform">
+<div class="relative h-48">
+<img class="w-full h-full object-cover" data-alt="A vibrant, energetic close-up of colorful snack packaging including gourmet chips, chocolates, and healthy nuts spilling out of a sleek delivery bag. The lighting is bright and fast-paced, evoking a 'deliver-it-now' feeling. The composition is dynamic and casual, emphasizing high contrast and bold primary colors like yellow and black." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIiDUe4PGslyYlVr1Zx1F-JRgBQRai2nVF-z-CaWRwgA0XVy_kbnQDwBctYeiniZRjeQXlq0rj_9GBHGqx3bTeXne9a8RiruYwgyskqVVh5Jiv3zEKf-pa5-GhWbch6kfIEBO_8ZfiLBxQPS0Gc8JxiVRqTPt18QLk7HsU9Bn9LjiSbHl2Gk4DkvwH06pbYJ_yeXK2d15bqZ4UM3CBzTh_N5vwWhlma6Gxc0OcD9lO-LxwOr8RD0C_cSboAr87fBfQue3ZcbVA5l5l"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-primary-container text-on-primary-container font-label-xs text-label-xs px-2 py-1 rounded-full uppercase tracking-wider">Fastest Delivery</span>
+</div>
+</div>
+<div class="p-stack-lg">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Snacks</h3>
+<div class="bg-surface-container rounded-lg p-stack-md mb-stack-lg relative">
+<span class="material-symbols-outlined text-on-surface-variant/20 absolute -right-2 -bottom-2 text-4xl" data-icon="format_quote">format_quote</span>
+<p class="font-body-md text-body-md text-on-surface-variant italic">"The best selection for movie nights!"</p>
+</div>
+<button class="w-full py-3 bg-on-surface text-on-primary font-body-lg text-body-lg rounded-xl flex items-center justify-center gap-2">
+                        Explore Snacks
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-4 pb-6 pt-2 bg-surface shadow-[0px_10px_30px_rgba(0,0,0,0.08)] rounded-t-xl">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<!-- Discover (Active State) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="search" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</a>
+<!-- Categories -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label-sm text-label-sm">Categories</span>
+</a>
+<!-- Print -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="print">print</span>
+<span class="font-label-sm text-label-sm">Print</span>
+</a>
+<!-- Ambulance -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-error" data-icon="emergency">emergency</span>
+<span class="font-label-sm text-label-sm">Ambulance</span>
+</a>
+<!-- Bistro (The Pill High-Contrast Item) -->
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-4 py-1 active:scale-90 transition-all duration-200 shadow-lg shadow-primary/20" href="#">
+<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
+<span class="font-label-sm text-label-sm">Bistro</span>
+</a>
+</nav>
+<script>
+        // Simple interactive micro-effects
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('click', (e) => {
+                // Add click feedback if needed
+            });
+        });
+
+        // Atmospheric fade-in on load
+        window.addEventListener('DOMContentLoaded', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.4s ease';
+            requestAnimationFrame(() => {
+                document.body.style.opacity = '1';
+            });
+        });
+    </script>
+</body></html>

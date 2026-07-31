@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Dog Food - Quick Commerce</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface": "#f8f9fb",
+                "on-secondary-container": "#646464",
+                "primary": "#6c5e00",
+                "on-secondary-fixed-variant": "#474747",
+                "secondary-fixed": "#e2e2e2",
+                "surface-container": "#edeef0",
+                "error": "#ba1a1a",
+                "surface-tint": "#6c5e00",
+                "surface-container-low": "#f3f4f6",
+                "surface-container-high": "#e7e8ea",
+                "on-primary-fixed": "#211c00",
+                "tertiary-container": "#00f9fe",
+                "outline-variant": "#cec6aa",
+                "surface-variant": "#e1e2e4",
+                "on-error": "#ffffff",
+                "surface-dim": "#d9dadc",
+                "secondary-fixed-dim": "#c6c6c6",
+                "tertiary-fixed-dim": "#00dce1",
+                "surface-container-highest": "#e1e2e4",
+                "inverse-surface": "#2e3132",
+                "surface-bright": "#f8f9fb",
+                "on-primary-container": "#726300",
+                "on-tertiary-container": "#006f71",
+                "on-tertiary-fixed": "#002021",
+                "on-secondary": "#ffffff",
+                "on-secondary-fixed": "#1b1b1b",
+                "on-tertiary": "#ffffff",
+                "on-error-container": "#93000a",
+                "on-primary": "#ffffff",
+                "on-background": "#191c1e",
+                "primary-container": "#ffe100",
+                "inverse-on-surface": "#f0f1f3",
+                "tertiary-fixed": "#2efaff",
+                "outline": "#7d775f",
+                "on-primary-fixed-variant": "#514700",
+                "inverse-primary": "#e1c700",
+                "primary-fixed-dim": "#e1c700",
+                "secondary": "#5e5e5e",
+                "on-surface-variant": "#4c4732",
+                "secondary-container": "#e2e2e2",
+                "background": "#f8f9fb",
+                "on-surface": "#191c1e",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-fixed-variant": "#004f51",
+                "tertiary": "#00696c",
+                "primary-fixed": "#ffe330",
+                "error-container": "#ffdad6",
+                "accent-green": "#0c831f"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "headline-lg": ["Inter"],
+                "body-lg": ["Inter"],
+                "label-xs": ["Inter"],
+                "label-sm": ["Inter"],
+                "headline-md": ["Inter"],
+                "body-md": ["Inter"],
+                "headline-lg-mobile": ["Inter"]
+            },
+            "fontSize": {
+                "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "body-lg": ["16px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                "label-xs": ["10px", {"lineHeight": "1", "fontWeight": "700"}],
+                "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                "headline-md": ["20px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "800"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .sidebar-active { border-left: 4px solid #0c831f; background: #f0fdf4; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+        .fill { font-variation-settings: 'FILL' 1; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface">
+<!-- Top AppBar (JSON Source of Truth Mapping) -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant flex items-center px-4 h-16 w-full">
+<div class="flex items-center w-full justify-between">
+<div class="flex items-center gap-3">
+<button class="active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-headline-md text-headline-md text-on-surface leading-tight">Dog Food</h1>
+<div class="flex items-center gap-1">
+<span class="text-[11px] font-semibold text-accent-green truncate max-w-[180px]">Delivering to Home: [Address], ground flo...</span>
+<span class="material-symbols-outlined text-[14px] text-accent-green">expand_more</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-surface">search</span>
+</button>
+<button class="active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-surface">share</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-16 pb-24 flex min-h-screen">
+<!-- Left Vertical Sidebar (Sub-category rail) -->
+<aside class="w-24 fixed left-0 top-16 bottom-24 overflow-y-auto bg-surface border-r border-outline-variant no-scrollbar">
+<div class="flex flex-col py-2">
+<!-- Adult Dog Food (Selected) -->
+<div class="sidebar-active flex flex-col items-center py-4 px-2 text-center gap-2">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional product shot of a premium golden retriever adult dog face looking happy, set against a bright studio background, high contrast, commerce style, sharp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl3RwvKACEQDSr7-8ZaPQ9WW0FT-K7b2Rc8nl4s1ocKYBUOrcdfRGcASB7siaTYJszKIOaReyHvafuyjCyYOhjiO2FiFWui9T6IJs1i9-9CJuhKS9AnAB6P2GkGRpCGrYC3KVWIrhJJLjgfjfcfmOdYr7a30_JaOJzBMIRZ7vB4CuOEyDqP7A8_tb11UqJYkeD5PEQh9AikPR4G-DiW0y8GXwiMLJBO9oCiEZ8eltNDAAp8c8nsrk1D0ZNTuPBOJbNRBxAoKHeEuPy"/>
+</div>
+<span class="text-[10px] font-bold leading-tight">Adult Dog Food</span>
+</div>
+<!-- Puppy Dog Food -->
+<div class="flex flex-col items-center py-4 px-2 text-center gap-2 border-l-4 border-transparent">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A cute labrador puppy face looking up playfully, bright and clear photography, minimalist light-mode aesthetic, pet commerce style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrzyF26mF5-lkK9fmUdiQEz4SKND7A2jJpuOo1miVZgnwblzMQqN7q-NgXkpEPBgqS747iEgKZrI9m2aubgVYGBJ0OR6ytpSyKOTPAcbh-gbZKNe2blkdxHQzqcYqCtttM-0JptvE8xK33o_0X1tiOZvsimqxdnJm53m60hTSWnm9OrGZNqfH88-QSBeYSwDe_qa5N3nYXIs8WJwmoqh_zsmZEWPZtRS9W-9KuVidQErMEvyl0R6HKdoqKutiQ-vYGbr5Rh4dhAe84"/>
+</div>
+<span class="text-[10px] font-medium leading-tight text-on-surface-variant">Puppy Dog Food</span>
+</div>
+<!-- Dog Food Toppers -->
+<div class="flex flex-col items-center py-4 px-2 text-center gap-2 border-l-4 border-transparent">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A macro close-up of colorful and nutritious dog food toppers and supplements, vibrant and fresh look, bright light-mode studio photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6u1xYiIHOGdd8Jr1VqDWArmUlOAqLX183JxJIsuPszRmJ_c2ETHK4x1A-jOi9BvJnAuDMSVeflpaoS5ULyzedd4T6qFrW-WlhovpqyVEjxyC1xaDvFIb1oks3IRWseWurROHmZie6EhnXFusoIrp_MFaTVz9khx4ePInu4clxZIOIPOCSeejq0Uaf_OUGNF7MzaHoCjF0bjAaFMcF1FnfrUAbL1Fy9tgPyR6u55LdSi8l0nRBD76YlRXN0dxHhBGE2oF_xJdzQntb"/>
+</div>
+<span class="text-[10px] font-medium leading-tight text-on-surface-variant">Dog Food Toppers</span>
+</div>
+<!-- Wet Dog Food -->
+<div class="flex flex-col items-center py-4 px-2 text-center gap-2 border-l-4 border-transparent">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A bowl of high-quality gourmet wet dog food with visible meat chunks and gravy, vibrant and appetizing commercial pet photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdbgtBXnqpCkk_xgZYowy17GCPd15QkaiSMoZ-EmN9k8l_0WsyqsD49a-D7ghYSFPzIlA_tp5l5VG-1ewlF9JL7hZM0nEwFqDnw2hr3QthAM9Bh2iAhiSymOxfiiFsVpuIxh_XR90oSzN5LbpERNhgLRSDUH0jtGS3U99shsTlL_9838dMJJkn5JQan15I28vuQffUFhUAzvDpKji9_1K8lOVAtctfvmQJn4HJopj26lKMQ0Z1eaEE8IJfVUCl_lKM4mC5GG0Jxi8P"/>
+</div>
+<span class="text-[10px] font-medium leading-tight text-on-surface-variant">Wet Dog Food</span>
+</div>
+</div>
+</aside>
+<!-- Right Content Area -->
+<section class="ml-24 flex-1">
+<!-- Filter/Sort Bar -->
+<div class="sticky top-16 z-40 bg-surface px-3 py-3 border-b border-outline-variant overflow-x-auto flex gap-2 no-scrollbar">
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-outline-variant bg-surface-container-lowest active:scale-95 transition-transform shrink-0">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span class="text-label-sm font-label-sm">Filters</span>
+</button>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-outline-variant bg-surface-container-lowest active:scale-95 transition-transform shrink-0">
+<span class="text-label-sm font-label-sm">Sort</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-outline-variant bg-surface-container-lowest active:scale-95 transition-transform shrink-0">
+<span class="text-label-sm font-label-sm">Pet Food Type</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+<!-- Product Grid -->
+<div class="p-3 grid grid-cols-2 gap-x-3 gap-y-6">
+<!-- Product Card 1 -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden relative">
+<div class="relative w-full aspect-square bg-surface-container-low p-2">
+<img class="w-full h-full object-contain" data-alt="A bag of Pedigree Adult Dry Dog Food (Chicken &amp; Vegetables) shown clearly on a bright, minimalist background. The packaging is vibrant yellow with high-contrast text and product imagery, captured in professional studio lighting for quick-commerce apps." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXECpCs_DC7cPpDLoVP-wQBICDYetOBtasIbkT68r7Fq0vlPGNqUhWi7FeM6fZjYWtYL6BTv4GwVaHcAyCdF9Fl96_IelIsOIUeDuLPyossdUr5mUpcUb1nq8ctt2CxpuKzvk9TPRMzu76OWYycKJaNfYjJmbli7Xqho9-8K0rz22QV6vQb6QZKsW8wmKHO1I40nNGQVM6xpCEf3c5s2NlvBiIIBctU5FsU4Db_zSnWbnBFJRxtnPAdDn0IxLFdsofmTPdmyrkL96u"/>
+<button class="absolute top-2 right-2 w-7 h-7 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+<span class="w-1 h-1 rounded-full bg-on-surface"></span>
+<span class="w-1 h-1 rounded-full bg-on-secondary-container/40"></span>
+<span class="w-1 h-1 rounded-full bg-on-secondary-container/40"></span>
+</div>
+<button class="absolute bottom-2 right-2 w-6 h-6 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">open_in_full</span>
+</button>
+</div>
+<div class="p-2.5 flex flex-col gap-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">schedule</span>
+<span class="text-[10px] font-bold text-on-surface">8 mins</span>
+</div>
+<h3 class="text-body-md font-bold leading-tight line-clamp-2 min-h-[40px]">Pedigree Adult Dry Dog Food (Chicken &amp; Vegetables)</h3>
+<div class="flex items-center gap-1 mt-0.5">
+<div class="bg-surface-container px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider">Adult</div>
+<div class="flex items-center text-[10px] font-bold">
+<span class="material-symbols-outlined fill text-yellow-500 text-[12px]">star</span>
+<span class="ml-0.5">4.0</span>
+<span class="text-on-secondary-container font-normal ml-0.5">(22,026)</span>
+</div>
+</div>
+<div class="text-[11px] text-on-secondary-container font-medium mt-1">3 kg</div>
+<div class="flex items-center justify-between mt-1">
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="text-body-lg font-bold">₹950</span>
+<span class="text-[10px] text-on-secondary-container line-through">₹1,200</span>
+</div>
+<span class="text-[9px] font-bold text-blue-600">20% OFF on MRP</span>
+</div>
+<div class="flex flex-col items-center">
+<button class="border border-accent-green text-accent-green font-bold text-[11px] px-3 py-1.5 rounded-lg active:scale-95 transition-transform bg-white">ADD</button>
+<span class="text-[8px] text-on-secondary-container mt-0.5 font-medium">2 options</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden relative">
+<div class="relative w-full aspect-square bg-surface-container-low p-2">
+<img class="w-full h-full object-contain" data-alt="Packaging of Royal Canin Medium Adult Dog Food, premium design with clean white and blue aesthetics. Professional high-key lighting, centered, sharp details, commercial pet supply aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUpT5PUjYGh0P8ZjcZUF0BuOXyedt9RoffCA0Or6Lnk78AGuSLJ1qahYiu-XCAmBc2AdqaPod6DygQwVwmOfMivqcmaPgcHTyMISEVf7jJ7_lGEm-tXEAC_V-_f719IpcPAonLoTa8x4GPjyoRd6UCTlBJNLJ-UpA82Hdw6R9CF5RwAjUPiCeYX8GBQXq6Ci8_9dwxE7scOBW4mMVGpGAygjgTFeWria3SlfNJ5XYGD-f5H27uSrwJQ4uuAbO-2niVGnJ86GH9qnrp"/>
+<button class="absolute top-2 right-2 w-7 h-7 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+<span class="w-1 h-1 rounded-full bg-on-surface"></span>
+<span class="w-1 h-1 rounded-full bg-on-secondary-container/40"></span>
+</div>
+<button class="absolute bottom-2 right-2 w-6 h-6 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">open_in_full</span>
+</button>
+</div>
+<div class="p-2.5 flex flex-col gap-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">schedule</span>
+<span class="text-[10px] font-bold text-on-surface">12 mins</span>
+</div>
+<h3 class="text-body-md font-bold leading-tight line-clamp-2 min-h-[40px]">Royal Canin Medium Adult Dry Dog Food</h3>
+<div class="flex items-center gap-1 mt-0.5">
+<div class="bg-surface-container px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider">Premium</div>
+<div class="flex items-center text-[10px] font-bold">
+<span class="material-symbols-outlined fill text-yellow-500 text-[12px]">star</span>
+<span class="ml-0.5">4.8</span>
+<span class="text-on-secondary-container font-normal ml-0.5">(8,142)</span>
+</div>
+</div>
+<div class="text-[11px] text-on-secondary-container font-medium mt-1">4 kg</div>
+<div class="flex items-center justify-between mt-1">
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="text-body-lg font-bold">₹2,850</span>
+<span class="text-[10px] text-on-secondary-container line-through">₹3,100</span>
+</div>
+<span class="text-[9px] font-bold text-blue-600">8% OFF on MRP</span>
+</div>
+<div class="flex flex-col items-center">
+<button class="border border-accent-green text-accent-green font-bold text-[11px] px-3 py-1.5 rounded-lg active:scale-95 transition-transform bg-white">ADD</button>
+<span class="text-[8px] text-on-secondary-container mt-0.5 font-medium">1 option</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden relative">
+<div class="relative w-full aspect-square bg-surface-container-low p-2">
+<img class="w-full h-full object-contain" data-alt="Chappi Adult Dry Dog Food bag, chicken and rice flavor. Yellow and red branding, classic quick-commerce product shot with balanced shadows and bright highlights on a neutral surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZe_VPldTh7klPAziwtpV6eDjCmL0uakBHQa-KF1A0XUwP9ryi4JDtnPg54MY3QXXBkQGhrLxmVnCYOmZ11qLQ52qOolfcmRDKLZOOAgjoS8kVGvVv8JKAPnYmcbi2olrGUagGosB7ahn_cH9URHbX6feZY48xKdCp9DkVN72dOg7TiWKfnKy9yJhvddK0H1MB6ltp0D5MuKo-Lr9q4bzY1J9_5ULvt4xGmbX5fd9Koq3PS1eWdD5qx7OCLsXeV3xcQZ4NTuziGy0V"/>
+<button class="absolute top-2 right-2 w-7 h-7 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<button class="absolute bottom-2 right-2 w-6 h-6 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">open_in_full</span>
+</button>
+</div>
+<div class="p-2.5 flex flex-col gap-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">schedule</span>
+<span class="text-[10px] font-bold text-on-surface">10 mins</span>
+</div>
+<h3 class="text-body-md font-bold leading-tight line-clamp-2 min-h-[40px]">Chappi Adult Dry Dog Food (Chicken &amp; Rice)</h3>
+<div class="flex items-center gap-1 mt-0.5">
+<div class="bg-surface-container px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider">Value</div>
+<div class="flex items-center text-[10px] font-bold">
+<span class="material-symbols-outlined fill text-yellow-500 text-[12px]">star</span>
+<span class="ml-0.5">4.2</span>
+<span class="text-on-secondary-container font-normal ml-0.5">(15,502)</span>
+</div>
+</div>
+<div class="text-[11px] text-on-secondary-container font-medium mt-1">2.8 kg</div>
+<div class="flex items-center justify-between mt-1">
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="text-body-lg font-bold">₹540</span>
+<span class="text-[10px] text-on-secondary-container line-through">₹600</span>
+</div>
+<span class="text-[9px] font-bold text-blue-600">10% OFF</span>
+</div>
+<div class="flex flex-col items-center">
+<button class="border border-accent-green text-accent-green font-bold text-[11px] px-3 py-1.5 rounded-lg active:scale-95 transition-transform bg-white">ADD</button>
+<span class="text-[8px] text-on-secondary-container mt-0.5 font-medium">3 options</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden relative">
+<div class="relative w-full aspect-square bg-surface-container-low p-2">
+<img class="w-full h-full object-contain" data-alt="Himalaya Healthy Pet Food for Adult Dogs, meat and rice variant. Clean medical-style packaging with green accents, high-quality resolution, studio lighting, isolated on white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL6BIa3fMeaXsTLo6xaL6VxChEoMtZc1Kz8uCsRKSXvCkuS_11J09uZNJAwS2LpaLRr9voe3JMWqM9l4SVWmCRy6VT-8gqAhX5P-IEh6YRwjV-jr2fr_1-riCH2p2DGkDWQH8VG2wYDJbSHAh446KW1l4gNDQnLkVSdOt9SJD3o3gxYWMjTuPk3yXeRIRbFSPW4kYadmX7-8DIH69rlOfiMA5cNcZV706TZ2mjeoJOXzAexUJO6hGvMTd15VPSoKBVjYF-zhohSBbN"/>
+<button class="absolute top-2 right-2 w-7 h-7 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<button class="absolute bottom-2 right-2 w-6 h-6 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">open_in_full</span>
+</button>
+</div>
+<div class="p-2.5 flex flex-col gap-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">schedule</span>
+<span class="text-[10px] font-bold text-on-surface">9 mins</span>
+</div>
+<h3 class="text-body-md font-bold leading-tight line-clamp-2 min-h-[40px]">Himalaya Healthy Pet Food (Meat &amp; Rice)</h3>
+<div class="flex items-center gap-1 mt-0.5">
+<div class="bg-surface-container px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider">Natural</div>
+<div class="flex items-center text-[10px] font-bold">
+<span class="material-symbols-outlined fill text-yellow-500 text-[12px]">star</span>
+<span class="ml-0.5">4.5</span>
+<span class="text-on-secondary-container font-normal ml-0.5">(3,221)</span>
+</div>
+</div>
+<div class="text-[11px] text-on-secondary-container font-medium mt-1">1.2 kg</div>
+<div class="flex items-center justify-between mt-1">
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="text-body-lg font-bold">₹315</span>
+<span class="text-[10px] text-on-secondary-container line-through">₹350</span>
+</div>
+<span class="text-[9px] font-bold text-blue-600">₹35 OFF</span>
+</div>
+<div class="flex flex-col items-center">
+<button class="border border-accent-green text-accent-green font-bold text-[11px] px-3 py-1.5 rounded-lg active:scale-95 transition-transform bg-white">ADD</button>
+<span class="text-[8px] text-on-secondary-container mt-0.5 font-medium">1 option</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (JSON Source of Truth Mapping) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-4 pb-6 pt-2 bg-surface shadow-[0px_10px_30px_rgba(0,0,0,0.08)] rounded-t-xl">
+<div class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined fill">search</span>
+<span class="font-label-sm text-label-sm mt-0.5">Discover</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label-sm text-label-sm mt-1">Categories</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined">print</span>
+<span class="font-label-sm text-label-sm mt-1">Print</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined text-error">emergency</span>
+<span class="font-label-sm text-label-sm mt-1 text-error">Ambulance</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container px-3 py-1 rounded-full active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined">restaurant</span>
+<span class="font-label-sm text-label-sm mt-0.5">Bistro</span>
+</div>
+</nav>
+<!-- Floating Action Button for Cart (Contextual Mockup) -->
+<div class="fixed bottom-[88px] right-4 z-[60]">
+<button class="bg-accent-green text-white px-5 py-3 rounded-2xl flex items-center gap-3 shadow-xl active:scale-95 transition-transform">
+<div class="flex flex-col items-start leading-tight">
+<span class="text-[10px] font-bold uppercase opacity-80">1 Item</span>
+<span class="text-body-lg font-extrabold">₹950</span>
+</div>
+<div class="h-6 w-[1px] bg-white/20"></div>
+<div class="flex items-center gap-1">
+<span class="font-bold text-[14px]">View Cart</span>
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+</div>
+</button>
+</div>
+<script>
+        // Simple Interaction Logic for Sidebar switching
+        document.querySelectorAll('aside > div > div').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('aside > div > div').forEach(i => {
+                    i.classList.remove('sidebar-active');
+                    i.querySelector('span').classList.add('text-on-surface-variant');
+                    i.querySelector('span').classList.remove('font-bold');
+                });
+                item.classList.add('sidebar-active');
+                item.querySelector('span').classList.remove('text-on-surface-variant');
+                item.querySelector('span').classList.add('font-bold');
+            });
+        });
+
+        // "ADD" button toggle animation
+        document.querySelectorAll('button:contains("ADD")').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('bg-accent-green');
+                this.classList.toggle('text-white');
+            });
+        });
+    </script>
+</body></html>

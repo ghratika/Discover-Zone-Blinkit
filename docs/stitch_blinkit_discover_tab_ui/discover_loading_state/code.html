@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Discover - Loading State</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#1b1b1b",
+                    "on-surface": "#191c1e",
+                    "on-secondary-fixed-variant": "#474747",
+                    "outline-variant": "#cec6aa",
+                    "surface-dim": "#d9dadc",
+                    "tertiary": "#00696c",
+                    "primary": "#6c5e00",
+                    "inverse-primary": "#e1c700",
+                    "on-tertiary-container": "#006f71",
+                    "error-container": "#ffdad6",
+                    "on-surface-variant": "#4c4732",
+                    "error": "#ba1a1a",
+                    "outline": "#7d775f",
+                    "surface-container-highest": "#e1e2e4",
+                    "surface-container-high": "#e7e8ea",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-tertiary": "#ffffff",
+                    "primary-container": "#ffe100",
+                    "on-background": "#191c1e",
+                    "surface": "#f8f9fb",
+                    "background": "#f8f9fb",
+                    "on-tertiary-fixed-variant": "#004f51",
+                    "on-secondary-container": "#646464",
+                    "primary-fixed": "#ffe330",
+                    "secondary": "#5e5e5e",
+                    "inverse-surface": "#2e3132",
+                    "surface-container": "#edeef0",
+                    "primary-fixed-dim": "#e1c700",
+                    "secondary-container": "#e2e2e2",
+                    "tertiary-container": "#00f9fe",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f0f1f3",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e1e2e4",
+                    "on-tertiary-fixed": "#002021",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#00dce1",
+                    "surface-container-low": "#f3f4f6",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "on-primary-fixed": "#211c00",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#514700",
+                    "surface-tint": "#6c5e00",
+                    "surface-bright": "#f8f9fb",
+                    "on-primary-container": "#726300",
+                    "tertiary-fixed": "#2efaff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "16px",
+                    "stack-md": "8px",
+                    "stack-sm": "4px",
+                    "container-margin": "16px",
+                    "gutter": "12px",
+                    "section-gap": "32px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Inter"],
+                    "label-xs": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "label-xs": ["10px", {"lineHeight": "1", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-lg": ["16px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                    "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .shimmer {
+            background: linear-gradient(
+                90deg,
+                rgba(229, 231, 235, 1) 0%,
+                rgba(243, 244, 246, 1) 50%,
+                rgba(229, 231, 235, 1) 100%
+            );
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface flex items-center px-container-margin h-16 border-b border-outline-variant">
+<div class="flex items-center gap-4 w-full">
+<button class="material-symbols-outlined text-primary active:scale-95 transition-transform" data-icon="arrow_back">arrow_back</button>
+<h1 class="font-headline-md text-headline-md text-on-surface">Discover</h1>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-20 pb-28 px-container-margin space-y-6">
+<!-- Skeleton Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant shadow-sm transition-all duration-300">
+<div class="w-full h-48 shimmer"></div>
+<div class="p-4 space-y-4">
+<div class="space-y-2">
+<div class="h-6 w-3/4 shimmer rounded-full"></div>
+<div class="h-4 w-1/2 shimmer rounded-full"></div>
+</div>
+<div class="flex justify-between items-center pt-2">
+<div class="h-8 w-24 shimmer rounded-full"></div>
+<div class="h-10 w-10 shimmer rounded-xl"></div>
+</div>
+</div>
+</div>
+<!-- Skeleton Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant shadow-sm transition-all duration-300">
+<div class="w-full h-48 shimmer"></div>
+<div class="p-4 space-y-4">
+<div class="space-y-2">
+<div class="h-6 w-2/3 shimmer rounded-full"></div>
+<div class="h-4 w-1/3 shimmer rounded-full"></div>
+</div>
+<div class="flex justify-between items-center pt-2">
+<div class="h-8 w-20 shimmer rounded-full"></div>
+<div class="h-10 w-10 shimmer rounded-xl"></div>
+</div>
+</div>
+</div>
+<!-- Skeleton Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant shadow-sm transition-all duration-300">
+<div class="w-full h-48 shimmer"></div>
+<div class="p-4 space-y-4">
+<div class="space-y-2">
+<div class="h-6 w-4/5 shimmer rounded-full"></div>
+<div class="h-4 w-2/5 shimmer rounded-full"></div>
+</div>
+<div class="flex justify-between items-center pt-2">
+<div class="h-8 w-28 shimmer rounded-full"></div>
+<div class="h-10 w-10 shimmer rounded-xl"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-4 pb-6 pt-2 bg-surface shadow-[0px_10px_30px_rgba(0,0,0,0.08)] rounded-t-xl">
+<!-- Home -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high active:scale-90 transition-all duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</div>
+<!-- Discover (ACTIVE) -->
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-all duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="search" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-label-sm text-label-sm mt-1">Discover</span>
+</div>
+<!-- Categories -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high active:scale-90 transition-all duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label-sm text-label-sm mt-1">Categories</span>
+</div>
+<!-- Print -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high active:scale-90 transition-all duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="print">print</span>
+<span class="font-label-sm text-label-sm mt-1">Print</span>
+</div>
+<!-- Ambulance -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high active:scale-90 transition-all duration-200 cursor-pointer">
+<span class="material-symbols-outlined text-error" data-icon="emergency">emergency</span>
+<span class="font-label-sm text-label-sm mt-1">Ambulance</span>
+</div>
+<!-- Bistro (Pill Differentiation) -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high active:scale-90 transition-all duration-200 cursor-pointer">
+<div class="bg-primary-container p-2 rounded-full mb-1">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="restaurant">restaurant</span>
+</div>
+<span class="font-label-sm text-label-sm">Bistro</span>
+</div>
+</nav>
+<!-- Background Decoration/Micro-interaction -->
+<div class="fixed inset-0 pointer-events-none opacity-20 z-[-1]">
+<div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-container blur-3xl rounded-full"></div>
+<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-container blur-3xl rounded-full"></div>
+</div>
+<script>
+        // Micro-interaction for feedback
+        document.querySelectorAll('nav div, header button').forEach(el => {
+            el.addEventListener('click', () => {
+                // Potential vibration or sound feedback logic here
+                console.log('User interaction registered on:', el.innerText || 'button');
+            });
+        });
+    </script>
+</body></html>

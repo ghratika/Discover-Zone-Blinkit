@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar hide for clean mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "tertiary-fixed": "#2efaff",
+                        "on-primary-container": "#726300",
+                        "inverse-surface": "#2e3132",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#00f9fe",
+                        "surface": "#f8f9fb",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e7e8ea",
+                        "background": "#f8f9fb",
+                        "tertiary": "#00696c",
+                        "surface-container": "#edeef0",
+                        "surface-container-highest": "#e1e2e4",
+                        "surface-variant": "#e1e2e4",
+                        "tertiary-fixed-dim": "#00dce1",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#514700",
+                        "primary-fixed-dim": "#e1c700",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#e2e2e2",
+                        "on-background": "#191c1e",
+                        "on-tertiary-fixed": "#002021",
+                        "surface-bright": "#f8f9fb",
+                        "on-surface": "#191c1e",
+                        "surface-container-low": "#f3f4f6",
+                        "on-secondary-container": "#646464",
+                        "primary": "#6c5e00",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#4c4732",
+                        "on-tertiary-fixed-variant": "#004f51",
+                        "primary-container": "#ffe100",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f0f1f3",
+                        "surface-tint": "#6c5e00",
+                        "secondary": "#5e5e5e",
+                        "inverse-primary": "#e1c700",
+                        "surface-dim": "#d9dadc",
+                        "outline": "#7d775f",
+                        "outline-variant": "#cec6aa",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#006f71",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-primary-fixed": "#211c00",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "primary-fixed": "#ffe330"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin": "16px",
+                        "stack-lg": "16px",
+                        "gutter": "12px",
+                        "stack-md": "8px",
+                        "stack-sm": "4px",
+                        "section-gap": "32px"
+                    },
+                    "fontFamily": {
+                        "label-xs": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-xs": ["10px", {"lineHeight": "1", "fontWeight": "700"}],
+                        "headline-md": ["20px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface antialiased select-none">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-on-surface border-b border-outline-variant flex items-center px-container-margin h-16 w-full">
+<div class="flex items-center w-full justify-between">
+<button class="flex items-center gap-2 text-primary active:scale-95 transition-transform">
+<span class="material-symbols-outlined">arrow_back</span>
+<span class="font-body-md text-body-md font-semibold">Back to Discover</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface">Pet Supplies</h1>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 pb-32 px-container-margin max-w-md mx-auto">
+<!-- Search Bar (Style Guidance Match) -->
+<div class="mb-stack-lg">
+<div class="relative flex items-center bg-white rounded-full border border-outline-variant px-4 py-3 shadow-sm">
+<span class="material-symbols-outlined text-outline mr-3">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-full outline-none placeholder-outline" placeholder="Search for food, toys, grooming..." type="text"/>
+<span class="material-symbols-outlined text-outline">mic</span>
+</div>
+</div>
+<!-- Category Banner (Decorative) -->
+<div class="relative overflow-hidden rounded-xl bg-primary-container p-6 mb-section-gap">
+<div class="relative z-10">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-primary-container leading-tight">Everything for your <br/>furry friends.</h2>
+<p class="font-label-sm text-label-sm text-on-primary-fixed-variant mt-2">Delivered in 10 minutes</p>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-20">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">pets</span>
+</div>
+</div>
+<!-- Product Grid (Vertical Cards) -->
+<div class="space-y-section-gap">
+<!-- Card 1: Dog Food -->
+<div class="flex flex-col">
+<div class="bg-white rounded-2xl overflow-hidden border border-outline-variant relative group active:scale-[0.98] transition-all">
+<div class="aspect-square relative overflow-hidden bg-surface-container-low p-4">
+<img class="w-full h-full object-contain mix-blend-multiply" data-alt="A professional studio product shot of a bag of Pedigree Adult Dry Dog Food placed centrally. The lighting is bright and clean with soft shadows against a neutral light grey background. The packaging is vibrant yellow and blue, showcasing high-quality pet nutrition. This minimalist commercial aesthetic emphasizes quick commerce efficiency and brand reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5n84BqNtl33C0YDlJsHZ4SAUHYHWo1FU9VNz5nRhPuHUz94PQm1m8R0XkVwGEBZNhtj_iJXr_cvxtNt5RYwP6wRAr3wn_lcoSx_W2btp2t7TYk6XmAVrNMFafxrpZXRlFkNidbsBCUkQsJb3G6NOf2GsJ_U3zFhlgvfQvck-d3VOxQPx6dFkA3JYxKxRZ8yNt_6GrkJg1AAyDposzY0s6h-IoESdIUesEbRuCfOopDxqjJHTQv8oHAZB7IWs0KElsxc-BfTpdP5On"/>
+<div class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Dog Food</div>
+</div>
+<div class="p-4 flex flex-col gap-1">
+<h3 class="font-body-lg text-body-lg text-on-background line-clamp-2 min-h-[48px]">Pedigree Adult Dry Dog Food, 3kg</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-sm font-bold">4.5</span>
+<span class="text-outline text-[10px] ml-1">(2.1k reviews)</span>
+</div>
+<div class="mt-stack-md flex items-center justify-between">
+<span class="font-headline-md text-headline-md">₹950</span>
+<button class="bg-white border-2 border-primary text-primary font-bold px-6 py-2 rounded-xl active:scale-90 transition-all hover:bg-primary hover:text-white">
+                                ADD
+                            </button>
+</div>
+</div>
+</div>
+<a class="mt-stack-md text-primary font-bold text-label-sm flex items-center hover:underline" href="#">
+                    See more in Dog Food <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</a>
+</div>
+<!-- Card 2: Cat Litter -->
+<div class="flex flex-col">
+<div class="bg-white rounded-2xl overflow-hidden border border-outline-variant relative group active:scale-[0.98] transition-all">
+<div class="aspect-square relative overflow-hidden bg-surface-container-low p-4">
+<img class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHLIaAuA_kSPHBhvZlXU4rFUnq_3HWKyixQREQONb8iQZg0_zcjKfTF-eLl_fINfpLMOsappMqDUj35wTov0sFIDCwZsy7vnyIYrNFTknfQ6YvG37Q9gDUI8EHmI76Z9XdzqxOkochZy8sdrfWKhVUbQDAW-jQgDjsDAc2XGk1GXPUmbrYEpci1qv3enppzjD9MfQYstzhU-cil0SCJt8nNykgNFCzCVYDP84ueWT0czMzjfQXaEeT_mj0vFuUqNK5qnLPPuJQFn-0"/>
+<div class="absolute top-3 left-3 bg-secondary text-on-secondary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Cat Litter</div>
+</div>
+<div class="p-4 flex flex-col gap-1">
+<h3 class="font-body-lg text-body-lg text-on-background line-clamp-2 min-h-[48px]">Feline Luxe Premium Clumping Litter, 5kg</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-sm font-bold">4.8</span>
+<span class="text-outline text-[10px] ml-1">(1.4k reviews)</span>
+</div>
+<div class="mt-stack-md flex items-center justify-between">
+<span class="font-headline-md text-headline-md">₹450</span>
+<button class="bg-white border-2 border-primary text-primary font-bold px-6 py-2 rounded-xl active:scale-90 transition-all hover:bg-primary hover:text-white">
+                                ADD
+                            </button>
+</div>
+</div>
+</div>
+<a class="mt-stack-md text-primary font-bold text-label-sm flex items-center hover:underline" href="#">
+                    See more in Cat Litter <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</a>
+</div>
+<!-- Card 3: Pet Grooming -->
+<div class="flex flex-col">
+<div class="bg-white rounded-2xl overflow-hidden border border-outline-variant relative group active:scale-[0.98] transition-all">
+<div class="aspect-square relative overflow-hidden bg-surface-container-low p-4">
+<img class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYHgKxtN4MVwfDQPXp-hZyfuc2jm1eKQaX8q8YsQ3dNwMSJ4ak_eoHbmytd9N9Sx21GvM5uVSEHdpoqkHdka_ZLmoWLSJAA3-0A2qZMO5F49b6HwsAUv_IvSc_gCEpB0mKCdUrWRo1ZUN6ho5a6H0V5DXB0DH06EdTUcL0K4jG7SAgOyxo4fBedWQZDSJrGF6oAtklDKRxThY3H6Yx0-4Rph87SckvOhflh-Fo8IwwNm_9Qn21F2QzjXpkSjUfVU80sekvGAkSI0B0"/>
+<div class="absolute top-3 left-3 bg-tertiary text-on-tertiary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Pet Grooming</div>
+</div>
+<div class="p-4 flex flex-col gap-1">
+<h3 class="font-body-lg text-body-lg text-on-background line-clamp-2 min-h-[48px]">Wild &amp; Clean Professional Pet Shampoo</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-sm font-bold">4.7</span>
+<span class="text-outline text-[10px] ml-1">(850 reviews)</span>
+</div>
+<div class="mt-stack-md flex items-center justify-between">
+<span class="font-headline-md text-headline-md">₹320</span>
+<button class="bg-white border-2 border-primary text-primary font-bold px-6 py-2 rounded-xl active:scale-90 transition-all hover:bg-primary hover:text-white">
+                                ADD
+                            </button>
+</div>
+</div>
+</div>
+<a class="mt-stack-md text-primary font-bold text-label-sm flex items-center hover:underline" href="#">
+                    See more in Pet Grooming <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Recommendation Spacer -->
+<div class="h-10"></div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-4 pb-6 pt-2 bg-surface shadow-[0px_10px_30px_rgba(0,0,0,0.08)] rounded-t-xl">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<!-- Discover (Active State per JSON instruction) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</a>
+<!-- Categories -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label-sm text-label-sm">Categories</span>
+</a>
+<!-- Print -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined">print</span>
+<span class="font-label-sm text-label-sm">Print</span>
+</a>
+<!-- Ambulance -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined text-error">emergency</span>
+<span class="font-label-sm text-label-sm">Ambulance</span>
+</a>
+<!-- Bistro (High-contrast Pill Treatment from Style Guidance) -->
+<a class="flex flex-col items-center justify-center bg-primary text-white rounded-full px-4 py-1 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">restaurant</span>
+<span class="font-label-sm text-label-sm">Bistro</span>
+</a>
+</nav>
+<!-- Micro-interaction Script -->
+<script>
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.add('scale-95');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('scale-95');
+            });
+            button.addEventListener('mouseleave', () => {
+                button.classList.remove('scale-95');
+            });
+        });
+    </script>
+</body></html>
