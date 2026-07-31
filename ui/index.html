@@ -442,7 +442,7 @@
             <span class="material-symbols-outlined text-[18px]">delivery_dining</span>
             <span class="">Delivery fee</span>
           </div>
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-2" id="checkout-delivery-fee-container">
             <span class="line-through text-secondary">₹25</span>
             <span class="text-primary font-bold">Free</span>
           </div>
@@ -1270,13 +1270,22 @@ function openCheckout() {
   if (!pendingCheckoutItem) return;
   const numPrice = parseInt(pendingCheckoutItem.price.replace(/[^0-9]/g,''),10)||200;
   
+  let deliveryFee = 0;
+  let deliveryHtml = `<span class="line-through text-secondary">₹25</span><span class="text-primary font-bold">Free</span>`;
+  if (numPrice < 100) {
+    deliveryFee = 25;
+    deliveryHtml = `<span class="text-on-surface">₹25</span>`;
+  }
+  
   document.getElementById('checkout-product-img').src = pendingCheckoutItem.img;
   document.getElementById('checkout-product-img').style.display = pendingCheckoutItem.img ? 'block' : 'none';
   document.getElementById('checkout-product-name').textContent = pendingCheckoutItem.name;
   document.getElementById('checkout-product-price').textContent = `₹${numPrice}`;
   document.getElementById('checkout-bill-total').textContent = `₹${numPrice}`;
-  document.getElementById('checkout-grand-total').textContent = `₹${numPrice + 5}`;
-  document.getElementById('checkout-footer-total').textContent = `₹${numPrice + 5}`;
+  const deliveryContainer = document.getElementById('checkout-delivery-fee-container');
+  if (deliveryContainer) deliveryContainer.innerHTML = deliveryHtml;
+  document.getElementById('checkout-grand-total').textContent = `₹${numPrice + 5 + deliveryFee}`;
+  document.getElementById('checkout-footer-total').textContent = `₹${numPrice + 5 + deliveryFee}`;
   
   showScreen('screen-checkout');
 }
