@@ -563,7 +563,7 @@
         <span class="material-symbols-outlined text-4xl text-outline-variant">star</span>
       </div>
       <!-- Report an issue -->
-      <button id="report-issue-btn" onclick="showScreen('screen-support-human-chat')" class="w-full bg-primary-container hover:bg-primary-fixed text-on-primary-container font-headline-md py-3 rounded-xl flex items-center justify-center gap-stack-md active:scale-[0.98] transition-all shadow-sm">
+      <button id="report-issue-btn" onclick="openSupportChat()" class="w-full bg-primary-container hover:bg-primary-fixed text-on-primary-container font-headline-md py-3 rounded-xl flex items-center justify-center gap-stack-md active:scale-[0.98] transition-all shadow-sm">
         <span class="material-symbols-outlined">report_problem</span>
         Report an issue
       </button>
@@ -592,7 +592,7 @@
     <div class="mt-6 mb-4 p-container-margin border-t border-outline-variant/20">
       <h4 class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-stack-md">More assistance</h4>
       <div class="grid gap-stack-md">
-        <div onclick="showScreen('screen-support-human-chat')" class="bg-white p-4 rounded-xl border border-outline-variant/30 flex flex-col items-center text-center mx-auto active:scale-95 transition-transform cursor-pointer">
+        <div onclick="openSupportChat()" class="bg-white p-4 rounded-xl border border-outline-variant/30 flex flex-col items-center text-center mx-auto active:scale-95 transition-transform cursor-pointer">
           <span class="material-symbols-outlined text-secondary mb-stack-sm">forum</span>
           <p class="font-label-sm text-label-sm text-on-surface">Chat with us</p>
         </div>
@@ -664,6 +664,66 @@
       <div class="bg-surface-container-lowest border border-outline-variant text-on-surface p-3 rounded-2xl rounded-bl-none shadow-sm">
         <p class="text-body-md font-body-md leading-relaxed">Let me check what we can do for you...</p>
       </div>
+    </div>
+  </main>
+  <!-- Bottom Input Area -->
+  <div class="fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-outline-variant p-3 z-50">
+    <div class="flex items-center gap-3">
+      <div class="flex-1 relative">
+        <input disabled class="w-full bg-surface-container-low border-none rounded-full py-2.5 px-5 text-body-md placeholder:text-secondary" placeholder="Select an option above..." type="text">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<!-- SCREEN - SUPPORT AI CHAT                                         -->
+<!-- ═════════════════════════════════════════════════════════════════ -->
+<div id="screen-support-ai-chat" class="screen hidden bg-surface text-on-surface h-screen flex flex-col overflow-hidden relative z-[100]">
+  <header class="fixed top-0 w-full z-50 bg-surface flex items-center justify-between px-container-margin h-14 w-full border-b border-outline-variant">
+    <div class="flex items-center gap-3">
+      <button class="text-primary active:scale-95 transition-transform" onclick="showScreen('screen-support-issue-reported')">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </button>
+      <div class="flex flex-col">
+        <h1 class="font-headline-md text-headline-md text-primary font-bold">AI Support Assistant</h1>
+        <span class="text-label-xs font-label-xs text-secondary leading-none flex items-center gap-1">
+          <span class="w-1.5 h-1.5 bg-[#10b981] rounded-full"></span> Automated
+        </span>
+      </div>
+    </div>
+  </header>
+  <main id="ai-chat-main" class="flex-1 mt-14 mb-16 overflow-y-auto px-container-margin py-stack-lg flex flex-col gap-gutter bg-background">
+    <!-- Agent Profile Intro -->
+    <div class="flex flex-col items-center mb-stack-lg mt-4">
+      <div class="w-16 h-16 rounded-full border-4 border-surface shadow-sm overflow-hidden mb-stack-md bg-surface-container-highest flex items-center justify-center">
+        <span class="material-symbols-outlined text-[32px] text-primary">smart_toy</span>
+      </div>
+      <p class="font-label-sm text-label-sm text-on-surface">AI Assistant</p>
+      <p class="text-label-xs font-label-xs text-secondary opacity-70">Automated Support System</p>
+    </div>
+    
+    <!-- AI Message 1 -->
+    <div class="flex gap-2 max-w-[85%]">
+      <div class="bg-surface-container-lowest border border-outline-variant text-on-surface p-3 rounded-2xl rounded-bl-none shadow-sm">
+        <p class="text-body-md font-body-md leading-relaxed">Hi, I'm your AI assistant. How can I help you today?</p>
+        <span class="text-[10px] text-secondary mt-1 block">Just now</span>
+      </div>
+    </div>
+    
+    <!-- Dynamic Chat Log -->
+    <div id="ai-chat-log" class="flex flex-col gap-4 mt-2"></div>
+    
+    <!-- Quick Replies -->
+    <div id="ai-chat-options" class="flex flex-wrap gap-2 justify-end my-stack-md">
+      <button onclick="handleAiChatReply('Item was damaged')" class="bg-surface-container-lowest border border-outline-variant px-4 py-2 rounded-full text-label-sm font-label-sm text-on-surface hover:bg-primary-container hover:text-on-primary-container hover:border-primary-container active:scale-95 transition-all shadow-sm">
+        Item was damaged
+      </button>
+      <button onclick="handleAiChatReply('Wrong item')" class="bg-surface-container-lowest border border-outline-variant px-4 py-2 rounded-full text-label-sm font-label-sm text-on-surface hover:bg-primary-container hover:text-on-primary-container hover:border-primary-container active:scale-95 transition-all shadow-sm">
+        Wrong item
+      </button>
     </div>
   </main>
   <!-- Bottom Input Area -->
@@ -938,7 +998,7 @@ let cartTotalNum      = 0;
 
 // ── Screen Routing ─────────────────────────────────────────────────────────
 function showScreen(id) {
-  ['screen-discover','screen-category','screen-variants','screen-checkout','screen-support-order-placed','screen-support-issue-reported','screen-support-human-chat','screen-support-resolution-options','screen-support-refund','screen-support-replacement'].forEach(s=>{
+  ['screen-discover','screen-category','screen-variants','screen-checkout','screen-support-order-placed','screen-support-issue-reported','screen-support-human-chat','screen-support-ai-chat','screen-support-resolution-options','screen-support-refund','screen-support-replacement'].forEach(s=>{
     const el = document.getElementById(s);
     if(el) el.classList.toggle('hidden', s!==id);
   });
@@ -1323,15 +1383,83 @@ function simulateDelivery() {
   const reportBtn = document.getElementById('report-issue-btn');
   const reportText = document.getElementById('report-issue-text');
   
-  if (numPrice < 200) {
-    if (reportBtn) reportBtn.classList.add('hidden');
-    if (reportText) reportText.classList.add('hidden');
-  } else {
-    if (reportBtn) reportBtn.classList.remove('hidden');
-    if (reportText) reportText.classList.remove('hidden');
-  }
+  if (reportBtn) reportBtn.classList.remove('hidden');
+  if (reportText) reportText.classList.remove('hidden');
   
   showScreen('screen-support-issue-reported');
+}
+
+
+let aiChatTurn = 0;
+
+function openSupportChat() {
+  const numPrice = pendingCheckoutItem ? (parseInt(pendingCheckoutItem.price.replace(/[^0-9]/g,''), 10) || 0) : 0;
+  
+  if (numPrice < 200) {
+    // Reset AI Chat
+    aiChatTurn = 0;
+    document.getElementById('ai-chat-log').innerHTML = '';
+    document.getElementById('ai-chat-options').innerHTML = `
+      <button onclick="handleAiChatReply('Item was damaged')" class="bg-surface-container-lowest border border-outline-variant px-4 py-2 rounded-full text-label-sm font-label-sm text-on-surface hover:bg-primary-container hover:text-on-primary-container hover:border-primary-container active:scale-95 transition-all shadow-sm">Item was damaged</button>
+      <button onclick="handleAiChatReply('Wrong item')" class="bg-surface-container-lowest border border-outline-variant px-4 py-2 rounded-full text-label-sm font-label-sm text-on-surface hover:bg-primary-container hover:text-on-primary-container hover:border-primary-container active:scale-95 transition-all shadow-sm">Wrong item</button>
+    `;
+    showScreen('screen-support-ai-chat');
+  } else {
+    showScreen('screen-support-human-chat');
+  }
+}
+
+function handleAiChatReply(text) {
+  const log = document.getElementById('ai-chat-log');
+  const options = document.getElementById('ai-chat-options');
+  
+  // 1. Add User Message
+  log.innerHTML += `
+    <div class="flex justify-end">
+      <div class="bg-primary-container text-on-primary-container p-3 rounded-2xl rounded-br-none shadow-sm max-w-[85%]">
+        <p class="text-body-md font-body-md font-medium">${text}</p>
+      </div>
+    </div>
+  `;
+  options.innerHTML = '';
+  
+  aiChatTurn++;
+  
+  // 2. Add AI Response after delay
+  setTimeout(() => {
+    let aiMsg = '';
+    let nextOptions = '';
+    
+    if (aiChatTurn === 1) {
+      aiMsg = 'Can you provide more details about the issue?';
+      nextOptions = `
+        <button onclick="handleAiChatReply('The packaging was crushed')" class="bg-surface-container-lowest border border-outline-variant px-4 py-2 rounded-full text-label-sm font-label-sm text-on-surface hover:bg-primary-container hover:text-on-primary-container hover:border-primary-container shadow-sm">The packaging was crushed</button>
+        <button onclick="handleAiChatReply('Quality is bad')" class="bg-surface-container-lowest border border-outline-variant px-4 py-2 rounded-full text-label-sm font-label-sm text-on-surface hover:bg-primary-container hover:text-on-primary-container hover:border-primary-container shadow-sm">Quality is bad</button>
+      `;
+    } else if (aiChatTurn === 2) {
+      aiMsg = 'I understand. Did it affect the product inside?';
+      nextOptions = `
+        <button onclick="handleAiChatReply('Yes, the product is broken')" class="bg-surface-container-lowest border border-outline-variant px-4 py-2 rounded-full text-label-sm font-label-sm text-on-surface hover:bg-primary-container hover:text-on-primary-container hover:border-primary-container shadow-sm">Yes, the product is broken</button>
+      `;
+    } else if (aiChatTurn === 3) {
+      aiMsg = 'We apologize for the inconvenience. Would you prefer a refund or a replacement?';
+      nextOptions = `
+        <button onclick="showScreen('screen-support-refund')" class="bg-primary text-white font-bold px-6 py-2 rounded-full active:scale-95 shadow-md border border-primary">Refund</button>
+        <button onclick="showScreen('screen-support-replacement')" class="bg-primary text-white font-bold px-6 py-2 rounded-full active:scale-95 shadow-md border border-primary">Replacement</button>
+      `;
+    }
+    
+    log.innerHTML += `
+      <div class="flex gap-2 max-w-[85%]">
+        <div class="bg-surface-container-lowest border border-outline-variant text-on-surface p-3 rounded-2xl rounded-bl-none shadow-sm">
+          <p class="text-body-md font-body-md leading-relaxed">${aiMsg}</p>
+        </div>
+      </div>
+    `;
+    
+    options.innerHTML = nextOptions;
+    document.getElementById('ai-chat-main').scrollTo(0, document.getElementById('ai-chat-main').scrollHeight);
+  }, 600);
 }
 
 function handleChatReply(text) {
